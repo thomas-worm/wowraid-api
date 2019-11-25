@@ -1,0 +1,12 @@
+#!/bin/sh
+
+BASEDIR=$(dirname "$0")
+BASEDIR="$BASEDIR/.."
+
+if [ ! -d "$BASEDIR/heroku" ]; then
+  wget https://cli-assets.heroku.com/heroku-linux-x64.tar.gz -O /tmp/heroku-linux-x64.tar.gz
+  tar xzvf /tmp/heroku-linux-x64.tar.gz -C $BASEDIR
+  rm /tmp/heroku-linux-x64.tar.gz
+fi
+
+$BASEDIR/heroku/bin/heroku $@
