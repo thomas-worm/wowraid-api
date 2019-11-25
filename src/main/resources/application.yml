@@ -3,7 +3,7 @@ spring:
     oauth2:
       client:
         registration:
-          google:
+          battlenet:
             provider: battlenet
             client-id: 5f07749cb34149de989c34d9e904ef8a
             client-secret: L3Cs6D7YwhDJOKYcodiU53eQqT8ybvPE
