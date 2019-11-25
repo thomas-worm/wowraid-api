@@ -1,4 +1,4 @@
-package de.tthomasworm.wowraid.api;
+package de.thomasworm.wowraid.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
