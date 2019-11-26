@@ -53,7 +53,7 @@ class BattleNetAuthenticationService {
         return UriComponentsBuilder
             .fromUri(authorizationEndpoint)
             .queryParam("response_type", "code")
-            .queryParam("scope", String.join(" ", (String[])scopes.toArray()))
+            .queryParam("scope", String.join(" ", scopes.toArray(new String[scopes.size()])))
             .queryParam("client_id", clientId)
             .queryParam("state", "dumnmy")
             .build().toUri();
