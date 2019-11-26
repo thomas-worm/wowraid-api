@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -64,7 +63,7 @@ class BattleNetAuthenticationService {
             .queryParam("scope", String.join(" ", scopes.toArray(new String[scopes.size()])))
             .queryParam("client_id", clientId)
             .queryParam("state", "dumnmy")
-            .queryParam("redirect_uri", redirectUri.toString())
+            .queryParam("redirect_uri", plainUri(redirectUri).toString())
             .build().toUri();
     }
 
@@ -76,7 +75,7 @@ class BattleNetAuthenticationService {
                 body.add("client_id", clientId);
                 body.add("client_secret", clientSecret);
                 body.add("code", code);
-                body.add("redirect_uri", redirectUri.toString());
+                body.add("redirect_uri", plainUri(redirectUri).toString());
 
                 WebClient
                     .create(tokenEndpoint.toString())
@@ -90,6 +89,16 @@ class BattleNetAuthenticationService {
                 }
             );
         });
+    }
+
+    private URI plainUri(URI uri) {
+        URI newUri = null;;
+        try {
+            newUri = new URI(uri.getScheme(), uri.getAuthority(), uri.getPath(), null, null);
+        } catch(Exception exception) {
+            //
+        }
+        return newUri;
     }
 
 }
