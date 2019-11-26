@@ -1,9 +1,12 @@
 package de.thomasworm.wowraid.api.auth.battlenet;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -20,8 +23,9 @@ class BattleNetAuthenticationService {
     @Value("${spring.security.oauth2.client.provider.battlenet.issuer-uri}")
     private String issuerUri;
 
-    @Value("${spring.security.oauth2.client.registration.battlenet.scope}")
-    private String[] scopes;
+    @Autowired()
+    @Qualifier("spring.security.oauth2.client.registration.battlenet.scope")
+    private List<String> scopes;
 
     private URI authorizationEndpoint;
 
@@ -49,7 +53,7 @@ class BattleNetAuthenticationService {
         return UriComponentsBuilder
             .fromUri(authorizationEndpoint)
             .queryParam("response_type", "code")
-            .queryParam("scope", String.join(" ", scopes))
+            .queryParam("scope", String.join(" ", (String[])scopes.toArray()))
             .queryParam("client_id", clientId)
             .queryParam("state", "dumnmy")
             .build().toUri();
