@@ -84,10 +84,10 @@ class BattleNetAuthenticationService {
                     .bodyValue(body)
                     .retrieve().bodyToMono(String.class)
                     .subscribe(response -> {
-                            callback.success(response)
+                            callback.success(response);
                         },
                         error -> {
-                            callback.success(error)
+                            callback.success(error.toString());
                         }
                     );
                 }
