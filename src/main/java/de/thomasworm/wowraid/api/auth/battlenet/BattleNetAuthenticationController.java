@@ -1,6 +1,7 @@
 package de.thomasworm.wowraid.api.auth.battlenet;
 
 import java.net.URI;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,8 +30,8 @@ class BattleNetAuthenticationController {
     }
 
     @GetMapping("/login/oauth2/code/battlenet")
-    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("id_token") String idToken) {
-        return Mono.just(idToken);
+    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("state") Optional<String> state) {
+        return authenticationService.getToken(Mono.just(code));
     }
 
     private Mono<Void> redirect(ServerHttpResponse response, URI uri) {

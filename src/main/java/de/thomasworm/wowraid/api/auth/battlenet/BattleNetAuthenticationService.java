@@ -66,20 +66,26 @@ class BattleNetAuthenticationService {
             .build().toUri();
     }
 
-    /** public Mono<String> getToken(Mono<String> authorizationCode) {
-        return authorizationCode.map(code -> {
-            return (Mono<String>) WebClient
-                .create(tokenEndpoint.toString())
-                .post()
-                .header("Content-Type: application/x-www-form-urlencoded")
-                .body(
-                    BodyInserters
-                        .fromFormData("grant_type", "authorization_code")
-                        .with("client_id", clientId)
-                        .with("client_secret", clientSecret)
-                        .with("code", code)
-                ).retrieve().bodyToMono(String.class);
-        }); 
-    } **/
+    public Mono<String> getToken(Mono<String> authorizationCode) {
+        return Mono.create(callback ->
+            authorizationCode.subscribe(code ->
+                WebClient
+                    .create(tokenEndpoint.toString())
+                    .post()
+                    .header("Content-Type: application/x-www-form-urlencoded")
+                    .body(
+                        BodyInserters
+                            .fromFormData("grant_type", "authorization_code")
+                            .with("client_id", clientId)
+                            .with("client_secret", clientSecret)
+                            .with("code", code)
+                    )
+                    .retrieve().bodyToMono(String.class)
+                    .subscribe(response -> 
+                        callback.success(response)
+                    )
+            )
+        );
+    }
 
 }
