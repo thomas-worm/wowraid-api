@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -19,6 +20,9 @@ class BattleNetAuthenticationService {
 
     @Value("${spring.security.oauth2.client.registration.battlenet.client-id}")
     private String clientId;
+    
+    @Value("${spring.security.oauth2.client.registration.battlenet.client-secret}")
+    private String clientSecret;
 
     @Value("${spring.security.oauth2.client.provider.battlenet.issuer-uri}")
     private String issuerUri;
@@ -28,11 +32,13 @@ class BattleNetAuthenticationService {
     private List<String> scopes;
 
     private URI authorizationEndpoint;
+    private URI tokenEndpoint;
 
     @PostConstruct()
     private void initialize() {
         getConfiguration().subscribe(config -> {
             this.authorizationEndpoint = URI.create(config.getAuthorizationEndpoint());
+            this.tokenEndpoint = URI.create(config.getTokenEndpoint());
         });
     }
 
@@ -52,12 +58,28 @@ class BattleNetAuthenticationService {
     public URI createAuthorizationUri(URI redirectUri) {
         return UriComponentsBuilder
             .fromUri(authorizationEndpoint)
-            .queryParam("response_type", "code")
+            .queryParam("response_type", "code id_token")
             .queryParam("scope", String.join(" ", scopes.toArray(new String[scopes.size()])))
             .queryParam("client_id", clientId)
             .queryParam("state", "dumnmy")
             .queryParam("redirect_uri", redirectUri.toString())
             .build().toUri();
     }
+
+    /** public Mono<String> getToken(Mono<String> authorizationCode) {
+        return authorizationCode.map(code -> {
+            return (Mono<String>) WebClient
+                .create(tokenEndpoint.toString())
+                .post()
+                .header("Content-Type: application/x-www-form-urlencoded")
+                .body(
+                    BodyInserters
+                        .fromFormData("grant_type", "authorization_code")
+                        .with("client_id", clientId)
+                        .with("client_secret", clientSecret)
+                        .with("code", code)
+                ).retrieve().bodyToMono(String.class);
+        }); 
+    } **/
 
 }

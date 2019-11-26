@@ -29,8 +29,8 @@ class BattleNetAuthenticationController {
     }
 
     @GetMapping("/login/oauth2/code/battlenet")
-    public Mono<String> authenticateCallback(@RequestParam("code") String code) {
-        return Mono.just(code);
+    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("id_token") String idToken) {
+        return Mono.just(idToken);
     }
 
     private Mono<Void> redirect(ServerHttpResponse response, URI uri) {
