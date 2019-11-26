@@ -66,7 +66,7 @@ class BattleNetAuthenticationService {
             .build().toUri();
     }
 
-    public Mono<String> getToken(Mono<String> authorizationCode) {
+    public Mono<String> getToken(Mono<String> authorizationCode, URI redirectUri) {
         return Mono.create(callback ->
             authorizationCode.subscribe(code ->
                 WebClient
@@ -79,6 +79,7 @@ class BattleNetAuthenticationService {
                             .with("client_id", clientId)
                             .with("client_secret", clientSecret)
                             .with("code", code)
+                            .with("redirect_uri", redirectUri.toString())
                     )
                     .retrieve().bodyToMono(String.class)
                     .subscribe(response -> 

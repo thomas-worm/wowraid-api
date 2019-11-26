@@ -30,8 +30,8 @@ class BattleNetAuthenticationController {
     }
 
     @GetMapping("/login/oauth2/code/battlenet")
-    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("state") Optional<String> state) {
-        return authenticationService.getToken(Mono.just(code));
+    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("state") Optional<String> state, ServerHttpRequest request) {
+        return authenticationService.getToken(Mono.just(code), getRedirectUrl(request));
     }
 
     private Mono<Void> redirect(ServerHttpResponse response, URI uri) {
