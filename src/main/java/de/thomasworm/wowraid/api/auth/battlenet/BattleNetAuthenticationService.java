@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -68,23 +70,23 @@ class BattleNetAuthenticationService {
 
     public Mono<String> getToken(Mono<String> authorizationCode, URI redirectUri) {
         return Mono.create(callback ->
-            authorizationCode.subscribe(code ->
-                WebClient
+            authorizationCode.subscribe(code -> {
+                MultiValueMap<String, String> body = new LinkedMultiValueMap<String, String>();
+                body.add("grant_type", "authorization_code");
+                body.add("client_id", clientId);
+                body.add("client_secret", clientSecret);
+                body.add("code", code);
+                body.add("redirect_uri", redirectUri.toString());
+
+                return WebClient
                     .create(tokenEndpoint.toString())
                     .post()
-                    .header("Content-Type: application/x-www-form-urlencoded")
-                    .body(
-                        BodyInserters
-                            .fromFormData("grant_type", "authorization_code")
-                            .with("client_id", clientId)
-                            .with("client_secret", clientSecret)
-                            .with("code", code)
-                            .with("redirect_uri", redirectUri.toString())
-                    )
+                    .bodyValue(body)
                     .retrieve().bodyToMono(String.class)
                     .subscribe(response -> 
                         callback.success(response)
                     )
+                }
             )
         );
     }
