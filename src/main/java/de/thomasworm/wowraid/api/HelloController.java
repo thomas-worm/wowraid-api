@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class HelloController {
 
-    @GetMapping("/me")
+    /** @GetMapping("/me")
     public ResponseEntity<OAuth2AuthenticationToken> hello(OAuth2AuthenticationToken currentUser)  {
         return ResponseEntity.ok(currentUser);
-    }
+    } **/
 
 }
