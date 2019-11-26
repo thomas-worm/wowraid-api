@@ -39,7 +39,7 @@ class BattleNetAuthenticationService {
     private Mono<OpenIdConfiguration> getConfiguration() {
         String configurationUriString = UriComponentsBuilder
             .fromUriString(issuerUri)
-            .path(".well-known/openid-configuration")
+            .pathSegment(".well-known", "openid-configuration")
             .build().toString();
 
         return WebClient
