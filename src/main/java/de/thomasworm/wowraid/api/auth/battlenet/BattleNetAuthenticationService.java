@@ -83,15 +83,10 @@ class BattleNetAuthenticationService {
                     .post()
                     .bodyValue(body)
                     .exchange()
-                    /**.retrieve()
-                    .bodyToMono(String.class)**/
-                    .subscribe(response -> {
-                            callback.success(response.toEntity(String.class));
-                        },
-                        error -> {
-                            callback.success(error.toString());
-                        }
-                    );
+                    .flatMap(response -> response.bodyToMono(String.class))
+                    .subscribe(data -> {
+                        callback.success(data);
+                    });
                 }
             );
         });
