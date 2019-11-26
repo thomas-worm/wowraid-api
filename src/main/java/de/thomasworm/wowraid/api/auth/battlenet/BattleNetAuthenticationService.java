@@ -69,7 +69,7 @@ class BattleNetAuthenticationService {
     }
 
     public Mono<String> getToken(Mono<String> authorizationCode, URI redirectUri) {
-        return Mono.create(callback ->
+        return Mono.create(callback -> {
             authorizationCode.subscribe(code -> {
                 MultiValueMap<String, String> body = new LinkedMultiValueMap<String, String>();
                 body.add("grant_type", "authorization_code");
@@ -78,19 +78,21 @@ class BattleNetAuthenticationService {
                 body.add("code", code);
                 body.add("redirect_uri", redirectUri.toString());
 
-                return WebClient
+                WebClient
                     .create(tokenEndpoint.toString())
                     .post()
                     .bodyValue(body)
                     .retrieve().bodyToMono(String.class)
-                    .subscribe(response -> 
-                        callback.success(response),
-                        error -> 
-                        callback.success(error)
-                    )
+                    .subscribe(response -> {
+                            callback.success(response)
+                        },
+                        error -> {
+                            callback.success(error)
+                        }
+                    );
                 }
-            )
-        );
+            );
+        });
     }
 
 }
