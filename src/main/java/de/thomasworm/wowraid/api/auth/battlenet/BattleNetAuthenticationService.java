@@ -82,9 +82,11 @@ class BattleNetAuthenticationService {
                     .create(tokenEndpoint.toString())
                     .post()
                     .bodyValue(body)
-                    .retrieve().bodyToMono(String.class)
+                    .exchange()
+                    /**.retrieve()
+                    .bodyToMono(String.class)**/
                     .subscribe(response -> {
-                            callback.success(response);
+                            callback.success(response.toEntity(String.class));
                         },
                         error -> {
                             callback.success(error.toString());
