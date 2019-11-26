@@ -56,6 +56,7 @@ class BattleNetAuthenticationService {
             .queryParam("scope", String.join(" ", scopes.toArray(new String[scopes.size()])))
             .queryParam("client_id", clientId)
             .queryParam("state", "dumnmy")
+            .queryParam("redirect_uri", redirectUri.toString())
             .build().toUri();
     }
 
