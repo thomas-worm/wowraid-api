@@ -12,6 +12,9 @@ public class UserInfo {
     @JsonProperty("userIdentifier")
     private int userIdentifier;
 
+    @JsonProperty("authenticated")
+    private boolean authenticated;
+
     public void setBattleTag(String value) {
         this.battleTag = value;
     }
@@ -28,11 +31,20 @@ public class UserInfo {
         return this.userIdentifier;
     }
 
+    public void setAuthenticated(boolean value) {
+        this.authenticated = value;
+    }
+
+    public boolean isAuthenticated() {
+        return this.authenticated;
+    }
+
     public UserInfo() {}
 
     public UserInfo(OAuth2AuthenticationToken oAuth2AuthenticationToken) {
         this.setBattleTag(oAuth2AuthenticationToken.getPrincipal().getAttribute("battle_tag"));
         this.setUserIdentifier(Integer.parseInt(oAuth2AuthenticationToken.getPrincipal().getName()));
+        this.setAuthenticated(true);
     }
 
 }
