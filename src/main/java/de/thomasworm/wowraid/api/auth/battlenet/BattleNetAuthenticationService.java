@@ -20,6 +20,7 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -153,7 +154,7 @@ class BattleNetAuthenticationService {
         return newUri;
     }
 
-    public JsonWebToken parseIdToken(TokenEndpointResponse token) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
+    public JsonWebToken parseIdToken(TokenEndpointResponse token) throws JsonParseException, JsonMappingException, IOException {
         Decoder decoder = Base64.getDecoder();
 
         String[] tokenParts = token.getIdToken().split("\\.");
@@ -162,6 +163,12 @@ class BattleNetAuthenticationService {
         JsonWebToken idToken = new JsonWebToken();
         idToken.setHeader(header);
         idToken.setBody(body);
+        try {
+            Jwts.parser().setSigningKey(jsonWebKeySet.get(header.getKeyIdentifier())).parseClaimsJws(token.getIdToken());
+            idToken.setValid(true);
+        } catch (Exception exception) {
+            idToken.setValid(false);
+        }
         return idToken;
     }
 

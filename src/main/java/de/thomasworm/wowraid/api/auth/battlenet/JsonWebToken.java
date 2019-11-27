@@ -6,6 +6,8 @@ class JsonWebToken {
 
     private JsonWebTokenBody body;
 
+    private boolean valid = false;
+
     public void setHeader(JsonWebTokenHeader value) {
         this.header = value;
     }
@@ -20,6 +22,14 @@ class JsonWebToken {
 
     public JsonWebTokenBody getBody() {
         return this.body;
+    }
+
+    public void setValid(boolean value) {
+        this.valid = value;
+    }
+
+    public boolean isValid() {
+        return this.valid;
     }
 
 }

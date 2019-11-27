@@ -42,16 +42,6 @@ class BattleNetAuthenticationController {
         return authenticationService.getToken(Mono.just(code), getRedirectUrl(request)).map(token -> {
             try {
                 return authenticationService.parseIdToken(token).getBody().getBattleTag();
-            } catch (InvalidKeyException e) {
-                return e.toString();
-            } catch (NoSuchAlgorithmException e) {
-                return e.toString();
-            } catch (NoSuchPaddingException e) {
-                return e.toString();
-            } catch (IllegalBlockSizeException e) {
-                return e.toString();
-            } catch (BadPaddingException e) {
-				return e.toString();
             } catch (IOException e) {
                 return e.toString();
             }
