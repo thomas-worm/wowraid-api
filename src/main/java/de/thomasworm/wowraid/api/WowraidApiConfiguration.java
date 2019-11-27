@@ -11,6 +11,8 @@ class WowraidApiConfiguration {
     @Bean()
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
+            .oauth2Login()
+            .and()
             .authorizeExchange()
             .pathMatchers("GET", "/user/authenticated")
             .permitAll()
