@@ -8,7 +8,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @Configuration()
 class WowraidApiConfiguration {
 
-    @Bean()
+    /**@Bean()
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
             .authorizeExchange()
@@ -16,6 +16,6 @@ class WowraidApiConfiguration {
             .permitAll()
             .and()
             .build();
-    }
+    }**/
 
 }
