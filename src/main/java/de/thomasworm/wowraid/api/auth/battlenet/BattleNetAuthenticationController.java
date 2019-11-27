@@ -41,7 +41,7 @@ class BattleNetAuthenticationController {
             @RequestParam("state") Optional<String> state, ServerHttpRequest request) {
         return authenticationService.getToken(Mono.just(code), getRedirectUrl(request)).map(token -> {
             try {
-                return authenticationService.parseIdToken(token);
+                return authenticationService.parseIdToken(token).getBody().getBattleTag().orElse("");
             } catch (InvalidKeyException e) {
                 return e.toString();
             } catch (NoSuchAlgorithmException e) {

@@ -153,16 +153,16 @@ class BattleNetAuthenticationService {
         return newUri;
     }
 
-    public String parseIdToken(TokenEndpointResponse token) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
+    public JsonWebToken parseIdToken(TokenEndpointResponse token) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
         Decoder decoder = Base64.getDecoder();
 
-        String[] tokenParts = token.getIdToken().split("\\.", 2);
+        String[] tokenParts = token.getIdToken().split("\\.");
         JsonWebTokenHeader header = new ObjectMapper().readValue(decoder.decode(tokenParts[0]), JsonWebTokenHeader.class);
-        PublicKey publicKey = jsonWebKeySet.get(header.getKeyIdentifier());
-        Cipher cipher = Cipher.getInstance("RSA");
-        cipher.init(Cipher.DECRYPT_MODE, publicKey);
-        System.out.println(tokenParts[1]);
-        return new String(cipher.doFinal(decoder.decode(tokenParts[1])), "UTF-8");
+        JsonWebTokenBody body = new ObjectMapper().readValue(decoder.decode(tokenParts[1]), JsonWebTokenBody.class);
+        JsonWebToken idToken = new JsonWebToken();
+        idToken.setHeader(header);
+        idToken.setBody(body);
+        return idToken;
     }
 
 }
