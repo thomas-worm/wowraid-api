@@ -29,7 +29,7 @@ class JsonWebTokenBody implements Serializable {
     private int issuedAtTime;
 
     @JsonProperty("battle_tag")
-    private Optional<String> battleTag;
+    private String battleTag;
 
     @JsonProperty("jti")
     private String identifier;
@@ -90,11 +90,11 @@ class JsonWebTokenBody implements Serializable {
         return this.issuedAtTime;
     }
 
-    public void setBattleTag(Optional<String> value) {
+    public void setBattleTag(String value) {
         this.battleTag = value;
     }
 
-    public Optional<String> getBattleTag() {
+    public String getBattleTag() {
         return this.battleTag;
     }
 
