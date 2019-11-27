@@ -1,7 +1,14 @@
 package de.thomasworm.wowraid.api.auth.battlenet;
 
+import java.io.IOException;
 import java.net.URI;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,8 +37,25 @@ class BattleNetAuthenticationController {
     }
 
     @GetMapping("/login/oauth2/code/battlenet")
-    public Mono<String> authenticateCallback(@RequestParam("code") String code, @RequestParam("state") Optional<String> state, ServerHttpRequest request) {
-        return authenticationService.getToken(Mono.just(code), getRedirectUrl(request));
+    public Mono<String> authenticateCallback(@RequestParam("code") String code,
+            @RequestParam("state") Optional<String> state, ServerHttpRequest request) {
+        return authenticationService.getToken(Mono.just(code), getRedirectUrl(request)).map(token -> {
+            try {
+                return authenticationService.parseIdToken(token);
+            } catch (InvalidKeyException e) {
+                return e.toString();
+            } catch (NoSuchAlgorithmException e) {
+                return e.toString();
+            } catch (NoSuchPaddingException e) {
+                return e.toString();
+            } catch (IllegalBlockSizeException e) {
+                return e.toString();
+            } catch (BadPaddingException e) {
+				return e.toString();
+            } catch (IOException e) {
+                return e.toString();
+            }
+        });
     }
 
     private Mono<Void> redirect(ServerHttpResponse response, URI uri) {
