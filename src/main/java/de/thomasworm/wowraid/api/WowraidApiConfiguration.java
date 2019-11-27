@@ -35,6 +35,7 @@ class WowraidApiConfiguration {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOrigins(Arrays.asList("https://just4fun.razorfen-wow.eu", "http://just4fun.razorfen-wow.eu"));
         corsConfig.addAllowedMethod(CorsConfiguration.ALL);
+        corsConfig.setAllowCredentials(true);
         corsConfigSource.registerCorsConfiguration("/**", corsConfig);
         return corsConfigSource;
     }
