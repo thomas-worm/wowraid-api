@@ -32,6 +32,7 @@ class WowraidApiConfiguration {
             .authenticated()
             .and()
             .build();
+            //
     }
 
 }
