@@ -16,7 +16,7 @@ class WowraidApiConfiguration {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         UrlBasedCorsConfigurationSource corsConfigSource = new UrlBasedCorsConfigurationSource();
         CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.setAllowedOrigins(Arrays.asList("https://just4fun.razorfen-wow.eu"));
+        corsConfig.setAllowedOrigins(Arrays.asList("https://just4fun.razorfen-wow.eu", "http://just4fun.razorfen-wow.eu"));
         corsConfig.addAllowedMethod(CorsConfiguration.ALL);
         corsConfigSource.registerCorsConfiguration("/**", corsConfig);
 
