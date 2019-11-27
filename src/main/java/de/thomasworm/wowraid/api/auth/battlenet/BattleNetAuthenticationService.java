@@ -161,6 +161,7 @@ class BattleNetAuthenticationService {
         PublicKey publicKey = jsonWebKeySet.get(header.getKeyIdentifier());
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, publicKey);
+        System.out.println(tokenParts[1]);
         return new String(cipher.doFinal(decoder.decode(tokenParts[1])), "UTF-8");
     }
 
