@@ -16,3 +16,8 @@ spring:
         provider:
           battlenet:
             issuer-uri: https://eu.battle.net/oauth
+server:
+  servlet:
+    session:
+      cookie:
+        secure: false
