@@ -9,6 +9,8 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+import org.springframework.session.web.http.CookieSerializer;
+import org.springframework.session.web.http.DefaultCookieSerializer;
 
 @Configuration()
 class WowraidApiConfiguration {
@@ -38,6 +40,13 @@ class WowraidApiConfiguration {
         corsConfig.setAllowCredentials(true);
         corsConfigSource.registerCorsConfiguration("/**", corsConfig);
         return corsConfigSource;
+    }
+
+    @Bean()
+    public CookieSerializer cookieSerializer() {
+        DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
+        cookieSerializer.setSameSite(null);
+        return cookieSerializer;
     }
 
 }
