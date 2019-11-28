@@ -8,14 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
-
+import org.springframework.web.server.session.WebSessionIdResolver;
 import org.apache.catalina.Context;
 import org.apache.tomcat.util.http.Rfc6265CookieProcessor;
 
@@ -72,6 +71,12 @@ class WowraidApiConfiguration {
                 context.setCookieProcessor(rfc6265CookieProcessor);
             }
         };
+    }
+
+    @Bean()
+    public WebSessionIdResolver webSessionIdResolver() {
+        CookieWebSessionIdResolver resolver = new CookieWebSessionIdResolver();
+        return resolver;
     }
 
 }
