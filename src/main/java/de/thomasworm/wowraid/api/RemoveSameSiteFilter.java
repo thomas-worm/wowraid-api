@@ -49,6 +49,11 @@ public class RemoveSameSiteFilter implements WebFilter {
             headers.put(HttpHeaders.SET_COOKIE, cookieHeaders);
         }
 
+        System.out.println("*************************************");
+        System.out.println("");
+        System.out.println("");
+        
+
         return chain.filter(exchange);
 	}
 }
