@@ -31,7 +31,7 @@ public class RemoveSameSiteFilter implements WebFilter {
                     String header = cookieHeaders.get(i);
                     if (header.contains("SESSION")) {
                         cookieHeaders.set(i, header.replaceAll("; SameSite=Lax", ""));
-                        System.out.println(header.replaceAll("; SameSite=Lax"));
+                        System.out.println(header.replaceAll("; SameSite=Lax", ""));
                     }
                 }
             }
