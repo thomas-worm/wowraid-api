@@ -35,7 +35,7 @@ class WowraidApiConfiguration {
             .anyExchange()
             .authenticated()
             .and()
-            .addFilterAfter(new RemoveSameSiteFilter(), SecurityWebFiltersOrder.AUTHORIZATION)
+            .addFilterAfter(new RemoveSameSiteFilter(), SecurityWebFiltersOrder.AUTHENTICATION)
             .build();
     }
 
