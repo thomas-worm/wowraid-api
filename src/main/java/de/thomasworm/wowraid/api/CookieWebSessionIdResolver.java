@@ -108,7 +108,7 @@ public class CookieWebSessionIdResolver implements WebSessionIdResolver {
 				.maxAge(maxAge)
 				.httpOnly(true)
 				.secure("https".equalsIgnoreCase(exchange.getRequest().getURI().getScheme()))
-				.sameSite(null);
+				.sameSite("None");
 
 		if (this.cookieInitializer != null) {
 			this.cookieInitializer.accept(cookieBuilder);
