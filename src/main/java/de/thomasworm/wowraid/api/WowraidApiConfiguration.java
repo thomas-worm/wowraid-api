@@ -44,6 +44,11 @@ class WowraidApiConfiguration {
 
     @Bean()
     public CookieSerializer cookieSerializer() {
+        return defaultCookieSerializer();
+    }
+
+    @Bean()
+    public DefaultCookieSerializer defaultCookieSerializer() {
         DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
         cookieSerializer.setSameSite(null);
         return cookieSerializer;
