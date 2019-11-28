@@ -23,7 +23,7 @@ import org.springframework.web.server.session.WebSessionIdResolver;
  */
 public class CookieWebSessionIdResolver implements WebSessionIdResolver {
 
-	private String cookieName = "MYSESSION";
+	private String cookieName = "SESSION";
 
 	private Duration cookieMaxAge = Duration.ofSeconds(-1);
 
