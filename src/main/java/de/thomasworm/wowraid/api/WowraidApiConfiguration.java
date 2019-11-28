@@ -6,7 +6,9 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
@@ -33,6 +35,7 @@ class WowraidApiConfiguration {
             .anyExchange()
             .authenticated()
             .and()
+            .addFilterAfter(new RemoveSameSiteFilter(), SecurityWebFiltersOrder.AUTHORIZATION)
             .build();
     }
 
@@ -65,7 +68,7 @@ class WowraidApiConfiguration {
             @Override
             protected void postProcessContext(Context context) {
                 Rfc6265CookieProcessor rfc6265CookieProcessor = new Rfc6265CookieProcessor();
-                rfc6265CookieProcessor.setSameSiteCookies("Strict");
+                rfc6265CookieProcessor.setSameSiteCookies(null);
                 context.setCookieProcessor(rfc6265CookieProcessor);
             }
         };
