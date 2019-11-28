@@ -23,6 +23,16 @@ public class RemoveSameSiteFilter implements WebFilter {
 	public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         ServerHttpResponse resp = exchange.getResponse();
         HttpHeaders headers = resp.getHeaders();
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("*************************************");
+        for (Object key : headers.keySet()) {
+            for (String value : headers.get(key)) {
+                System.out.println(key.toString() + " = " + value);
+            }
+        }
+
         if (headers.containsKey(HttpHeaders.SET_COOKIE)) {
             List<String> cookieHeaders = headers.get(HttpHeaders.SET_COOKIE);
 
