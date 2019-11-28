@@ -10,7 +10,9 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsConfigurationSource;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+import org.springframework.web.server.session.DefaultWebSessionManager;
 import org.springframework.web.server.session.WebSessionIdResolver;
+import org.springframework.web.server.session.WebSessionManager;
 
 @Configuration()
 class WowraidApiConfiguration {
@@ -41,6 +43,13 @@ class WowraidApiConfiguration {
         corsConfig.setAllowCredentials(true);
         corsConfigSource.registerCorsConfiguration("/**", corsConfig);
         return corsConfigSource;
+    }
+
+    @Bean()
+    public WebSessionManager webSessionManager() {
+        DefaultWebSessionManager manager = new DefaultWebSessionManager();
+        manager.setSessionIdResolver(webSessionIdResolver());
+        return manager;
     }
 
     @Bean()
