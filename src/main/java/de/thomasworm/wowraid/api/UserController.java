@@ -30,7 +30,7 @@ class UserController {
         return Mono.just(new UserInfo(token));
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/login")
     public Mono<Void> loginUser(@RequestParam("redirect_uri") String redirectUri, ServerWebExchange exchange) {
         ServerHttpResponse response = exchange.getResponse();
         response.setStatusCode(HttpStatus.FOUND);
