@@ -23,4 +23,4 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+        globally_quoted_identifiers: true

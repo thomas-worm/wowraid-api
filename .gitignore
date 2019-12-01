@@ -52,6 +52,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-# Heroku files
-/heroku
