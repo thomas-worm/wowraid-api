@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +17,7 @@ public class UserRepository {
     @PersistenceContext()
     private EntityManager entityManager;
 
+    @Transactional()
     public void addOrUpdateByBlizzardIdentifier(User user) {
         User existingUser = findByBlizzardIdentifier(user.getBlizzardIdentifier());
         if (existingUser == null) {
