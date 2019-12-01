@@ -1,4 +1,4 @@
-package de.thomasworm.wowraid.api.model;
+package de.thomasworm.wowraid.api.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
