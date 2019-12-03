@@ -17,9 +17,9 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne()
+    @OneToOne(optional = true)
     @JoinColumn()
-    private Optional<User> user;
+    private User user;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "class")
@@ -37,11 +37,11 @@ public class Character {
         return this.id;
     }
 
-    public void setUser(Optional<User> value) {
+    public void setUser(User value) {
         this.user = value;
     }
 
-    public Optional<User> getUser() {
+    public User getUser() {
         return this.user;
     }
 
