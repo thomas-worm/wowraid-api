@@ -28,12 +28,12 @@ public class Character {
     private Realm realm;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "class")
+    @JoinColumn(name = "class_id")
     private CharacterClass characterClass;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn()
-    private CharacterRace race;
+    private Race race;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn()
@@ -67,11 +67,11 @@ public class Character {
         return this.characterClass;
     }
 
-    public void setRace(CharacterRace value) {
+    public void setRace(Race value) {
         this.race = value;
     }
 
-    public CharacterRace getRace() {
+    public Race getRace() {
         return this.race;
     }
 
