@@ -1,7 +1,6 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
-import java.util.Optional;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,6 +19,13 @@ public class Character {
     @OneToOne(optional = true)
     @JoinColumn()
     private User user;
+
+    @Column()
+    private String name;
+
+    @OneToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn()
+    private Realm realm;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "class")
@@ -45,6 +51,14 @@ public class Character {
         return this.user;
     }
 
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     public void setCharacterClass(CharacterClass value) {
         this.characterClass = value;
     }
@@ -61,12 +75,20 @@ public class Character {
         return this.race;
     }
 
-    public void setFaction(Faction faction) {
-        this.faction = faction;
+    public void setFaction(Faction value) {
+        this.faction = value;
     }
 
     public Faction getFaction() {
         return this.faction;
+    }
+
+    public void setRealm(Realm value) {
+        this.realm = value;
+    }
+
+    public Realm getRealm() {
+        return this.realm;
     }
 
 }

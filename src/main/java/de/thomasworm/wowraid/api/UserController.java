@@ -20,7 +20,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import reactor.core.publisher.Mono;
 
-@RestController
+@RestController()
 class UserController {
 
     private UserRepository userRepository;
