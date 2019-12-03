@@ -24,4 +24,14 @@ public class FactionRepository {
         return foundFactions;
     }
 
+    public Faction findByName(String name) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<Faction> query = builder.createQuery(Faction.class);
+        Root<Faction> factionTable = query.from(Faction.class);
+        List<Faction> foundFactions = entityManager.createQuery(
+            query.select(factionTable).where(builder.equal(factionTable.get("name"), name))
+        ).setMaxResults(1).getResultList();
+        return foundFactions.isEmpty() ? null : foundFactions.get(0);
+    }
+
 }
