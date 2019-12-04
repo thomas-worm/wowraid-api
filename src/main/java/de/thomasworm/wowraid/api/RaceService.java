@@ -19,6 +19,7 @@ public class RaceService {
 
     @Autowired()
     public RaceService(RaceRepository raceRepository) {
+        this.raceRepository = raceRepository;
     }
 
     public Mono<Iterable<Race>> getAll() {

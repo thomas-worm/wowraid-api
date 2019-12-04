@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import de.thomasworm.wowraid.api.model.persistence.Faction;
 import de.thomasworm.wowraid.api.model.persistence.FactionRepository;
 import de.thomasworm.wowraid.api.model.persistence.Race;
-import de.thomasworm.wowraid.api.model.persistence.RaceRepository;
 import reactor.core.publisher.Mono;
 
 @RestController()
