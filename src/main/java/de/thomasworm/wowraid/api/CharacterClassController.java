@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.thomasworm.wowraid.api.model.persistence.CharacterClass;
-import de.thomasworm.wowraid.api.model.persistence.Faction;
-import de.thomasworm.wowraid.api.model.persistence.FactionRepository;
-import de.thomasworm.wowraid.api.model.persistence.Race;
 import reactor.core.publisher.Mono;
 
 @RestController()
