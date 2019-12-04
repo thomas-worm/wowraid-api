@@ -26,6 +26,10 @@ public class RaceService {
         return Mono.just(this.raceRepository.findAll());
     }
 
+    public Mono<Race> getByName(String name) {
+        return Mono.just(this.raceRepository.findByName(name));
+    }
+
     public Mono<Iterable<Race>> getByFaction(Faction faction) {
         String[] allianceRaces = new String[] { "Human", "Dwarf", "Night Elf", "Gnome" };
         String[] hordeRaces = new String[] { "Orc", "Undead", "Tauren", "Troll" };

@@ -24,4 +24,14 @@ public class RaceRepository {
         return foundRaces;
     }
 
+    public Race findByName(String name) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<Race> query = builder.createQuery(Race.class);
+        Root<Race> raceTable = query.from(Race.class);
+        List<Race> foundRaces = entityManager.createQuery(
+            query.select(raceTable).where(builder.equal(raceTable.get("name"), name))
+        ).setMaxResults(1).getResultList();
+        return foundRaces.isEmpty() ? null : foundRaces.get(0);
+    }
+
 }
