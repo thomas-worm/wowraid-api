@@ -6,6 +6,6 @@ RUN sudo apt-get update \
  && sudo sudo -u postgres createuser --superuser gitpod \
  && sudo sudo -u postgres createuser --superuser zcatzlevtcsphw \
  && ( curl https://cli-assets.heroku.com/install.sh | sh ) \
- && sudo sed -i '1s/.*/#!\/usr\/bin\/env bash'"\n"'unset PGHOSTADDR/' /usr/local/bin/heroku \
+ && sudo sed -i '1s/.*/#!\/usr\/bin\/env bash'"\n"'unset PGHOSTADDR/' /usr/local/lib/heroku/bin/heroku \
  && npm install -g npm
 
