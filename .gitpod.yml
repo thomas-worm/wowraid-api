@@ -2,3 +2,7 @@ ports:
  - port: 8080
 image:
   file: .gitpod.dockerfile
+vscode:
+  extensions: 
+    - ms-ossdata.vscode-postgresql@0.2.0:AVAvDYQU3oJl82ktJAHoeA==
+  
