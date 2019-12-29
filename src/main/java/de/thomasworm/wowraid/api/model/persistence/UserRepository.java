@@ -24,7 +24,7 @@ public class UserRepository {
             this.entityManager.persist(user);
         } else {
             existingUser.setBattleTag(user.getBattleTag());
-            this.entityManager.merge(existingUser);
+            existingUser = this.entityManager.merge(existingUser);
         }
         this.entityManager.flush();
     }
