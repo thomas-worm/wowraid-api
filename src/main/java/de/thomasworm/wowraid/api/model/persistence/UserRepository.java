@@ -18,15 +18,17 @@ public class UserRepository {
     private EntityManager entityManager;
 
     @Transactional()
-    public void addOrUpdateByBlizzardIdentifier(User user) {
+    public User addOrUpdateByBlizzardIdentifier(User user) {
         User existingUser = findByBlizzardIdentifier(user.getBlizzardIdentifier());
         if (existingUser == null) {
             this.entityManager.persist(user);
+            existingUser = user;
         } else {
             existingUser.setBattleTag(user.getBattleTag());
             existingUser = this.entityManager.merge(existingUser);
         }
         this.entityManager.flush();
+        return existingUser;
     }
 
     public User findByBlizzardIdentifier(int blizzardIdentifier) {

@@ -70,7 +70,7 @@ class CharacterController {
         User user = new User();
         user.setBlizzardIdentifier(userInfo.getUserIdentifier());
         user.setBattleTag(userInfo.getBattleTag());
-        this.userRepository.addOrUpdateByBlizzardIdentifier(user);
+        user = this.userRepository.addOrUpdateByBlizzardIdentifier(user);
         return user;
     }
 
