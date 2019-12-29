@@ -31,42 +31,51 @@ class CharacterClassController {
         });
     }
 
-    @GetMapping("/race/human/class")
+    @GetMapping({"/race/human/class",
+                 "/race/Human/class"})
     public Mono<List<String>> getHumanClasses() {
         return getRaceClasses("Human");
     }
 
-    @GetMapping("/race/dwarf/class")
+    @GetMapping({"/race/dwarf/class",
+                 "/race/Dwarf/class"})
     public Mono<List<String>> getDwarfClasses() {
         return getRaceClasses("Dwarf");
     }
 
-    @GetMapping({"/race/night elf/class", "/race/nightelf/class"})
+    @GetMapping({"/race/night elf/class", "/race/nightelf/class",
+                 "/race/Night elf/class", "/race/Nightelf/class",
+                 "/race/Night Elf/class", "/race/NightElf/class"})
     public Mono<List<String>> getNightElfClasses() {
         return getRaceClasses("Night Elf");
     }
 
-    @GetMapping("/race/gnome/class")
+    @GetMapping({"/race/gnome/class",
+                 "/race/Gnome/class"})
     public Mono<List<String>> getGnomeClasses() {
         return getRaceClasses("Gnome");
     }
 
-    @GetMapping("/race/orc/class")
+    @GetMapping({"/race/orc/class",
+                 "/race/Orc/class"})
     public Mono<List<String>> getOrcClasses() {
         return getRaceClasses("Orc");
     }
 
-    @GetMapping("/race/undead/class")
+    @GetMapping({"/race/undead/class",
+                 "/race/Undead/class"})
     public Mono<List<String>> getUndeadClasses() {
         return getRaceClasses("Undead");
     }
 
-    @GetMapping("/race/tauren/class")
+    @GetMapping({"/race/tauren/class",
+                 "/race/Tauren/class"})
     public Mono<List<String>> getTaurenClasses() {
         return getRaceClasses("Tauren");
     }
 
-    @GetMapping("/race/troll/class")
+    @GetMapping({"/race/troll/class",
+                 "/race/Troll/class"})
     public Mono<List<String>> getTrollClasses() {
         return getRaceClasses("Troll");
     }

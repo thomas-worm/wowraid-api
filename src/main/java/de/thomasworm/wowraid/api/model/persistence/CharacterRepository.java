@@ -23,5 +23,15 @@ public class CharacterRepository {
         List<Character> foundCharacters = this.entityManager.createQuery(query.select(characterTable)).getResultList();
         return foundCharacters;
     }
+
+    public Iterable<Character> findByUser(User user) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<Character> query = builder.createQuery(Character.class);
+        Root<Character> characterTable = query.from(Character.class);
+        List<Character> foundCharacters = entityManager.createQuery(
+            query.select(characterTable).where(builder.equal(characterTable.get("user"), user))
+        ).getResultList();
+        return foundCharacters.isEmpty() ? null : foundCharacters;
+    }
     
 }

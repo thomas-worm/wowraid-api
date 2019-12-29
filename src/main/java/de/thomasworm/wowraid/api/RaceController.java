@@ -33,12 +33,14 @@ class RaceController {
         });
     }
 
-    @GetMapping("/faction/alliance/race")
+    @GetMapping({"/faction/alliance/race",
+                 "/faction/Alliance/race"})
     public Mono<List<String>> getAllianceRaces() {
         return getFactionRaces("Alliance");
     }
 
-    @GetMapping("/faction/horde/race")
+    @GetMapping({"/faction/horde/race",
+                 "/faction/Horde/race"})
     public Mono<List<String>> getHordeRaces() {
         return getFactionRaces("Horde");
     }
