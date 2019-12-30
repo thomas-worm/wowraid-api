@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.thomasworm.wowraid.api.model.persistence.Faction;
-import de.thomasworm.wowraid.api.model.persistence.FactionRepository;
 import de.thomasworm.wowraid.api.model.persistence.Race;
 import reactor.core.publisher.Mono;
 
@@ -16,12 +14,12 @@ import reactor.core.publisher.Mono;
 class RaceController {
 
     private RaceService raceService;
-    private FactionRepository factionRepository;
+    private FactionService factionService;
 
     @Autowired()
-    public RaceController(RaceService raceService, FactionRepository factionRepository) {
+    public RaceController(RaceService raceService, FactionService factionService) {
         this.raceService = raceService;
-        this.factionRepository = factionRepository;
+        this.factionService = factionService;
     }
 
     @GetMapping("/race")
@@ -46,12 +44,13 @@ class RaceController {
     }
 
     private Mono<List<String>> getFactionRaces(String factionName) {
-        return Mono.create(subscriber -> {
-            Faction faction = this.factionRepository.findByName(factionName);
-            this.raceService.getByFaction(faction).subscribe(races -> {
-                subscriber.success(mapRaces(races));
-            });
-        });
+        return Mono.create(subscriber ->
+            this.factionService.getByName(factionName).subscribe(faction -> 
+                this.raceService.getByFaction(faction).subscribe(races -> {
+                    subscriber.success(mapRaces(races));
+                })
+            )
+        );
     }
 
     private List<String> mapRaces(Iterable<Race> races) {

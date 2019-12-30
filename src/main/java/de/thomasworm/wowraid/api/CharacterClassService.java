@@ -26,6 +26,10 @@ public class CharacterClassService {
         return Mono.just(this.characterClassRepository.findAll());
     }
 
+    public Mono<CharacterClass> getByName(String className) {
+        return Mono.just(this.characterClassRepository.findByName(className));
+    }
+
     public Mono<Iterable<CharacterClass>> getByRace(Race race) {
         List<String> relevantClasses = new ArrayList<>();
         if (race.getName().equals("Human")) {

@@ -24,4 +24,14 @@ public class RealmRepository {
         return foundRealms;
     }
 
+    public Realm findByName(String name) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<Realm> query = builder.createQuery(Realm.class);
+        Root<Realm> realmTable = query.from(Realm.class);
+        List<Realm> foundRealms = entityManager.createQuery(
+            query.select(realmTable).where(builder.equal(realmTable.get("name"), name))
+        ).setMaxResults(1).getResultList();
+        return foundRealms.isEmpty() ? null : foundRealms.get(0);
+    }
+
 }

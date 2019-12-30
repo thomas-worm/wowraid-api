@@ -7,26 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.thomasworm.wowraid.api.model.persistence.FactionRepository;
 import reactor.core.publisher.Mono;
 
 @RestController()
 class FactionController {
 
-    private FactionRepository factionRepository;
+    private FactionService factionService;
 
     @Autowired()
-    public FactionController(FactionRepository factionRepository) {
-        this.factionRepository = factionRepository;
+    public FactionController(FactionService factionService) {
+        this.factionService = factionService;
     }
 
     @GetMapping("/faction")
     public Mono<List<String>> getFactions() {
-        List<String> factions = new ArrayList<>();
-        this.factionRepository.findAll().forEach(faction -> {
-            factions.add(faction.getName());
+        return this.factionService.getAll().map(factionRecords -> {
+            List<String> factions = new ArrayList<>();
+            factionRecords.forEach(faction -> {
+                factions.add(faction.getName());
+            });
+            return factions;
         });
-        return Mono.just(factions);
     }
 
 }

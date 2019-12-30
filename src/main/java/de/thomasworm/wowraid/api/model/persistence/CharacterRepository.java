@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +33,25 @@ public class CharacterRepository {
             query.select(characterTable).where(builder.equal(characterTable.get("user"), user))
         ).getResultList();
         return foundCharacters.isEmpty() ? null : foundCharacters;
+    }
+
+    public Character findByRealmAndName(Realm realm, String name) {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<Character> query = builder.createQuery(Character.class);
+        Root<Character> characterTable = query.from(Character.class);
+        List<Character> foundCharacters = entityManager.createQuery(
+            query.select(characterTable).where(builder.and(
+                builder.equal(characterTable.get("realm"), realm),
+                builder.equal(characterTable.get("name"), name)
+            ))
+        ).setMaxResults(1).getResultList();
+        return foundCharacters.isEmpty() ? null : foundCharacters.get(0);
+    }
+
+    @Transactional()
+    public void add(Character character) {
+        this.entityManager.persist(character);
+        this.entityManager.flush();
     }
     
 }

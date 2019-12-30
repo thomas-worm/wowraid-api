@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import de.thomasworm.wowraid.api.model.persistence.Character;
 import de.thomasworm.wowraid.api.model.persistence.CharacterRepository;
+import de.thomasworm.wowraid.api.model.persistence.DuplicateKeyException;
 import de.thomasworm.wowraid.api.model.persistence.User;
 import reactor.core.publisher.Mono;
 
@@ -24,5 +25,12 @@ public class CharacterService {
 
     public Mono<Iterable<Character>> getCharactersByUser(User user) {
         return Mono.just(this.characterRepository.findByUser(user));
+    }
+
+    public void create(Character character) throws DuplicateKeyException {
+        Character existingCharacter = this.characterRepository.findByRealmAndName(character.getRealm(), character.getName());
+        if (existingCharacter != null)
+            throw new DuplicateKeyException();
+        this.characterRepository.add(character);
     }
 }
