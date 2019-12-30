@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -81,6 +82,21 @@ class CharacterController {
         });
     }
 
+    @GetMapping("/realm/{realm}/character/{name}")
+    public Mono<Character> getUserByRealmAndName(@PathVariable("realm") String realm, @PathVariable("name") String name) {
+        return this.realmService.getByName(realm)
+            .flatMap(realmObject -> this.characterService.getByRealmAndName(realmObject, name))
+            .map(characterRecord -> {
+                Character character = new Character();
+                character.setName(characterRecord.getName());
+                character.setRealm(characterRecord.getRealm().getName());
+                character.setFaction(characterRecord.getFaction().getName());
+                character.setRace(characterRecord.getRace().getName());
+                character.setCharacterClass(characterRecord.getCharacterClass().getName());
+                return character;
+            });
+    }
+
     @PostMapping("/user/character")
     public Mono<ServerResponse> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
         if (isNullOrBlank(character.getRealm())) {
@@ -98,49 +114,47 @@ class CharacterController {
         if (isNullOrBlank(character.getName())) {
             return unprocessableEntity("name", "empty", "The name is empty but required for the character.");
         }
-        return Mono.create(subscriber -> {
-            User user = getUserFromToken(token);
-            Mono<CharacterClass> characterClassMono = this.characterClassService.getByName(character.getCharacterClass());
-            Mono<Race> raceMono = this.raceService.getByName(character.getName());
-            Mono<Faction> factionMono = this.factionService.getByName(character.getFaction());
-            Mono<Realm> realmMono = this.realmService.getByName(character.getRealm());
-            Mono.zip(characterClassMono, raceMono, factionMono, realmMono).map(tuple -> {
-                de.thomasworm.wowraid.api.model.persistence.Character characterRecord = new de.thomasworm.wowraid.api.model.persistence.Character();
-                characterRecord.setUser(user);
-                characterRecord.setCharacterClass((CharacterClass) tuple.get(0));
-                characterRecord.setRace((Race) tuple.get(1));
-                characterRecord.setFaction((Faction) tuple.get(2));
-                characterRecord.setRealm((Realm) tuple.get(3));
-                characterRecord.setName(character.getName());
-                return characterRecord;
-            }).flatMap(characterRecord -> {
-                if (characterRecord.getRealm() == null) {
-                    return unprocessableEntity("realm", "notFound", "The given realm was not found.");
-                }
-                if (characterRecord.getFaction() == null) {
-                    return unprocessableEntity("faction", "notFound", "The given faction was not found.");
-                }
-                if (characterRecord.getRace() == null) {
-                    return unprocessableEntity("race", "notFound", "The given race was not found.");
-                }
-                if (characterRecord.getCharacterClass() == null) {
-                    return unprocessableEntity("class", "notFound", "The given class was not found.");
-                }
-                URI createdResourceUri = null;
-                try {
-                    createdResourceUri = new URI("/realm/" + characterRecord.getRealm().getName() + "/character/" + characterRecord.getName());
-                } catch (URISyntaxException exception) {}
-                try {
-                    this.characterService.create(characterRecord);
-                } catch (DuplicateKeyException exception) {
-                    return ServerResponse
-                        .seeOther(createdResourceUri)
-                        .bodyValue(null);
-                }
+        User user = getUserFromToken(token);
+        Mono<CharacterClass> characterClassMono = this.characterClassService.getByName(character.getCharacterClass());
+        Mono<Race> raceMono = this.raceService.getByName(character.getName());
+        Mono<Faction> factionMono = this.factionService.getByName(character.getFaction());
+        Mono<Realm> realmMono = this.realmService.getByName(character.getRealm());
+        return Mono.zip(characterClassMono, raceMono, factionMono, realmMono).map(tuple -> {
+            de.thomasworm.wowraid.api.model.persistence.Character characterRecord = new de.thomasworm.wowraid.api.model.persistence.Character();
+            characterRecord.setUser(user);
+            characterRecord.setCharacterClass((CharacterClass) tuple.get(0));
+            characterRecord.setRace((Race) tuple.get(1));
+            characterRecord.setFaction((Faction) tuple.get(2));
+            characterRecord.setRealm((Realm) tuple.get(3));
+            characterRecord.setName(character.getName());
+            return characterRecord;
+        }).flatMap(characterRecord -> {
+            if (characterRecord.getRealm() == null) {
+                return unprocessableEntity("realm", "notFound", "The given realm was not found.");
+            }
+            if (characterRecord.getFaction() == null) {
+                return unprocessableEntity("faction", "notFound", "The given faction was not found.");
+            }
+            if (characterRecord.getRace() == null) {
+                return unprocessableEntity("race", "notFound", "The given race was not found.");
+            }
+            if (characterRecord.getCharacterClass() == null) {
+                return unprocessableEntity("class", "notFound", "The given class was not found.");
+            }
+            URI createdResourceUri = null;
+            try {
+                createdResourceUri = new URI("/realm/" + characterRecord.getRealm().getName() + "/character/" + characterRecord.getName());
+            } catch (URISyntaxException exception) {}
+            try {
+                this.characterService.create(characterRecord);
+            } catch (DuplicateKeyException exception) {
                 return ServerResponse
-                    .created(createdResourceUri)
+                    .seeOther(createdResourceUri)
                     .bodyValue(null);
-            });
+            }
+            return ServerResponse
+                .created(createdResourceUri)
+                .bodyValue(null);
         });
     }
 
