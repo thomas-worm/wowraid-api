@@ -42,7 +42,7 @@ public class CharacterRepository {
         List<Character> foundCharacters = entityManager.createQuery(
             query.select(characterTable).where(builder.and(
                 builder.equal(characterTable.get("realm"), realm),
-                builder.equal(characterTable.get("name"), name)
+                builder.equal(builder.lower(characterTable.get("name")), name.toLowerCase())
             ))
         ).setMaxResults(1).getResultList();
         return foundCharacters.isEmpty() ? null : foundCharacters.get(0);

@@ -29,7 +29,7 @@ public class RealmRepository {
         CriteriaQuery<Realm> query = builder.createQuery(Realm.class);
         Root<Realm> realmTable = query.from(Realm.class);
         List<Realm> foundRealms = entityManager.createQuery(
-            query.select(realmTable).where(builder.equal(realmTable.get("name"), name))
+            query.select(realmTable).where(builder.equal(builder.lower(realmTable.get("name")), name.toLowerCase()))
         ).setMaxResults(1).getResultList();
         return foundRealms.isEmpty() ? null : foundRealms.get(0);
     }
