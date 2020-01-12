@@ -35,7 +35,30 @@ public class CharacterService {
     public void create(Character character) throws DuplicateKeyException {
         Character existingCharacter = this.characterRepository.findByRealmAndName(character.getRealm(), character.getName());
         if (existingCharacter != null)
-            throw new DuplicateKeyException();
+            throw DuplicateKeyException.withExistingRecord(existingCharacter);
         this.characterRepository.add(character);
+    }
+
+    public Character createOrLink(Character character) throws DuplicateKeyException {
+        try {
+            this.create(character);
+            return character;
+        } catch (DuplicateKeyException exception) {
+            Character existingCharacter = exception.getExistingRecord(Character.class);
+            if (existingCharacter.getUser() != null) {
+                throw exception;
+            }
+            if (!existingCharacter.getFaction().equals(character.getFaction())) {
+                throw exception;
+            }
+            if (!existingCharacter.getRace().equals(character.getRace())) {
+                throw exception;
+            }
+            if (!existingCharacter.getCharacterClass().equals(character.getCharacterClass())) {
+                throw exception;
+            }
+            existingCharacter.setUser(character.getUser());
+            return this.characterRepository.save(existingCharacter);
+        }
     }
 }

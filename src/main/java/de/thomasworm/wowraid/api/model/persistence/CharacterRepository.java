@@ -53,5 +53,12 @@ public class CharacterRepository {
         this.entityManager.persist(character);
         this.entityManager.flush();
     }
+
+    @Transactional()
+    public Character save(Character character) {
+        Character savedCharacter = this.entityManager.merge(character);
+        this.entityManager.flush();
+        return savedCharacter;
+    }
     
 }
