@@ -116,7 +116,7 @@ class CharacterController {
         }
         User user = getUserFromToken(token);
         Mono<CharacterClass> characterClassMono = this.characterClassService.getByName(character.getCharacterClass());
-        Mono<Race> raceMono = this.raceService.getByName(character.getName());
+        Mono<Race> raceMono = this.raceService.getByName(character.getRace());
         Mono<Faction> factionMono = this.factionService.getByName(character.getFaction());
         Mono<Realm> realmMono = this.realmService.getByName(character.getRealm());
         return Mono.zip(characterClassMono, raceMono, factionMono, realmMono).map(tuple -> {
