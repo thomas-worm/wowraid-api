@@ -150,11 +150,11 @@ class CharacterController {
             } catch (DuplicateKeyException exception) {
                 return ServerResponse
                     .seeOther(createdResourceUri)
-                    .bodyValue(null);
+                    .bodyValue("");
             }
             return ServerResponse
                 .created(createdResourceUri)
-                .bodyValue(null);
+                .bodyValue("");
         });
     }
 
