@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
@@ -29,9 +30,9 @@ class WowraidApiConfiguration {
             .oauth2Login()
             .and()
             .authorizeExchange()
-            .pathMatchers("GET", "/user/authenticated")
+            .pathMatchers(HttpMethod.GET, "/user/authenticated")
             .permitAll()
-            .pathMatchers("OPTIONS", "/**")
+            .pathMatchers(HttpMethod.OPTIONS, "/**")
             .permitAll()
             .anyExchange()
             .authenticated()
