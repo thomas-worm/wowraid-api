@@ -146,7 +146,7 @@ class CharacterController {
                 createdResourceUri = new URI("/realm/" + characterRecord.getRealm().getName() + "/character/" + characterRecord.getName());
             } catch (URISyntaxException exception) {}
             try {
-                this.characterService.create(characterRecord);
+                this.characterService.createOrLink(characterRecord);
             } catch (DuplicateKeyException exception) {
                 return ServerResponse
                     .seeOther(createdResourceUri)
