@@ -37,6 +37,8 @@ class WowraidApiConfiguration {
             .anyExchange()
             .authenticated()
             .and()
+            .csrf()
+            .disable()
             .build();
     }
 
