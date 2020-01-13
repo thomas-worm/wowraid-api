@@ -31,8 +31,6 @@ class WowraidApiConfiguration {
             .authorizeExchange()
             .pathMatchers("GET", "/user/authenticated")
             .permitAll()
-            .pathMatchers("OPTIONS", "/**")
-            .permitAll()
             .anyExchange()
             .authenticated()
             .and()
