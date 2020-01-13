@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -150,11 +151,13 @@ class CharacterController {
             } catch (DuplicateKeyException exception) {
                 return ServerResponse
                     .seeOther(createdResourceUri)
-                    .build();
+                    .contentType(MediaType.TEXT_HTML)
+                    .bodyValue("");
             }
             return ServerResponse
                 .created(createdResourceUri)
-                .build();
+                .contentType(MediaType.TEXT_HTML)
+                .bodyValue("");
         });
     }
 
