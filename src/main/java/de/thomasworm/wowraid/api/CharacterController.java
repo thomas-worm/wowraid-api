@@ -6,7 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -99,7 +103,7 @@ class CharacterController {
     }
 
     @PostMapping("/user/character")
-    public Mono<ServerResponse> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
+    public Mono<ResponseEntity<Void>> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
         if (isNullOrBlank(character.getRealm())) {
             return unprocessableEntity("realm", "empty", "The realm is empty but required for the character.");
         }
@@ -149,13 +153,15 @@ class CharacterController {
             try {
                 this.characterService.createOrLink(characterRecord);
             } catch (DuplicateKeyException exception) {
-                return ServerResponse
-                    .seeOther(createdResourceUri)
-                    .bodyValue(new Object());
+                return Mono.just(ResponseEntity
+                    .status(HttpStatus.SEE_OTHER)
+                    .header(HttpHeaders.LOCATION, createdResourceUri.toString())
+                    .build());
             }
-            return ServerResponse
-                .created(createdResourceUri)
-                .bodyValue(character);
+            return Mono.just(ResponseEntity
+                    .status(HttpStatus.CREATED)
+                    .header(HttpHeaders.LOCATION, createdResourceUri.toString())
+                    .build());
         });
     }
 
