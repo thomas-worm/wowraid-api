@@ -103,7 +103,7 @@ class CharacterController {
     }
 
     @PostMapping("/user/character")
-    public Mono<ResponseEntity<Void>> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
+    public Mono<ResponseEntity<Object>> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
         if (isNullOrBlank(character.getRealm())) {
             return unprocessableEntity("realm", "empty", "The realm is empty but required for the character.");
         }
@@ -178,10 +178,11 @@ class CharacterController {
         return string == null || string.trim().isEmpty();
     }
 
-    private Mono<ServerResponse> unprocessableEntity(String path, String error, String errorMessage) {
-        return ServerResponse
-            .unprocessableEntity()
-            .body(Mono.just(new UnprocessableEntityError(path, error, errorMessage)), UnprocessableEntityError.class);
+    private Mono<ResponseEntity<Object>> unprocessableEntity(String path, String error, String errorMessage) {
+        return Mono.just(ResponseEntity
+            .status(HttpStatus.UNPROCESSABLE_ENTITY)
+            .body(new UnprocessableEntityError(path, error, errorMessage))
+        );
     }
 
 }
