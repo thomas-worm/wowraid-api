@@ -98,7 +98,10 @@ class CharacterController {
             });
     }
 
-    @PostMapping("/user/character")
+    @PostMapping(
+        path = "/user/character",
+        produces = MediaType.TEXT_HTML_VALUE
+    )
     public Mono<ServerResponse> createCharacter(@RequestBody() Character character, OAuth2AuthenticationToken token) {
         if (isNullOrBlank(character.getRealm())) {
             return unprocessableEntity("realm", "empty", "The realm is empty but required for the character.");
@@ -151,13 +154,11 @@ class CharacterController {
             } catch (DuplicateKeyException exception) {
                 return ServerResponse
                     .seeOther(createdResourceUri)
-                    .contentType(MediaType.TEXT_HTML)
-                    .bodyValue("");
+                    .build();
             }
             return ServerResponse
                 .created(createdResourceUri)
-                .contentType(MediaType.TEXT_HTML)
-                .bodyValue("");
+                .build();
         });
     }
 
