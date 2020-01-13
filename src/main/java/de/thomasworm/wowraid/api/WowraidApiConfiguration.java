@@ -31,8 +31,8 @@ class WowraidApiConfiguration {
             .and()
             .authorizeExchange()
             .pathMatchers(HttpMethod.GET, "/user/authenticated")
-            .permitAll()
-            .pathMatchers(HttpMethod.OPTIONS, "/**")
+            //.permitAll()
+            //.pathMatchers(HttpMethod.OPTIONS, "/**")
             .permitAll()
             .anyExchange()
             .authenticated()
@@ -47,6 +47,7 @@ class WowraidApiConfiguration {
         corsConfig.setAllowedOrigins(Arrays.asList("https://just4fun.razorfen-wow.eu", "http://just4fun.razorfen-wow.eu"));
         corsConfig.addAllowedMethod(CorsConfiguration.ALL);
         corsConfig.setAllowCredentials(true);
+        corsConfig.setAllowedHeaders(Arrays.asList("*"));
         corsConfigSource.registerCorsConfiguration("/**", corsConfig);
         return corsConfigSource;
     }
