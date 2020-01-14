@@ -48,13 +48,13 @@ public class CharacterService {
             if (existingCharacter.getUser() != null) {
                 throw exception;
             }
-            if (!existingCharacter.getFaction().equals(character.getFaction())) {
+            if (!existingCharacter.getFaction().getId().equals(character.getFaction().getId())) {
                 throw exception;
             }
-            if (!existingCharacter.getRace().equals(character.getRace())) {
+            if (!existingCharacter.getRace().getId().equals(character.getRace().getId())) {
                 throw exception;
             }
-            if (!existingCharacter.getCharacterClass().equals(character.getCharacterClass())) {
+            if (!existingCharacter.getCharacterClass().getId().equals(character.getCharacterClass().getId())) {
                 throw exception;
             }
             existingCharacter.setUser(character.getUser());
