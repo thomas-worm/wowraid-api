@@ -29,7 +29,7 @@ public class EventRepository {
         CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
         CriteriaQuery<Event> query = builder.createQuery(Event.class);
         Root<Event> eventTable = query.from(Event.class);
-        SetJoin<Event, Eventcategory> joinTable = eventTable.join(Event.Columns.categories);
+        SetJoin<Event, Eventcategory> joinTable = eventTable.join(Event_.categories);
         List<Event> foundEvents = this.entityManager.createQuery(
             query.select(eventTable).where(joinTable.in(eventcategory))
         ).getResultList();
