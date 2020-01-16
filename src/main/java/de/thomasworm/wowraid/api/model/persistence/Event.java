@@ -9,9 +9,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.metamodel.SetAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
 
 @Entity()
 public class Event {
+
+    @StaticMetamodel(Event.class)
+    public static class Columns {
+        public static volatile SingularAttribute<Event, Long> id;
+        public static volatile SingularAttribute<Event, String> key;
+        public static volatile SingularAttribute<Event, String> name;
+        public static volatile SingularAttribute<Event, String> description;
+        public static volatile SingularAttribute<Event, LocalDateTime> startDateTime;
+        public static volatile SingularAttribute<Event, LocalDateTime> finishDateTime;
+        public static volatile SetAttribute<Event, Eventcategory> categories;
+    }
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)

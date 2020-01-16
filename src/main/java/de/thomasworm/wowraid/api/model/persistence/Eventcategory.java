@@ -10,9 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.metamodel.SetAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
 
 @Entity()
 public class Eventcategory {
+
+    @StaticMetamodel(Eventcategory.class)
+    public static class Columns {
+        public static volatile SingularAttribute<Eventcategory, Long> id;
+        public static volatile SingularAttribute<Eventcategory, String> name;
+        public static volatile SetAttribute<Eventcategory, Event> events;
+    }
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
