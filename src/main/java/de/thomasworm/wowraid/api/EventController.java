@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.thomasworm.wowraid.api.model.dto.Event;
@@ -28,7 +29,7 @@ public class EventController {
     }
 
     @GetMapping("/eventcategory/{category}/event")
-    public Mono<List<Event>> getEventByCategory(String categoryName) {
+    public Mono<List<Event>> getEventByCategory(@PathVariable("category") String categoryName) {
         return this.eventcategoryService.getByName(categoryName).flatMap(category -> {
             if (category == null) {
                 return Mono.just((List<Event>) new ArrayList<Event>());
