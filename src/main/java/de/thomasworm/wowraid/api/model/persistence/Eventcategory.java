@@ -12,7 +12,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity()
-public class Usergroup {
+public class Eventcategory {
 
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,11 +23,11 @@ public class Usergroup {
 
     @ManyToMany()
     @JoinTable(
-        name = "usergroup_members",
-        joinColumns = @JoinColumn(name = "usergroup_id"),
-        inverseJoinColumns = @JoinColumn(name = "user_id")
+        name = "eventcategory_events",
+        joinColumns = @JoinColumn(name = "eventcategory_id"),
+        inverseJoinColumns = @JoinColumn(name = "event_id")
     )
-    private Set<User> members;
+    private Set<Event> events;
 
     public Long getId() {
         return this.id;
@@ -41,8 +41,8 @@ public class Usergroup {
         return this.name;
     }
 
-    public Set<User> getMembers() {
-        return this.members;
+    public Set<Event> getEvents() {
+        return this.events;
     }
 
 }

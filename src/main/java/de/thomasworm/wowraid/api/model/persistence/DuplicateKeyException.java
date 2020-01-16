@@ -2,6 +2,8 @@ package de.thomasworm.wowraid.api.model.persistence;
 
 public class DuplicateKeyException extends Exception {
 
+    private static final long serialVersionUID = 6487642956357464875L;
+
     private Object existingRecord;
 
     public void setExisitingRecord(Object value) {
