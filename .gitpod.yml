@@ -4,6 +4,7 @@ image:
   file: .gitpod.dockerfile
 tasks:
   - command: 'if [ ! -z "$HEROKU_USERNAME" -a ! -z "$HEROKU_TOKEN" ]; then (echo -e "machine api.heroku.com\n  login $HEROKU_USERNAME\n  password $HEROKU_TOKEN\nmachine git.heroku.com\n  login $HEROKU_USERNAME\n  password $HEROKU_TOKEN" >> /home/$USER/.netrc) fi'
+  - command: export DATABASE_URL=postgresql://gitpod@127.0.0.1:5432/postgres
 vscode:
   extensions: 
     - ms-ossdata.vscode-postgresql@0.2.0:AVAvDYQU3oJl82ktJAHoeA==

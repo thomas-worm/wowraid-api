@@ -71,18 +71,34 @@ class WowraidApiConfiguration {
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
-        String[] userInfo = dbUri.getUserInfo().split(":");
-        String username = userInfo[0];
-        String password = userInfo[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+        StringBuilder dbUrlBuilder = new StringBuilder();
+        dbUrlBuilder.append("jdbc:postgresql://");
+        dbUrlBuilder.append(dbUri.getHost());
+
+        if (dbUri.getPort() > 0) {
+            dbUrlBuilder.append(":" + dbUri.getPort());
+        }
+
+        dbUrlBuilder.append(dbUri.getPath());
+
+        if (dbUri.getQuery() != null && !dbUri.getQuery().isEmpty()) {
+            dbUrlBuilder.append("?" + dbUri.getQuery());
+        }
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-    
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
-        dataSource.setUrl(dbUrl); 
-        
+
+        String dbUrl = dbUrlBuilder.toString();
+        dataSource.setUrl(dbUrl);
+
+        if (dbUri.getUserInfo() != null && !dbUri.getUserInfo().isEmpty()) {
+            String[] userInfo = dbUri.getUserInfo().split(":");
+            dataSource.setUsername(userInfo[0]);
+            if (userInfo.length > 1) {
+                dataSource.setPassword(userInfo[1]);
+            }
+        }
+                
         return dataSource;
     }
 

@@ -42,12 +42,12 @@ public class Event {
     private LocalDateTime finishDateTime;
 
     @OneToMany(
-        mappedBy = "start_event_id"
+        mappedBy = "start"
     )
     private List<EventEventLink> eventLinks;
 
     @OneToMany(
-        mappedBy = "target_event_id"
+        mappedBy = "target"
     )
     private List<EventEventLink> incomingEventLinks;
 
