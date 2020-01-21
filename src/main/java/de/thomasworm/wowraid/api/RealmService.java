@@ -22,7 +22,7 @@ public class RealmService {
     }
 
     public Mono<Realm> getByName(String name) {
-        return Mono.just(this.realmRepository.findByName(name));
+        return Mono.just(this.realmRepository.findByNameIgnoreCase(name));
     }
 
 }
