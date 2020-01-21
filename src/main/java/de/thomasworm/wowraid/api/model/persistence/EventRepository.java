@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository()
 public interface EventRepository extends PagingAndSortingRepository<Event, Long> {
 
-    @Query("SELECT event FROM Event event WHERE :category IN event.categories")
+    @Query("SELECT event FROM Event event WHERE :category IN categories")
     public Iterable<Event> findByCategory(@Param("category") Eventcategory category);
 
 }
