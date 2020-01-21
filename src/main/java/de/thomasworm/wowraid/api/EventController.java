@@ -28,6 +28,11 @@ public class EventController {
         return this.eventService.getAll().map(this::convertEventRecords);
     }
 
+    @GetMapping("/event/{key}")
+    public Mono<Event> getEvent(@PathVariable("key") String key) {
+        return this.eventService.getByKey(key).map(this::convertEventRecord);
+    }
+
     @GetMapping("/eventcategory/{category}/event")
     public Mono<List<Event>> getEventByCategory(@PathVariable("category") String categoryName) {
         return this.eventcategoryService.getByName(categoryName).flatMap(category -> {
@@ -41,19 +46,23 @@ public class EventController {
     private List<Event> convertEventRecords(Iterable<de.thomasworm.wowraid.api.model.persistence.Event> eventRecords) {
         List<Event> events = new ArrayList<>();
         eventRecords.forEach(eventRecord -> {
-            Event event = new Event();
-            event.setKey(eventRecord.getKey());
-            event.setName(eventRecord.getName());
-            event.setDescription(eventRecord.getDescription());
-            event.setStartDateTime(eventRecord.getStartDateTime());
-            event.setFinishDateTime(eventRecord.getFinishDateTime());
-            List<String> categories = event.getCategories();
-            eventRecord.getCategories().forEach(category -> {
-                categories.add(category.getName());
-            });
-            events.add(event);
+            events.add(convertEventRecord(eventRecord));
         });
         return events;
+    }
+
+    private Event convertEventRecord(de.thomasworm.wowraid.api.model.persistence.Event eventRecord) {
+        Event event = new Event();
+        event.setKey(eventRecord.getKey());
+        event.setName(eventRecord.getName());
+        event.setDescription(eventRecord.getDescription());
+        event.setStartDateTime(eventRecord.getStartDateTime());
+        event.setFinishDateTime(eventRecord.getFinishDateTime());
+        List<String> categories = event.getCategories();
+        eventRecord.getCategories().forEach(category -> {
+            categories.add(category.getName());
+        });
+        return event;
     }
 
 }

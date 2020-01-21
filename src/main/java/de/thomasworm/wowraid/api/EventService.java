@@ -26,4 +26,8 @@ public class EventService {
         return Mono.just(this.eventRepository.findByCategory(category));
     }
 
+    public Mono<Event> getByKey(String key) {
+        return Mono.just(this.eventRepository.findByKey(key));
+    }
+
 }

@@ -11,4 +11,6 @@ public interface EventRepository extends PagingAndSortingRepository<Event, Long>
     @Query("SELECT event FROM Event event JOIN event.categories category WHERE category = :category")
     public Iterable<Event> findByCategory(@Param("category") Eventcategory category);
 
+    public Event findByKey(String key);
+
 }
