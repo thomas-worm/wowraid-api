@@ -1,39 +1,14 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import javax.persistence.criteria.SetJoin;
-
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository()
-public class EventRepository {
+public interface EventRepository extends PagingAndSortingRepository<Event, Long> {
 
-    @PersistenceContext()
-    private EntityManager entityManager;
-
-    public Iterable<Event> findAll() {
-        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
-        CriteriaQuery<Event> query = builder.createQuery(Event.class);
-        Root<Event> eventTable = query.from(Event.class);
-        List<Event> foundEvents = this.entityManager.createQuery(query.select(eventTable)).getResultList();
-        return foundEvents;
-    }
-
-    public Iterable<Event> findByCategory(Eventcategory eventcategory) {
-        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
-        CriteriaQuery<Event> query = builder.createQuery(Event.class);
-        Root<Event> eventTable = query.from(Event.class);
-        SetJoin<Event, Eventcategory> joinTable = eventTable.join(Event_.categories);
-        List<Event> foundEvents = this.entityManager.createQuery(
-            query.select(eventTable).where(joinTable.in(eventcategory))
-        ).getResultList();
-        return foundEvents;
-    }
+    @Query("SELECT event FROM Event event WHERE :category IN event.categories")
+    public Iterable<Event> findByCategory(@Param("category") Eventcategory category);
 
 }
