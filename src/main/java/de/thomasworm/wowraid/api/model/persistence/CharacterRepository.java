@@ -30,7 +30,7 @@ public class CharacterRepository {
         CriteriaQuery<Character> query = builder.createQuery(Character.class);
         Root<Character> characterTable = query.from(Character.class);
         List<Character> foundCharacters = entityManager.createQuery(
-            query.select(characterTable).where(builder.equal(characterTable.get("user"), user))
+            query.select(characterTable).where(builder.equal(characterTable.get(Character_.user), user))
         ).getResultList();
         return foundCharacters.isEmpty() ? null : foundCharacters;
     }
@@ -41,8 +41,8 @@ public class CharacterRepository {
         Root<Character> characterTable = query.from(Character.class);
         List<Character> foundCharacters = entityManager.createQuery(
             query.select(characterTable).where(builder.and(
-                builder.equal(characterTable.get("realm"), realm),
-                builder.equal(builder.lower(characterTable.get("name")), name.toLowerCase())
+                builder.equal(characterTable.get(Character_.realm), realm),
+                builder.equal(builder.lower(characterTable.get(Character_.name)), name.toLowerCase())
             ))
         ).setMaxResults(1).getResultList();
         return foundCharacters.isEmpty() ? null : foundCharacters.get(0);

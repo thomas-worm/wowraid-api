@@ -29,7 +29,7 @@ public class CharacterClassRepository {
         CriteriaQuery<CharacterClass> query = builder.createQuery(CharacterClass.class);
         Root<CharacterClass> characterClassTable = query.from(CharacterClass.class);
         List<CharacterClass> foundCharacterClasses = entityManager.createQuery(
-            query.select(characterClassTable).where(builder.equal(characterClassTable.get("name"), className))
+            query.select(characterClassTable).where(builder.equal(characterClassTable.get(CharacterClass_.name), className))
         ).setMaxResults(1).getResultList();
         return foundCharacterClasses.isEmpty() ? null : foundCharacterClasses.get(0);
     }

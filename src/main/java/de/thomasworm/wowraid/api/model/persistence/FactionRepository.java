@@ -29,7 +29,7 @@ public class FactionRepository {
         CriteriaQuery<Faction> query = builder.createQuery(Faction.class);
         Root<Faction> factionTable = query.from(Faction.class);
         List<Faction> foundFactions = entityManager.createQuery(
-            query.select(factionTable).where(builder.equal(factionTable.get("name"), name))
+            query.select(factionTable).where(builder.equal(factionTable.get(Faction_.name), name))
         ).setMaxResults(1).getResultList();
         return foundFactions.isEmpty() ? null : foundFactions.get(0);
     }

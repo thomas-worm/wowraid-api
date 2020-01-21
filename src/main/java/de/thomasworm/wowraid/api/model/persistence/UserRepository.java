@@ -36,7 +36,7 @@ public class UserRepository {
         CriteriaQuery<User> query = builder.createQuery(User.class);
         Root<User> userTable = query.from(User.class);
         List<User> foundUsers = entityManager.createQuery(
-            query.select(userTable).where(builder.equal(userTable.get("blizzardIdentifier"), blizzardIdentifier))
+            query.select(userTable).where(builder.equal(userTable.get(User_.blizzardIdentifier), blizzardIdentifier))
         ).setMaxResults(1).getResultList();
         return foundUsers.isEmpty() ? null : foundUsers.get(0);
     }

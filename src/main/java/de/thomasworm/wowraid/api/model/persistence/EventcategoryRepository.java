@@ -29,7 +29,7 @@ public class EventcategoryRepository {
         CriteriaQuery<Eventcategory> query = builder.createQuery(Eventcategory.class);
         Root<Eventcategory> eventcategoryTable = query.from(Eventcategory.class);
         List<Eventcategory> foundEventgategories = this.entityManager.createQuery(
-            query.select(eventcategoryTable).where(builder.equal(eventcategoryTable.get("name"), name))
+            query.select(eventcategoryTable).where(builder.equal(eventcategoryTable.get(Eventcategory_.name), name))
         ).setMaxResults(1).getResultList();
         return foundEventgategories.isEmpty() ? null : foundEventgategories.get(0);
     }
