@@ -1,5 +1,7 @@
 FROM gitpod/workspace-postgres
 
+ENV DATABASE_URL=postgresql://gitpod@127.0.0.1:5432/postgres
+
 RUN sudo apt-get update \
  && sudo apt-get install -y postgresql postgresql-contrib libpq-dev \
  && sudo service postgresql start \
@@ -8,4 +10,3 @@ RUN sudo apt-get update \
  && ( curl https://cli-assets.heroku.com/install.sh | sh ) \
  && sudo sed -i '1s/.*/#!\/usr\/bin\/env bash'"\n"'unset PGHOSTADDR/' /usr/local/lib/heroku/bin/heroku \
  && npm install -g npm
-
