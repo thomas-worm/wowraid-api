@@ -15,6 +15,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Type;
+
 @Entity()
 public class Event {
 
@@ -27,6 +29,7 @@ public class Event {
 
     @Column()
     @Lob()
+    @Type(type = "org.hibernate.type.TextType")
     private String description;
 
     @Column()
