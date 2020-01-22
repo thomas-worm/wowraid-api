@@ -13,4 +13,15 @@ public interface EventRepository extends PagingAndSortingRepository<Event, Long>
 
     public Event findByKey(String key);
 
+    @Query(
+        "SELECT event " +
+          "FROM Event event "+
+          "JOIN event.incomingEventLinks incomingEventLink " +
+          "JOIN incomingEventLink.target targetEvent " +
+        "WHERE "+
+          "targetEvent.key = :key " +
+          "AND incomingEventLink.type = :type"
+    )
+    public Iterable<Event> findByIncomingEventLinkKeyAndType(@Param("key") String key, @Param("type") String type);
+
 }

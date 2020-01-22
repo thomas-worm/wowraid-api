@@ -26,6 +26,9 @@ public class Event {
     @JsonProperty("finish_datetime")
     LocalDateTime finishDateTime;
 
+    @JsonProperty("childs")
+    private List<Event> childs = new ArrayList<>();
+
     public void setKey(String value) {
         this.key = value;
     }
@@ -68,6 +71,10 @@ public class Event {
 
     public LocalDateTime getFinishDateTime() {
         return this.finishDateTime;
+    }
+
+    public List<Event> getChilds() {
+        return this.childs;
     }
 
 }

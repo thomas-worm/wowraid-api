@@ -1,7 +1,9 @@
 package de.thomasworm.wowraid.api;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +54,10 @@ public class EventController {
     }
 
     private Event convertEventRecord(de.thomasworm.wowraid.api.model.persistence.Event eventRecord) {
+        return this.convertEventRecord(eventRecord, new HashSet<>());
+    }
+
+    private Event convertEventRecord(de.thomasworm.wowraid.api.model.persistence.Event eventRecord, HashSet<String> processedEvents) {
         Event event = new Event();
         event.setKey(eventRecord.getKey());
         event.setName(eventRecord.getName());
@@ -62,6 +68,19 @@ public class EventController {
         eventRecord.getCategories().forEach(category -> {
             categories.add(category.getName());
         });
+        if (!processedEvents.contains(eventRecord.getKey())) {
+            processedEvents.add(eventRecord.getKey());
+            eventRecord.getEventLinks().forEach(eventLink -> {
+                if (eventLink.getType().equals("child")) {
+                    event.getChilds().add(convertEventRecord(eventLink.getTarget(), (HashSet<String>)processedEvents.clone()));
+                }
+            });
+            eventRecord.getIncomingEventLinks().forEach(incomingEventLink -> {
+                if (incomingEventLink.getType().equals("parent")) {
+                    event.getChilds().add(convertEventRecord(incomingEventLink.getStart(), (HashSet<String>)processedEvents.clone()));
+                }
+            });
+        };
         return event;
     }
 
