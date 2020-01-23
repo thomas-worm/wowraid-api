@@ -1,7 +1,11 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Type;
@@ -38,7 +43,7 @@ public class Event {
     @ManyToMany(
         mappedBy = "events"
     )
-    private Set<Eventcategory> categories;
+    private Set<Eventcategory> categories = new HashSet<>();
 
     @Column()
     private LocalDateTime startDateTime;
@@ -49,7 +54,7 @@ public class Event {
     @OneToMany(
         mappedBy = "start"
     )
-    private List<EventEventLink> eventLinks;
+    private List<EventEventLink> eventLinks = new ArrayList<>();
 
     @OneToMany(
         mappedBy = "target"
@@ -63,6 +68,20 @@ public class Event {
         inverseJoinColumns = @JoinColumn(name = "item_id")
     )
     private Set<Item> drops;
+
+    @OneToMany()
+    @MapKeyJoinColumn(
+        name = "item"
+    )
+    private Map<Item, Loot> loots = new HashMap<>();
+
+    @ManyToMany()
+    @JoinTable(
+        name = "event_creatures",
+        joinColumns = @JoinColumn(name = "event_id"),
+        inverseJoinColumns = @JoinColumn(name = "creature_id")
+    )
+    private Set<Creature> creatures = new HashSet<>();
 
     public Long getId() {
         return this.id;
@@ -127,6 +146,14 @@ public class Event {
 
     public Set<Item> getDrops() {
         return this.drops;
+    }
+
+    public Map<Item, Loot> getLoots() {
+        return this.loots;
+    }
+
+    public Set<Creature> getCreatures() {
+        return this.creatures;
     }
 
 }
