@@ -6,6 +6,8 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import de.thomasworm.wowraid.api.model.persistence.EventEnrollment;
+
 public class Event {
 
     @JsonProperty("key")
@@ -28,6 +30,9 @@ public class Event {
 
     @JsonProperty("childs")
     private List<Event> childs = new ArrayList<>();
+
+    @JsonProperty("enrollments")
+    private List<EventEnrollment> enrollments = new ArrayList<>();
 
     public void setKey(String value) {
         this.key = value;

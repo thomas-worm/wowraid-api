@@ -2,10 +2,10 @@ package de.thomasworm.wowraid.api;
 
 import de.thomasworm.wowraid.api.model.dto.UserInfo;
 import de.thomasworm.wowraid.api.model.persistence.User;
-import de.thomasworm.wowraid.api.model.persistence.UserRepository;
 
 import java.security.Principal;
 import java.util.Arrays;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -23,11 +23,11 @@ import reactor.core.publisher.Mono;
 @RestController()
 class UserController {
 
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired()
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/me")
@@ -50,11 +50,18 @@ class UserController {
     }
 
     private UserInfo getUserInfoFromToken(OAuth2AuthenticationToken token) {
-        UserInfo userInfo = new UserInfo(token);
-        User user = new User();
-        user.setBlizzardIdentifier(userInfo.getUserIdentifier());
-        user.setBattleTag(userInfo.getBattleTag());
-        this.userRepository.addOrUpdateByBlizzardIdentifier(user);
+        User user = this.userService.getUserByToken(token);
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserIdentifier(user.getBlizzardIdentifier());
+        userInfo.setBattleTag(user.getBattleTag());
+        Set<String> groups = userInfo.getGroups();
+        user.getGroups().forEach(group -> {
+            String groupName = group.getName();
+            if (!groups.contains(groupName)) {
+                groups.add(groupName);
+            }
+        });
+        userInfo.setAuthenticated(true);
         return userInfo;
     }
 

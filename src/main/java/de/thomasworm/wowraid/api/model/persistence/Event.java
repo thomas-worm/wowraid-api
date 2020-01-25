@@ -83,6 +83,14 @@ public class Event {
     )
     private Set<Creature> creatures = new HashSet<>();
 
+    @Column()
+    private boolean enrollPossible;
+
+    @OneToMany(
+        mappedBy = "event"
+    )
+    private Set<EventEnrollment> enrollments;
+
     public Long getId() {
         return this.id;
     }
@@ -154,6 +162,14 @@ public class Event {
 
     public Set<Creature> getCreatures() {
         return this.creatures;
+    }
+
+    public void setEnrollPossible(boolean value) {
+        this.enrollPossible = value;
+    }
+
+    public boolean isEnrollPossible() {
+        return this.enrollPossible;
     }
 
 }

@@ -17,32 +17,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import de.thomasworm.wowraid.api.model.dto.Character;
 import de.thomasworm.wowraid.api.model.dto.UnprocessableEntityError;
-import de.thomasworm.wowraid.api.model.dto.UserInfo;
 import de.thomasworm.wowraid.api.model.persistence.CharacterClass;
 import de.thomasworm.wowraid.api.model.persistence.DuplicateKeyException;
 import de.thomasworm.wowraid.api.model.persistence.Faction;
 import de.thomasworm.wowraid.api.model.persistence.Race;
 import de.thomasworm.wowraid.api.model.persistence.Realm;
 import de.thomasworm.wowraid.api.model.persistence.User;
-import de.thomasworm.wowraid.api.model.persistence.UserRepository;
 import reactor.core.publisher.Mono;
 
 @RestController()
 class CharacterController {
 
     private CharacterService characterService;
-    private UserRepository userRepository;
+    private UserService userService;
     private CharacterClassService characterClassService;
     private RaceService raceService;
     private FactionService factionService;
     private RealmService realmService;
 
     @Autowired()
-    public CharacterController(CharacterService characterService, UserRepository userRepository,
+    public CharacterController(CharacterService characterService, UserService userService,
                                CharacterClassService characterClassService, RaceService raceService,
                                FactionService factionService, RealmService realmService) {
         this.characterService = characterService;
-        this.userRepository = userRepository;
+        this.userService = userService;
         this.characterClassService = characterClassService;
         this.raceService = raceService;
         this.factionService = factionService;
@@ -162,11 +160,7 @@ class CharacterController {
     }
 
     private User getUserFromToken(OAuth2AuthenticationToken token) {
-        UserInfo userInfo = new UserInfo(token);
-        User user = new User();
-        user.setBlizzardIdentifier(userInfo.getUserIdentifier());
-        user.setBattleTag(userInfo.getBattleTag());
-        user = this.userRepository.addOrUpdateByBlizzardIdentifier(user);
+        User user = this.userService.getUserByToken(token);
         return user;
     }
 

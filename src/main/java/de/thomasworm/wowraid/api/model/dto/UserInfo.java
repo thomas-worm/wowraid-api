@@ -1,8 +1,9 @@
 package de.thomasworm.wowraid.api.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.HashSet;
+import java.util.Set;
 
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserInfo {
 
@@ -13,7 +14,10 @@ public class UserInfo {
     private int userIdentifier;
 
     @JsonProperty("authenticated")
-    private boolean authenticated;
+    private boolean authenticated = false;
+
+    @JsonProperty("groups")
+    private Set<String> groups = new HashSet<>();
 
     public void setBattleTag(String value) {
         this.battleTag = value;
@@ -39,12 +43,8 @@ public class UserInfo {
         return this.authenticated;
     }
 
-    public UserInfo() {}
-
-    public UserInfo(OAuth2AuthenticationToken oAuth2AuthenticationToken) {
-        this.setBattleTag(oAuth2AuthenticationToken.getPrincipal().getAttribute("battle_tag"));
-        this.setUserIdentifier(Integer.parseInt(oAuth2AuthenticationToken.getPrincipal().getName()));
-        this.setAuthenticated(true);
+    public Set<String> getGroups() {
+        return this.groups;
     }
 
 }
