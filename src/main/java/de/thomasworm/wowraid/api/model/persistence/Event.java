@@ -91,6 +91,11 @@ public class Event {
     )
     private Set<EventEnrollment> enrollments;
 
+    @OneToMany(
+        mappedBy = "event"
+    )
+    private Set<EventAttendee> attendees;
+
     public Long getId() {
         return this.id;
     }
@@ -170,6 +175,14 @@ public class Event {
 
     public boolean isEnrollPossible() {
         return this.enrollPossible;
+    }
+
+    public Set<EventEnrollment> getEnrollments() {
+        return this.enrollments;
+    }
+
+    public Set<EventAttendee> getAttendees() {
+        return this.attendees;
     }
 
 }
