@@ -1,8 +1,10 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,6 +37,12 @@ public class EventAttendee {
     )
     private Set<CharacterRole> roles = new HashSet<>();
 
+    @Column()
+    private LocalDateTime startDateTime;
+
+    @Column()
+    private LocalDateTime finishDateTime;
+
     public Long getId() {
         return this.id;
     }
@@ -57,6 +65,22 @@ public class EventAttendee {
 
     public Set<CharacterRole> getRoles() {
         return this.roles;
+    }
+
+    public void setStartDateTime(LocalDateTime value) {
+        this.startDateTime = value;
+    }
+
+    public LocalDateTime getStartDateTime() {
+        return this.startDateTime;
+    }
+
+    public void setFinishDateTime(LocalDateTime value) {
+        this.finishDateTime = value;
+    }
+
+    public LocalDateTime getFinishDateTime() {
+        return this.finishDateTime;
     }
 
 }

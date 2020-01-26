@@ -1,10 +1,8 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,12 +35,6 @@ public class EventEnrollment {
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<CharacterRole> roles = new HashSet<>();
-
-    @Column()
-    private LocalDateTime startDateTime;
-
-    @Column()
-    private LocalDateTime finishDateTime;
 
     @OneToOne()
     @JoinColumn(name = "state_id")
@@ -78,22 +70,6 @@ public class EventEnrollment {
 
     public EventEnrollmentState getState() {
         return this.state;
-    }
-
-    public void setStartDateTime(LocalDateTime value) {
-        this.startDateTime = value;
-    }
-
-    public LocalDateTime getStartDateTime() {
-        return this.startDateTime;
-    }
-
-    public void setFinishDateTime(LocalDateTime value) {
-        this.finishDateTime = value;
-    }
-
-    public LocalDateTime getFinishDateTime() {
-        return this.finishDateTime;
     }
 
 }
