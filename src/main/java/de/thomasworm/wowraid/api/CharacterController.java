@@ -53,11 +53,19 @@ class CharacterController {
             List<Character> characters = new ArrayList<>();
             characterRecords.forEach(character -> {
                 Character characterDto = new Character();
-                characterDto.setRealm(character.getRealm().getName());
+                Realm realm = character.getRealm();
+                if (realm != null)
+                    characterDto.setRealm(realm.getName());
                 characterDto.setName(character.getName());
-                characterDto.setFaction(character.getFaction().getName());
-                characterDto.setRace(character.getRace().getName());
-                characterDto.setCharacterClass(character.getCharacterClass().getName());
+                Faction faction = character.getFaction();
+                if (faction != null)
+                    characterDto.setFaction(faction.getName());
+                Race race = character.getRace();
+                if (race != null)
+                    characterDto.setRace(race.getName());
+                CharacterClass characterClass = character.getCharacterClass();
+                if (characterClass != null)
+                    characterDto.setCharacterClass(characterClass.getName());
                 characters.add(characterDto);
             });
             return characters;
