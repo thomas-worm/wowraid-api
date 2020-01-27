@@ -1,5 +1,7 @@
 package de.thomasworm.wowraid.api;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,11 @@ public class CharacterService {
     }
 
     public Mono<Iterable<Character>> getCharactersByUser(User user) {
-        return Mono.just(this.characterRepository.findByUser(user));
+        Iterable<Character> characters = this.characterRepository.findByUser(user);
+        if (characters == null) {
+            characters = new ArrayList<>();
+        }
+        return Mono.just(characters);
     }
 
     public Mono<Character> getByRealmAndName(Realm realm, String name) {

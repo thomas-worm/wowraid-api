@@ -1,5 +1,6 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -25,7 +26,7 @@ public class User {
     @ManyToMany(
         mappedBy = "members"
     )
-    private Set<Usergroup> groups;
+    private Set<Usergroup> groups = new HashSet<>();
 
     public Long getId() {
         return this.id;
