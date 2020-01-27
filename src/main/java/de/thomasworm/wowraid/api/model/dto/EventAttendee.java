@@ -1,5 +1,6 @@
 package de.thomasworm.wowraid.api.model.dto;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class EventEnrollment {
+public class EventAttendee {
 
     @JsonProperty("character_realm")
     private String characterRealm;
@@ -15,29 +16,23 @@ public class EventEnrollment {
     @JsonProperty("character_name")
     private String characterName;
 
-    @JsonProperty(
-        value = "character_class",
-        required = false
-    )
+    @JsonProperty("character_class")
     private String characterClass;
 
-    @JsonProperty(
-        value = "character_race",
-        required = false
-    )
+    @JsonProperty("character_race")
     private String characterRace;
 
-    @JsonProperty(
-        value = "character_faction",
-        required = false
-    )
+    @JsonProperty("character_faction")
     private String characterFaction;
 
     @JsonProperty("roles")
     private Set<String> roles = new HashSet<>();
 
-    @JsonProperty("state")
-    private String state;
+    @JsonProperty("start_datetime")
+    LocalDateTime startDateTime;
+
+    @JsonProperty("finish_datetime")
+    LocalDateTime finishDateTime;
 
     public void setCharacterRealm(String value) {
         this.characterRealm = value;
@@ -83,12 +78,20 @@ public class EventEnrollment {
         return this.roles;
     }
 
-    public void setState(String value) {
-        this.state = value;
+    public void setStartDateTime(LocalDateTime value) {
+        this.startDateTime = value;
     }
 
-    public String getState() {
-        return this.state;
+    public LocalDateTime getStartDateTime() {
+        return this.startDateTime;
+    }
+
+    public void setFinishDateTime(LocalDateTime value) {
+        this.finishDateTime = value;
+    }
+
+    public LocalDateTime getFinishDateTime() {
+        return this.finishDateTime;
     }
 
 }

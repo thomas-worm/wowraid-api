@@ -3,6 +3,7 @@ package de.thomasworm.wowraid.api;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.thomasworm.wowraid.api.model.dto.Event;
+import de.thomasworm.wowraid.api.model.dto.EventAttendee;
+import de.thomasworm.wowraid.api.model.persistence.Character;
+import de.thomasworm.wowraid.api.model.persistence.CharacterClass;
+import de.thomasworm.wowraid.api.model.persistence.Faction;
+import de.thomasworm.wowraid.api.model.persistence.Race;
+import de.thomasworm.wowraid.api.model.persistence.Realm;
 import reactor.core.publisher.Mono;
 
 @RestController()
@@ -66,6 +73,37 @@ public class EventController {
         List<String> categories = event.getCategories();
         eventRecord.getCategories().forEach(category -> {
             categories.add(category.getName());
+        });
+        List<EventAttendee> attendees = event.getAttendees();
+        eventRecord.getAttendees().forEach(attendeeRecord -> {
+            EventAttendee attendee = new EventAttendee();
+            Character character = attendeeRecord.getCharacter();
+            if (character != null) {
+                attendee.setCharacterName(character.getName());
+                Realm realm = character.getRealm();
+                if (realm != null) {
+                    attendee.setCharacterRealm(realm.getName());
+                }
+                Faction faction = character.getFaction();
+                if (faction != null) {
+                    attendee.setCharacterFaction(faction.getName());
+                }
+                Race race = character.getRace();
+                if (race != null) {
+                    attendee.setCharacterRace(race.getName());
+                }
+                CharacterClass characterClass = character.getCharacterClass();
+                if (characterClass != null) {
+                    attendee.setCharacterClass(characterClass.getName());
+                }
+            }
+            attendee.setStartDateTime(attendeeRecord.getStartDateTime());
+            attendee.setFinishDateTime(attendeeRecord.getFinishDateTime());
+            Set<String> roles = attendee.getRoles();
+            attendeeRecord.getRoles().forEach(roleRecord -> {
+                roles.add(roleRecord.getName());
+            });
+            attendees.add(attendee);
         });
         if (!processedEvents.contains(eventRecord.getKey())) {
             processedEvents.add(eventRecord.getKey());
