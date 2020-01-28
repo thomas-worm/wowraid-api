@@ -21,7 +21,7 @@ public class EventDrop {
     @JsonProperty("looter_faction")
     private String looterFaction;
 
-    @JsonProperty("item_blizzardIdentifier")
+    @JsonProperty("item_blizzard_identifier")
     private int itemBlizzardIdentifier;
 
     @JsonProperty("item_name")
