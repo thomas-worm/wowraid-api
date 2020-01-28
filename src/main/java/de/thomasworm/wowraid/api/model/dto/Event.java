@@ -37,6 +37,9 @@ public class Event {
     @JsonProperty("attendees")
     private List<EventAttendee> attendees = new ArrayList<>();
 
+    @JsonProperty("drops")
+    private List<EventDrop> drops = new ArrayList<>();
+
     public void setKey(String value) {
         this.key = value;
     }
@@ -91,6 +94,10 @@ public class Event {
 
     public List<EventAttendee> getAttendees() {
         return this.attendees;
+    }
+
+    public List<EventDrop> getDrops() {
+        return this.drops;
     }
 
 }

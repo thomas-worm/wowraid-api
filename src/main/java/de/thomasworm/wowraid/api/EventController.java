@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import de.thomasworm.wowraid.api.model.dto.Event;
 import de.thomasworm.wowraid.api.model.dto.EventAttendee;
+import de.thomasworm.wowraid.api.model.dto.EventDrop;
 import de.thomasworm.wowraid.api.model.persistence.Character;
 import de.thomasworm.wowraid.api.model.persistence.CharacterClass;
 import de.thomasworm.wowraid.api.model.persistence.Faction;
+import de.thomasworm.wowraid.api.model.persistence.Item;
 import de.thomasworm.wowraid.api.model.persistence.Race;
 import de.thomasworm.wowraid.api.model.persistence.Realm;
 import reactor.core.publisher.Mono;
@@ -104,6 +106,34 @@ public class EventController {
                 roles.add(roleRecord.getName());
             });
             attendees.add(attendee);
+        });
+        List<EventDrop> drops = event.getDrops();
+        eventRecord.getDrops().forEach(dropRecord -> {
+            EventDrop drop = new EventDrop();
+            Character character = dropRecord.getLooter();
+            if (character != null) {
+                drop.setLooterName(character.getName());
+                Realm realm = character.getRealm();
+                if (realm != null) {
+                    drop.setLooterRealm(realm.getName());
+                }
+                Faction faction = character.getFaction();
+                if (faction != null) {
+                    drop.setLooterFaction(faction.getName());
+                }
+                Race race = character.getRace();
+                if (race != null) {
+                    drop.setLooterRace(race.getName());
+                }
+                CharacterClass characterClass = character.getCharacterClass();
+                if (characterClass != null) {
+                    drop.setLooterClass(characterClass.getName());
+                }
+            }
+            Item item = dropRecord.getItem();
+            drop.setItemBlizzardIdentifier(item.getBlizzardIdentifier());
+            drop.setItemName(item.getName());
+            drops.add(drop);
         });
         if (!processedEvents.contains(eventRecord.getKey())) {
             processedEvents.add(eventRecord.getKey());

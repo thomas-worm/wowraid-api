@@ -34,4 +34,32 @@ public class Drop {
     @JoinColumn(name = "looter_character_id")
     private Character looter;
 
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setCreature(Creature value) {
+        this.creature = value;
+    }
+
+    public Creature getCreature() {
+        return this.creature;
+    }
+
+    public void setItem(Item value) {
+        this.item = value;
+    }
+
+    public Item getItem() {
+        return this.item;
+    }
+
+    public void setLooter(Character value) {
+        this.looter = value;
+    }
+
+    public Character getLooter() {
+        return this.looter;
+    }
+
 }
