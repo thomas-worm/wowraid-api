@@ -2,10 +2,8 @@ package de.thomasworm.wowraid.api.model.persistence;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -18,7 +16,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
-import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Type;
@@ -71,17 +68,9 @@ public class Event {
     @JoinTable(
         name = "event_drops",
         joinColumns = @JoinColumn(name = "event_id"),
-        inverseJoinColumns = @JoinColumn(name = "item_id")
+        inverseJoinColumns = @JoinColumn(name = "drop_id")
     )
-    private Set<Item> drops;
-
-    @OneToMany(
-        fetch = FetchType.EAGER
-    )
-    @MapKeyJoinColumn(
-        name = "item"
-    )
-    private Map<Item, Loot> loots = new HashMap<>();
+    private Set<Drop> drops;
 
     @ManyToMany(
         fetch = FetchType.EAGER
@@ -169,12 +158,8 @@ public class Event {
         return this.incomingEventLinks;
     }
 
-    public Set<Item> getDrops() {
+    public Set<Drop> getDrops() {
         return this.drops;
-    }
-
-    public Map<Item, Loot> getLoots() {
-        return this.loots;
     }
 
     public Set<Creature> getCreatures() {
