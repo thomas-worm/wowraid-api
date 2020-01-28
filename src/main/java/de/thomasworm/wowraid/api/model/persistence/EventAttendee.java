@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,15 +22,21 @@ public class EventAttendee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne()
+    @ManyToOne(
+        fetch = FetchType.EAGER
+    )
     @JoinColumn(name = "event_id")
     private Event event;
 
-    @ManyToOne()
+    @ManyToOne(
+        fetch = FetchType.EAGER
+    )
     @JoinColumn(name = "character_id")
     private Character character;
 
-    @ManyToMany()
+    @ManyToMany(
+        fetch = FetchType.EAGER
+    )
     @JoinTable(
         name = "event_attendee_roles",
         joinColumns = @JoinColumn(name = "attendee_id"),

@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +42,8 @@ public class Event {
     private String key;
 
     @ManyToMany(
-        mappedBy = "events"
+        mappedBy = "events",
+        fetch = FetchType.EAGER
     )
     private Set<Eventcategory> categories = new HashSet<>();
 
@@ -52,16 +54,20 @@ public class Event {
     private LocalDateTime finishDateTime;
 
     @OneToMany(
-        mappedBy = "start"
+        mappedBy = "start",
+        fetch = FetchType.EAGER
     )
     private List<EventEventLink> eventLinks = new ArrayList<>();
 
     @OneToMany(
-        mappedBy = "target"
+        mappedBy = "target",
+        fetch = FetchType.EAGER
     )
     private List<EventEventLink> incomingEventLinks;
 
-    @ManyToMany()
+    @ManyToMany(
+        fetch = FetchType.EAGER
+    )
     @JoinTable(
         name = "event_drops",
         joinColumns = @JoinColumn(name = "event_id"),
@@ -69,13 +75,17 @@ public class Event {
     )
     private Set<Item> drops;
 
-    @OneToMany()
+    @OneToMany(
+        fetch = FetchType.EAGER
+    )
     @MapKeyJoinColumn(
         name = "item"
     )
     private Map<Item, Loot> loots = new HashMap<>();
 
-    @ManyToMany()
+    @ManyToMany(
+        fetch = FetchType.EAGER
+    )
     @JoinTable(
         name = "event_creatures",
         joinColumns = @JoinColumn(name = "event_id"),
@@ -87,12 +97,14 @@ public class Event {
     private boolean enrollPossible;
 
     @OneToMany(
-        mappedBy = "event"
+        mappedBy = "event",
+        fetch = FetchType.EAGER
     )
     private Set<EventEnrollment> enrollments;
 
     @OneToMany(
-        mappedBy = "event"
+        mappedBy = "event",
+        fetch = FetchType.EAGER
     )
     private Set<EventAttendee> attendees;
 
