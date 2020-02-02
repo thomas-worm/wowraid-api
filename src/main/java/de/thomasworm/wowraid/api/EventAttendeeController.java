@@ -54,7 +54,7 @@ public class EventAttendeeController {
                 rolesMono = this.characterRoleService.findByName((String)attendee.getRoles().toArray()[0]).map(role -> new CharacterRole[] { role });
             } else {
                 Iterable<Mono<CharacterRole>> iterableMonos = attendee.getRoles().stream().map(role -> this.characterRoleService.findByName(role))::iterator;
-                rolesMono = Mono.zip(iterableMonos, arr -> (CharacterRole[]) arr);
+                rolesMono = Mono.zip(iterableMonos, arr -> Arrays.stream(arr).toArray(CharacterRole[]::new));
             }
         }
         Mono<Event> eventMono = this.eventService.getByKey(key);
