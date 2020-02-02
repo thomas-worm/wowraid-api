@@ -60,7 +60,7 @@ public class EventAttendeeController {
         Mono<Event> eventMono = this.eventService.getByKey(key);
         Mono<Character> characterMono = 
             this.realmService.getByName(attendee.getCharacterRealm()).flatMap(realm -> (realm == null) ? Mono.justOrEmpty(null) :
-                this.characterService.getByRealmAndName(realm, attendee.getCharacterFaction()));
+                this.characterService.getByRealmAndName(realm, attendee.getCharacterName()));
         return Mono.zip(eventMono, characterMono, rolesMono).flatMap(tuple -> {
             if (tuple.get(0) == null || tuple.get(1) == null) {
                 return Mono.just(ResponseEntity.notFound().build());
