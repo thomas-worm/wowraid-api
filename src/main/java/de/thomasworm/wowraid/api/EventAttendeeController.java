@@ -49,7 +49,7 @@ public class EventAttendeeController {
     @PostMapping("/event/{key}/attendee")
     public Mono<ResponseEntity<Object>> createEventAttendee(@RequestBody() EventAttendee attendee, @PathVariable("key") String key, @RequestParam(name = "recursive", required = false, defaultValue = "false") String recursive) {
         Mono<CharacterRole[]> rolesMono = Mono.just(new CharacterRole[] {});
-        if (attendee.getRoles() != null) {
+        if (attendee.getRoles() != null && attendee.getRoles().size() > 0) {
             if (attendee.getRoles().size() == 1) {
                 rolesMono = this.characterRoleService.findByName((String)attendee.getRoles().toArray()[0]).map(role -> new CharacterRole[] { role });
             } else {
