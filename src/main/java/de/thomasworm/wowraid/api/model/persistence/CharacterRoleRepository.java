@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository()
 public interface CharacterRoleRepository extends PagingAndSortingRepository<CharacterRole, Long> {
+
+    public CharacterRole findByName(String name);
+
 }
