@@ -51,7 +51,7 @@ public class EventAttendeeController {
     @PostMapping("/event/{key}/attendee")
     public Mono<ResponseEntity<Object>> createEventAttendee(@RequestBody() EventAttendee attendee, @PathVariable("key") String key, @RequestParam(name = "recursive", required = false, defaultValue = "false") String recursive, OAuth2AuthenticationToken token) {
         User user = this.userService.getUserByToken(token);
-        if (!user.getGroups().contains("admin")) {
+        if (!this.userService.isUserInAnyGroupWithName(user, Arrays.asList(new String[] {"admin"}))) {
             return Mono.just(ResponseEntity.status(HttpStatus.FORBIDDEN).build());
         }
         Mono<CharacterRole[]> rolesMono = Mono.just(new CharacterRole[] {});
