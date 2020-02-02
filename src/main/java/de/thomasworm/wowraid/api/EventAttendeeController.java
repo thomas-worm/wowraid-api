@@ -1,9 +1,6 @@
 package de.thomasworm.wowraid.api;
 
-import java.net.URI;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +17,7 @@ import de.thomasworm.wowraid.api.model.dto.EventAttendee;
 import de.thomasworm.wowraid.api.model.persistence.Character;
 import de.thomasworm.wowraid.api.model.persistence.CharacterRole;
 import de.thomasworm.wowraid.api.model.persistence.Event;
+import de.thomasworm.wowraid.api.model.persistence.User;
 import reactor.core.publisher.Mono;
 
 @RestController()
@@ -30,6 +28,7 @@ public class EventAttendeeController {
     private CharacterRoleService characterRoleService;
     private RealmService realmService;
     private EventAttendeeService eventAttendeeService;
+    private UserService userService;
 
     @Autowired()
     public EventAttendeeController(
@@ -37,17 +36,23 @@ public class EventAttendeeController {
         CharacterService characterService,
         CharacterRoleService characterRoleService,
         RealmService realmService,
-        EventAttendeeService eventAttendeeService
+        EventAttendeeService eventAttendeeService,
+        UserService userService
     ) {
         this.eventService = eventService;
         this.characterService = characterService;
         this.characterRoleService = characterRoleService;
         this.realmService = realmService;
         this.eventAttendeeService = eventAttendeeService;
+        this.userService = userService;
     }
 
     @PostMapping("/event/{key}/attendee")
-    public Mono<ResponseEntity<Object>> createEventAttendee(@RequestBody() EventAttendee attendee, @PathVariable("key") String key, @RequestParam(name = "recursive", required = false, defaultValue = "false") String recursive) {
+    public Mono<ResponseEntity<Object>> createEventAttendee(@RequestBody() EventAttendee attendee, @PathVariable("key") String key, @RequestParam(name = "recursive", required = false, defaultValue = "false") String recursive, OAuth2AuthenticationToken token) {
+        User user = this.userService.getUserByToken(token);
+        if (!user.getGroups().contains("admin")) {
+            return Mono.just(ResponseEntity.status(HttpStatus.FORBIDDEN).build());
+        }
         Mono<CharacterRole[]> rolesMono = Mono.just(new CharacterRole[] {});
         if (attendee.getRoles() != null && attendee.getRoles().size() > 0) {
             if (attendee.getRoles().size() == 1) {
