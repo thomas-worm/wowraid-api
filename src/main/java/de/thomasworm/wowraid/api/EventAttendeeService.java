@@ -16,6 +16,7 @@ import de.thomasworm.wowraid.api.model.persistence.EventAttendee;
 public class EventAttendeeService {
 
     EventAttendee create(Event event, Character character, Iterable<CharacterRole> roles, LocalDateTime startDateTime, LocalDateTime finishDateTime, boolean recursive) {
+        System.out.println(finishDateTime.toString());
         List<EventAttendee> attendees = new ArrayList<>();
         buildAttendee(attendees, event, character, roles, startDateTime, finishDateTime, recursive, new HashSet<>());
         attendees.forEach(attendee -> {
