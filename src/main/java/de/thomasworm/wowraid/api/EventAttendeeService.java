@@ -11,20 +11,21 @@ import de.thomasworm.wowraid.api.model.persistence.Character;
 import de.thomasworm.wowraid.api.model.persistence.CharacterRole;
 import de.thomasworm.wowraid.api.model.persistence.Event;
 import de.thomasworm.wowraid.api.model.persistence.EventAttendee;
+import de.thomasworm.wowraid.api.model.persistence.EventAttendeeRepository;
 
 @Service()
 public class EventAttendeeService {
 
+    private EventAttendeeRepository eventAttendeeRepository;
+
+    public EventAttendeeService(EventAttendeeRepository eventAttendeeRepository) {
+        this.eventAttendeeRepository = eventAttendeeRepository;
+    }
+
     EventAttendee create(Event event, Character character, Iterable<CharacterRole> roles, LocalDateTime startDateTime, LocalDateTime finishDateTime, boolean recursive) {
-        System.out.println(finishDateTime.toString());
         List<EventAttendee> attendees = new ArrayList<>();
         buildAttendee(attendees, event, character, roles, startDateTime, finishDateTime, recursive, new HashSet<>());
-        attendees.forEach(attendee -> {
-            System.out.println("EVENT: " + attendee.getEvent().getName());
-            System.out.println("CHARACTER: " + attendee.getCharacter().getName());
-            System.out.println("START: " + attendee.getStartDateTime().toString());
-            System.out.println("FINISH: " + attendee.getFinishDateTime().toString());
-        });
+        this.eventAttendeeRepository.saveAll(attendees);
         return attendees.get(0);
     }
 
