@@ -34,6 +34,7 @@ public class AccountController {
                     transactionDto.setTitle(transaction.getTitle());
                     transactionDto.setValue(transaction.getValue());
                     transactionDto.setCurrency(transaction.getCurrency().getName());
+                    transactionList.add(transactionDto);
                 });
                 return transactionList;
             });
