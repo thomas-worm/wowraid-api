@@ -30,7 +30,6 @@ public class EffortAndGearKeyPerformanceIndicator {
     }
 
     public double getPriority() {
-        //return (this.gearPoints == 0) ? this.effortPoints : this.effortPoints / this.gearPoints;
         return this.priority;
     }
 
