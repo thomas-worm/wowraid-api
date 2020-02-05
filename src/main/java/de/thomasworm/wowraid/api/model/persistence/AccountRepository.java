@@ -11,9 +11,12 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
 
     @Query(
         "SELECT " +
-            "user.blizzardIdentifier AS battleTag, " +
-            "SUM(effortTransactions.value) AS effortPoints, " +
-            "SUM(gearTransactions.value) AS gearPoints " +
+            "" +
+                "user.blizzardIdentifier AS battleTag, " +
+                "SUM(effortTransactions.value) AS effortPoints, " +
+                "SUM(gearTransactions.value) AS gearPoints, " +
+                "SUM(effortTransactions.value)/SUM(gearTransactions.value) AS priority " +
+            "" +
         "FROM User user " +
         "JOIN user.effortAndGearAccounts epgpmapping " +
         "JOIN epgpmapping.effortAccount effortAccount " +

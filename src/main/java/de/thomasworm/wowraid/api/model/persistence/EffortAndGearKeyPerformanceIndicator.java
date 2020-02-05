@@ -1,13 +1,20 @@
 package de.thomasworm.wowraid.api.model.persistence;
 
-import org.springframework.data.annotation.Immutable;
+/** import org.springframework.data.annotation.Immutable; **/
 
-@Immutable()
-public class EffortAndGearKeyPerformanceIndicator {
+/** @Immutable() **/
+public interface EffortAndGearKeyPerformanceIndicator {
 
-    private String battleTag;
-    private double effortPoints;
-    private double gearPoints;
+    /** private **/ String battleTag = "";
+    /** private **/ double effortPoints = 0;
+    /** private **/ double gearPoints = 0;
+    double priority = 0;
+
+    /**public EffortAndGearKeyPerformanceIndicator(String battleTag, double effortPoints, double gearPoints) {
+        this.battleTag = battleTag;
+        this.effortPoints = effortPoints;
+        this.gearPoints = gearPoints;
+    }
 
     public String getBattleTag() {
         return this.battleTag;
@@ -23,6 +30,6 @@ public class EffortAndGearKeyPerformanceIndicator {
 
     public double getPriority() {
         return (this.gearPoints == 0) ? this.effortPoints : this.effortPoints / this.gearPoints;
-    }
+    } **/
 
 }
