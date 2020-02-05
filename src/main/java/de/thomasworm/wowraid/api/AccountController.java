@@ -36,6 +36,7 @@ public class AccountController {
                     transactionDto.setCurrency(transaction.getCurrency().getName());
                     transactionList.add(transactionDto);
                 });
+                transactionList.sort((a, b) -> b.getDateTime().compareTo(a.getDateTime()));
                 return transactionList;
             });
     }
