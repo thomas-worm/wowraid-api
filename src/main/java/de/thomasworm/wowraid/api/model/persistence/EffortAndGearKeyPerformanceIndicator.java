@@ -7,13 +7,17 @@ public class EffortAndGearKeyPerformanceIndicator {
 
     private User user;
     private double effortPoints;
+    private Account effortPointsAccount;
     private double gearPoints;
+    private Account gearPointsAccount;
     private double priority;
 
-    public EffortAndGearKeyPerformanceIndicator(User user, double effortPoints, double gearPoints, double priority) {
+    public EffortAndGearKeyPerformanceIndicator(User user, double effortPoints, Account effortPointsAccount, double gearPoints, Account gearPointsAccount, double priority) {
         this.user = user;
         this.effortPoints = effortPoints;
+        this.effortPointsAccount = effortPointsAccount;
         this.gearPoints = gearPoints;
+        this.gearPointsAccount = gearPointsAccount;
         this.priority = priority;
     }
 
@@ -25,8 +29,16 @@ public class EffortAndGearKeyPerformanceIndicator {
         return this.effortPoints;
     }
 
+    public Account getEffortPointsAccount() {
+        return this.effortPointsAccount;
+    }
+ 
     public double getGearPoints() {
         return this.gearPoints;
+    }
+
+    public Account getGearPointsAccount() {
+        return this.gearPointsAccount;
     }
 
     public double getPriority() {

@@ -52,7 +52,9 @@ public class AccountController {
                     EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator();
                     epgp.setBattleTag(kpi.getUser().getBattleTag());
                     epgp.setEffortPoints(kpi.getEffortPoints());
+                    epgp.setEffortPointsAccount(kpi.getEffortPointsAccount().getKey());
                     epgp.setGearPoints(kpi.getGearPoints());
+                    epgp.setGearPointsAccount(kpi.getGearPointsAccount().getKey());
                     epgp.setPriority(kpi.getPriority());
                     epgps.add(epgp);
                 });

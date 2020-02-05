@@ -12,34 +12,6 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
 
     @Query(
         "SELECT " +
-            "new de.thomasworm.wowraid.api.model.persistence.EffortAndGearKeyPerformanceIndicator(" +
-                "user, " +
-                "SUM(effortTransactions.value), " +
-                "SUM(gearTransactions.value), " +
-                "SUM(effortTransactions.value)/SUM(gearTransactions.value)" +
-            ")" +
-        "FROM User user " +
-        "JOIN user.effortAndGearAccounts epgpmapping " +
-        "JOIN epgpmapping.effortAccount effortAccount " +
-        "JOIN epgpmapping.gearAccount gearAccount " +
-        "LEFT JOIN effortAccount.transactions effortTransactions " +
-        "LEFT JOIN gearAccount.transactions gearTransactions " +
-        "GROUP BY user"
-    )
-    public Iterable<EffortAndGearKeyPerformanceIndicator> findEffortAndGearKeyPerformanceIndicators();
-
-    public class SumResult {
-        private double sum = 0.0;
-        public SumResult(double sum) {
-            this.sum = sum;
-        }
-        public double getSum() {
-            return this.sum;
-        }
-    }
-    @Query(
-        "SELECT " +
-            //"new de.thomasworm.wowraid.api.model.persistence.AccountRepository.SumResult(SUM(transaction.value)) " +
             "SUM(transaction.value) " +
         "FROM Account account " +
         "JOIN account.transactions transaction " +

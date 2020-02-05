@@ -14,7 +14,6 @@ import de.thomasworm.wowraid.api.model.persistence.Transaction;
 import de.thomasworm.wowraid.api.model.persistence.TransactionRepository;
 import de.thomasworm.wowraid.api.model.persistence.User;
 import de.thomasworm.wowraid.api.model.persistence.UserRepository;
-import de.thomasworm.wowraid.api.model.persistence.AccountRepository.SumResult;
 import reactor.core.publisher.Mono;
 
 @Service()
@@ -52,17 +51,14 @@ public class AccountService {
                 Account effortAccount = mapping.getEffortAccount();
                 Account gearAccount = mapping.getGearAccount();
                 if (effortAccount != null && gearAccount != null) {
-                    //SumResult effortPoints = this.accountRepository.findSumOfValueByAccount(effortAccount);
                     double effortPoints = this.accountRepository.findSumOfValueByAccount(effortAccount);
-                    // SumResult gearPoints = this.accountRepository.findSumOfValueByAccount(gearAccount);
                     double gearPoints = this.accountRepository.findSumOfValueByAccount(gearAccount);
                     EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator(
                         user,
-                        //effortPoints.getSum(), 
-                        effortPoints, 
-                        //gearPoints.getSum(),
+                        effortPoints,
+                        effortAccount,
                         gearPoints,
-                        //effortPoints.getSum()/(gearPoints.getSum() == 0 ? (effortPoints.getSum() == 0 ? 1.0 : effortPoints.getSum()) : gearPoints.getSum())
+                        gearAccount,
                         effortPoints/(gearPoints == 0 ? (effortPoints == 0 ? 1.0 : effortPoints) : gearPoints)
                     );
                     epgps.add(epgp);

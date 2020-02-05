@@ -12,8 +12,14 @@ public class EffortAndGearKeyPerformanceIndicator {
     @JsonProperty("effort_points")
     private double effortPoints;
 
+    @JsonProperty("effort_points_account")
+    private String effortPointsAccount;
+
     @JsonProperty("gear_points")
     private double gearPoints;
+
+    @JsonProperty("gear_points_account")
+    private String gearPointsAccount;
 
     @JsonProperty("priority")
     private double priority;
@@ -34,12 +40,28 @@ public class EffortAndGearKeyPerformanceIndicator {
         return this.effortPoints;
     }
 
+    public void setEffortPointsAccount(String value) {
+        this.effortPointsAccount = value;
+    }
+
+    public String getEffortPointsAccount() {
+        return this.effortPointsAccount;
+    }
+
     public void setGearPoints(double value) {
         this.gearPoints = value;
     }
 
     public double getGearPoints() {
         return this.gearPoints;
+    }
+
+    public void setGearPointsAccount(String value) {
+        this.gearPointsAccount = value;
+    }
+
+    public String getGearPointsAccount() {
+        return this.gearPointsAccount;
     }
 
     public void setPriority(double value) {
