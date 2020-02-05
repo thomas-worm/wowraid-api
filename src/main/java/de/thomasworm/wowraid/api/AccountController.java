@@ -1,5 +1,6 @@
 package de.thomasworm.wowraid.api;
 
+import de.thomasworm.wowraid.api.model.dto.EffortAndGearKeyPerformanceIndicator;
 import de.thomasworm.wowraid.api.model.dto.Transaction;
 import reactor.core.publisher.Mono;
 
@@ -38,6 +39,25 @@ public class AccountController {
                 });
                 transactionList.sort((a, b) -> b.getDateTime().compareTo(a.getDateTime()));
                 return transactionList;
+            });
+    }
+
+    @GetMapping("/kpi/epgp")
+    public Mono<Iterable<EffortAndGearKeyPerformanceIndicator>> getEffortAndGearKeyPerformanceIndicators() {
+        return this.accountService
+            .getEffortAndGearKeyPerformanceIndicators()
+            .map(kpis -> {
+                List<EffortAndGearKeyPerformanceIndicator> epgps = new ArrayList<>();
+                kpis.forEach(kpi -> {
+                    EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator();
+                    epgp.setBattleTag(kpi.getBattleTag());
+                    epgp.setEffortPoints(kpi.getEffortPoints());
+                    epgp.setGearPoints(kpi.getGearPoints());
+                    epgp.setPriority(kpi.getGearPoints());
+                    epgps.add(epgp);
+                });
+                epgps.sort((a, b) -> Double.compare(b.getPriority(), a.getPriority()));
+                return epgps;
             });
     }
 
