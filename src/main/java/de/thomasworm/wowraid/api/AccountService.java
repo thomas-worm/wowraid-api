@@ -25,11 +25,19 @@ public class AccountService {
     }
 
     public Mono<Account> getAccountByKey(String key) {
-        return Mono.justOrEmpty(this.accountRepository.findByKey(key));
+        System.out.println("Looking for account with key " + key);
+        Account x = this.accountRepository.findByKey(key);
+        if (x == null) System.out.println("Not found");
+        return Mono.justOrEmpty(x);
     }
 
     public Mono<Iterable<Transaction>> getTransactionsByAccount(Account account) {
-        return Mono.justOrEmpty(this.transactionRepository.findByAccount(account));
+        System.out.println("Looking for transaction for account " + account.getName());
+        Iterable<Transaction> x = this.transactionRepository.findByAccount(account);
+        x.forEach(i -> {
+            System.out.println(i.getTitle());
+        });
+        return Mono.justOrEmpty(x);
     }
 
 }
