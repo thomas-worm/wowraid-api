@@ -17,6 +17,7 @@ spring:
           battlenet:
             issuer-uri: "https://eu.battle.net/oauth"
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
       show-sql: true
