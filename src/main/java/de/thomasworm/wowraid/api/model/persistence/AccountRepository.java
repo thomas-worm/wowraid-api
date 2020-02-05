@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository()
 public interface AccountRepository extends PagingAndSortingRepository<Account, Long> {
+
+    public Account findByKey(String key);
+
 }

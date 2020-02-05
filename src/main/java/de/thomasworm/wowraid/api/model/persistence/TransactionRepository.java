@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository()
 public interface TransactionRepository extends PagingAndSortingRepository<Transaction, Long> {
+
+    public Iterable<Transaction> findByAccount(Account account);
+
 }
