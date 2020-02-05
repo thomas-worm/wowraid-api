@@ -28,11 +28,23 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
     )
     public Iterable<EffortAndGearKeyPerformanceIndicator> findEffortAndGearKeyPerformanceIndicators();
 
+    public class SumResult {
+        private double sum = 0.0;
+        public SumResult(double sum) {
+            this.sum = sum;
+        }
+        public double getSum() {
+            return this.sum;
+        }
+    }
     @Query(
         "SELECT " +
-            "SUM(value) " +
+            //"new de.thomasworm.wowraid.api.model.persistence.AccountRepository.SumResult(SUM(transaction.value)) " +
+            "SUM(transaction.value) " +
         "FROM Account account " +
-        "WHERE account = :account"
+        "JOIN account.transactions transaction " +
+        "WHERE account = :account " +
+        "GROUP BY account"
     )
     public double findSumOfValueByAccount(@Param("account") Account account);
 
