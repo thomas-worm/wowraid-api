@@ -1,13 +1,19 @@
 package de.thomasworm.wowraid.api;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import de.thomasworm.wowraid.api.model.persistence.Account;
 import de.thomasworm.wowraid.api.model.persistence.AccountRepository;
+import de.thomasworm.wowraid.api.model.persistence.EffortAndGearAccountMapping;
 import de.thomasworm.wowraid.api.model.persistence.EffortAndGearKeyPerformanceIndicator;
 import de.thomasworm.wowraid.api.model.persistence.Transaction;
 import de.thomasworm.wowraid.api.model.persistence.TransactionRepository;
+import de.thomasworm.wowraid.api.model.persistence.User;
+import de.thomasworm.wowraid.api.model.persistence.UserRepository;
 import reactor.core.publisher.Mono;
 
 @Service()
@@ -15,14 +21,17 @@ public class AccountService {
 
     private AccountRepository accountRepository;
     private TransactionRepository transactionRepository;
+    private UserRepository userRepository;
 
     @Autowired()
     public AccountService(
         AccountRepository accountRepository,
-        TransactionRepository transactionRepository
+        TransactionRepository transactionRepository,
+        UserRepository userRepository
     ) {
         this.accountRepository = accountRepository;
         this.transactionRepository = transactionRepository;
+        this.userRepository = userRepository;
     }
 
     public Mono<Account> getAccountByKey(String key) {
@@ -34,7 +43,27 @@ public class AccountService {
     }
 
     public Mono<Iterable<EffortAndGearKeyPerformanceIndicator>> getEffortAndGearKeyPerformanceIndicators() {
-        return Mono.justOrEmpty(this.accountRepository.findEffortAndGearKeyPerformanceIndicators());
+        Iterable<User> users = this.userRepository.findAll();
+        List<EffortAndGearKeyPerformanceIndicator> epgps = new ArrayList<>();
+        users.forEach(user -> {
+            EffortAndGearAccountMapping mapping = user.getEffortAndGearAccounts();
+            if (mapping != null) {
+                Account effortAccount = mapping.getEffortAccount();
+                Account gearAccount = mapping.getGearAccount();
+                if (effortAccount != null && gearAccount != null) {
+                    double effortPoints = this.accountRepository.findSumOfValueByAccount(effortAccount);
+                    double gearPoints = this.accountRepository.findSumOfValueByAccount(gearAccount);
+                    EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator(
+                        user,
+                        effortPoints, 
+                        gearPoints,
+                        effortPoints/(gearPoints == 0 ? effortPoints : gearPoints)
+                    );
+                    epgps.add(epgp);
+                }
+            }
+        });
+        return Mono.justOrEmpty(epgps);
     }
 
 }

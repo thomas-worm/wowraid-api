@@ -2,6 +2,7 @@ package de.thomasworm.wowraid.api.model.persistence;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository()
@@ -26,5 +27,13 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
         "GROUP BY user"
     )
     public Iterable<EffortAndGearKeyPerformanceIndicator> findEffortAndGearKeyPerformanceIndicators();
+
+    @Query(
+        "SELECT " +
+            "SUM(value) " +
+        "FROM Account account " +
+        "WHERE account = :account"
+    )
+    public double findSumOfValueByAccount(@Param("account") Account account);
 
 }

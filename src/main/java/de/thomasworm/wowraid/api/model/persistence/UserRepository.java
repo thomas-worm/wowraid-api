@@ -17,6 +17,16 @@ public class UserRepository {
     @PersistenceContext()
     private EntityManager entityManager;
 
+    public Iterable<User> findAll() {
+        CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        CriteriaQuery<User> query = builder.createQuery(User.class);
+        Root<User> userTable = query.from(User.class);
+        List<User> foundUsers = entityManager.createQuery(
+            query.select(userTable)
+        ).getResultList();
+        return foundUsers.isEmpty() ? null : foundUsers;
+    }
+
     @Transactional()
     public User addOrUpdateByBlizzardIdentifier(User user) {
         User existingUser = findByBlizzardIdentifier(user.getBlizzardIdentifier());

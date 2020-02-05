@@ -68,4 +68,8 @@ public class User {
         return this.characters;
     }
 
+    public EffortAndGearAccountMapping getEffortAndGearAccounts() {
+        return this.effortAndGearAccounts;
+    }
+
 }
