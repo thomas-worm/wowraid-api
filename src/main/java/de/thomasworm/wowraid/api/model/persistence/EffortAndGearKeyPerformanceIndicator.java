@@ -5,20 +5,20 @@ import org.springframework.data.annotation.Immutable;
 @Immutable()
 public class EffortAndGearKeyPerformanceIndicator {
 
-    private String battleTag;
+    private User user;
     private double effortPoints;
     private double gearPoints;
     private double priority;
 
-    public EffortAndGearKeyPerformanceIndicator(String battleTag, double effortPoints, double gearPoints, double priority) {
-        this.battleTag = battleTag;
+    public EffortAndGearKeyPerformanceIndicator(User user, double effortPoints, double gearPoints, double priority) {
+        this.user = user;
         this.effortPoints = effortPoints;
         this.gearPoints = gearPoints;
         this.priority = priority;
     }
 
-    public String getBattleTag() {
-        return this.battleTag;
+    public User getUser() {
+        return this.user;
     }
 
     public double getEffortPoints() {

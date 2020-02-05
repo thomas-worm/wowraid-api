@@ -11,8 +11,8 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
 
     @Query(
         "SELECT " +
-            "new EffortAndGearKeyPerformanceIndicator(" +
-                "user.blizzardIdentifier, " +
+            "new de.thomasworm.wowraid.api.model.persistence.EffortAndGearKeyPerformanceIndicator(" +
+                "user, " +
                 "SUM(effortTransactions.value), " +
                 "SUM(gearTransactions.value), " +
                 "SUM(effortTransactions.value)/SUM(gearTransactions.value)" +

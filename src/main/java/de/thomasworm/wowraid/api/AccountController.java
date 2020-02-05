@@ -50,7 +50,7 @@ public class AccountController {
                 List<EffortAndGearKeyPerformanceIndicator> epgps = new ArrayList<>();
                 kpis.forEach(kpi -> {
                     EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator();
-                    epgp.setBattleTag(kpi.getBattleTag());
+                    epgp.setBattleTag(kpi.getUser().getBattleTag());
                     epgp.setEffortPoints(kpi.getEffortPoints());
                     epgp.setGearPoints(kpi.getGearPoints());
                     epgp.setPriority(kpi.getPriority());
