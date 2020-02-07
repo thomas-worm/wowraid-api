@@ -96,7 +96,7 @@ class WowraidApiConfiguration {
                 dataSource.setPassword(userInfo[1]);
             }
         }
-                
+
         return dataSource;
     }
 
