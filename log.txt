@@ -1,0 +1,1000 @@
+2020-02-07T08:39:51.407608+00:00 app[web.1]: 
+2020-02-07T08:39:51.407608+00:00 app[web.1]: 
+2020-02-07T08:39:51.407608+00:00 app[web.1]: Negative matches:
+2020-02-07T08:39:51.407608+00:00 app[web.1]: -----------------
+2020-02-07T08:39:51.407609+00:00 app[web.1]: 
+2020-02-07T08:39:51.407609+00:00 app[web.1]: ActiveMQAutoConfiguration:
+2020-02-07T08:39:51.407609+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407609+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+2020-02-07T08:39:51.407609+00:00 app[web.1]: 
+2020-02-07T08:39:51.407610+00:00 app[web.1]: AopAutoConfiguration.AspectJAutoProxyingConfiguration.JdkDynamicAutoProxyConfiguration:
+2020-02-07T08:39:51.407610+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407610+00:00 app[web.1]: - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+2020-02-07T08:39:51.407610+00:00 app[web.1]: 
+2020-02-07T08:39:51.407610+00:00 app[web.1]: AopAutoConfiguration.ClassProxyingConfiguration:
+2020-02-07T08:39:51.407611+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407611+00:00 app[web.1]: - @ConditionalOnMissingClass found unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+2020-02-07T08:39:51.407611+00:00 app[web.1]: 
+2020-02-07T08:39:51.407611+00:00 app[web.1]: ArtemisAutoConfiguration:
+2020-02-07T08:39:51.407611+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407612+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.jms.ConnectionFactory' (OnClassCondition)
+2020-02-07T08:39:51.407612+00:00 app[web.1]: 
+2020-02-07T08:39:51.407612+00:00 app[web.1]: AtomikosJtaConfiguration:
+2020-02-07T08:39:51.407612+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407612+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.atomikos.icatch.jta.UserTransactionManager' (OnClassCondition)
+2020-02-07T08:39:51.407612+00:00 app[web.1]: 
+2020-02-07T08:39:51.407613+00:00 app[web.1]: BatchAutoConfiguration:
+2020-02-07T08:39:51.407613+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407613+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.batch.core.launch.JobLauncher' (OnClassCondition)
+2020-02-07T08:39:51.407614+00:00 app[web.1]: 
+2020-02-07T08:39:51.407614+00:00 app[web.1]: BitronixJtaConfiguration:
+2020-02-07T08:39:51.407614+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407614+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'bitronix.tm.jndi.BitronixContext' (OnClassCondition)
+2020-02-07T08:39:51.407614+00:00 app[web.1]: 
+2020-02-07T08:39:51.407615+00:00 app[web.1]: CacheAutoConfiguration:
+2020-02-07T08:39:51.407615+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407616+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+2020-02-07T08:39:51.407616+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407616+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407617+00:00 app[web.1]: 
+2020-02-07T08:39:51.407617+00:00 app[web.1]: CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnPostProcessor:
+2020-02-07T08:39:51.407617+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407620+00:00 app[web.1]: - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+2020-02-07T08:39:51.407621+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407621+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+2020-02-07T08:39:51.407621+00:00 app[web.1]: 
+2020-02-07T08:39:51.407622+00:00 app[web.1]: CaffeineCacheConfiguration:
+2020-02-07T08:39:51.407622+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407622+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'com.github.benmanes.caffeine.cache.Caffeine', 'org.springframework.cache.caffeine.CaffeineCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407623+00:00 app[web.1]: 
+2020-02-07T08:39:51.407623+00:00 app[web.1]: CassandraAutoConfiguration:
+2020-02-07T08:39:51.407623+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407624+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.datastax.driver.core.Cluster' (OnClassCondition)
+2020-02-07T08:39:51.407624+00:00 app[web.1]: 
+2020-02-07T08:39:51.407624+00:00 app[web.1]: CassandraDataAutoConfiguration:
+2020-02-07T08:39:51.407625+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407625+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.datastax.driver.core.Cluster' (OnClassCondition)
+2020-02-07T08:39:51.407625+00:00 app[web.1]: 
+2020-02-07T08:39:51.407626+00:00 app[web.1]: CassandraReactiveDataAutoConfiguration:
+2020-02-07T08:39:51.407627+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407627+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.datastax.driver.core.Cluster' (OnClassCondition)
+2020-02-07T08:39:51.407628+00:00 app[web.1]: 
+2020-02-07T08:39:51.407628+00:00 app[web.1]: CassandraReactiveRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407628+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407629+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.cassandra.ReactiveSession' (OnClassCondition)
+2020-02-07T08:39:51.407629+00:00 app[web.1]: 
+2020-02-07T08:39:51.407629+00:00 app[web.1]: CassandraRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407630+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407630+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.datastax.driver.core.Session' (OnClassCondition)
+2020-02-07T08:39:51.407631+00:00 app[web.1]: 
+2020-02-07T08:39:51.407631+00:00 app[web.1]: ClientHttpConnectorConfiguration.JettyClient:
+2020-02-07T08:39:51.407631+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407632+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.eclipse.jetty.reactive.client.ReactiveRequest' (OnClassCondition)
+2020-02-07T08:39:51.407632+00:00 app[web.1]: 
+2020-02-07T08:39:51.407632+00:00 app[web.1]: ClientHttpConnectorConfiguration.ReactorNetty#reactorClientResourceFactory:
+2020-02-07T08:39:51.407633+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407633+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.http.client.reactive.ReactorResourceFactory; SearchStrategy: all) found beans of type 'org.springframework.http.client.reactive.ReactorResourceFactory' reactorServerResourceFactory (OnBeanCondition)
+2020-02-07T08:39:51.407634+00:00 app[web.1]: 
+2020-02-07T08:39:51.407634+00:00 app[web.1]: CloudServiceConnectorsAutoConfiguration:
+2020-02-07T08:39:51.407634+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407635+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.cloud.config.java.CloudScanConfiguration' (OnClassCondition)
+2020-02-07T08:39:51.407635+00:00 app[web.1]: 
+2020-02-07T08:39:51.407636+00:00 app[web.1]: CouchbaseAutoConfiguration:
+2020-02-07T08:39:51.407636+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407637+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+2020-02-07T08:39:51.407637+00:00 app[web.1]: 
+2020-02-07T08:39:51.407637+00:00 app[web.1]: CouchbaseCacheConfiguration:
+2020-02-07T08:39:51.407638+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407638+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'com.couchbase.client.java.Bucket', 'com.couchbase.client.spring.cache.CouchbaseCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407638+00:00 app[web.1]: 
+2020-02-07T08:39:51.407639+00:00 app[web.1]: CouchbaseDataAutoConfiguration:
+2020-02-07T08:39:51.407639+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407639+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+2020-02-07T08:39:51.407640+00:00 app[web.1]: 
+2020-02-07T08:39:51.407640+00:00 app[web.1]: CouchbaseReactiveDataAutoConfiguration:
+2020-02-07T08:39:51.407640+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407641+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+2020-02-07T08:39:51.407641+00:00 app[web.1]: 
+2020-02-07T08:39:51.407642+00:00 app[web.1]: CouchbaseReactiveRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407642+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407642+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+2020-02-07T08:39:51.407643+00:00 app[web.1]: 
+2020-02-07T08:39:51.407643+00:00 app[web.1]: CouchbaseRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407643+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407644+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Bucket' (OnClassCondition)
+2020-02-07T08:39:51.407644+00:00 app[web.1]: 
+2020-02-07T08:39:51.407644+00:00 app[web.1]: DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+2020-02-07T08:39:51.407645+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407645+00:00 app[web.1]: - EmbeddedDataSource found supported pooled data source (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+2020-02-07T08:39:51.407645+00:00 app[web.1]: 
+2020-02-07T08:39:51.407646+00:00 app[web.1]: DataSourceAutoConfiguration.PooledDataSourceConfiguration:
+2020-02-07T08:39:51.407646+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407647+00:00 app[web.1]: - @ConditionalOnBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) found beans of type 'javax.sql.DataSource' dataSource (OnBeanCondition)
+2020-02-07T08:39:51.407647+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407652+00:00 app[web.1]: - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+2020-02-07T08:39:51.407652+00:00 app[web.1]: 
+2020-02-07T08:39:51.407653+00:00 app[web.1]: DataSourceConfiguration.Dbcp2:
+2020-02-07T08:39:51.407653+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407653+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+2020-02-07T08:39:51.407654+00:00 app[web.1]: 
+2020-02-07T08:39:51.407654+00:00 app[web.1]: DataSourceConfiguration.Generic:
+2020-02-07T08:39:51.407654+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407655+00:00 app[web.1]: - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+2020-02-07T08:39:51.407655+00:00 app[web.1]: 
+2020-02-07T08:39:51.407656+00:00 app[web.1]: DataSourceConfiguration.Tomcat:
+2020-02-07T08:39:51.407656+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407656+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+2020-02-07T08:39:51.407657+00:00 app[web.1]: 
+2020-02-07T08:39:51.407657+00:00 app[web.1]: DataSourceJmxConfiguration.TomcatDataSourceJmxConfiguration:
+2020-02-07T08:39:51.407657+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407658+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSourceProxy' (OnClassCondition)
+2020-02-07T08:39:51.407658+00:00 app[web.1]: 
+2020-02-07T08:39:51.407658+00:00 app[web.1]: DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+2020-02-07T08:39:51.407659+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407659+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+2020-02-07T08:39:51.407659+00:00 app[web.1]: 
+2020-02-07T08:39:51.407660+00:00 app[web.1]: DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+2020-02-07T08:39:51.407660+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407660+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+2020-02-07T08:39:51.407661+00:00 app[web.1]: 
+2020-02-07T08:39:51.407661+00:00 app[web.1]: DataSourceTransactionManagerAutoConfiguration.DataSourceTransactionManagerConfiguration#transactionManager:
+2020-02-07T08:39:51.407661+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407662+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.PlatformTransactionManager' transactionManager (OnBeanCondition)
+2020-02-07T08:39:51.407662+00:00 app[web.1]: 
+2020-02-07T08:39:51.407663+00:00 app[web.1]: DispatcherServletAutoConfiguration:
+2020-02-07T08:39:51.407663+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407663+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+2020-02-07T08:39:51.407664+00:00 app[web.1]: 
+2020-02-07T08:39:51.407664+00:00 app[web.1]: EhCacheCacheConfiguration:
+2020-02-07T08:39:51.407664+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407665+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'net.sf.ehcache.Cache', 'org.springframework.cache.ehcache.EhCacheCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407665+00:00 app[web.1]: 
+2020-02-07T08:39:51.407665+00:00 app[web.1]: ElasticsearchAutoConfiguration:
+2020-02-07T08:39:51.407666+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407666+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.elasticsearch.client.Client' (OnClassCondition)
+2020-02-07T08:39:51.407666+00:00 app[web.1]: 
+2020-02-07T08:39:51.407667+00:00 app[web.1]: ElasticsearchDataAutoConfiguration:
+2020-02-07T08:39:51.407667+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407668+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.core.ElasticsearchTemplate' (OnClassCondition)
+2020-02-07T08:39:51.407668+00:00 app[web.1]: 
+2020-02-07T08:39:51.407669+00:00 app[web.1]: ElasticsearchRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407669+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407669+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.elasticsearch.client.Client' (OnClassCondition)
+2020-02-07T08:39:51.407669+00:00 app[web.1]: 
+2020-02-07T08:39:51.407670+00:00 app[web.1]: EmbeddedLdapAutoConfiguration:
+2020-02-07T08:39:51.407670+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407670+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.unboundid.ldap.listener.InMemoryDirectoryServer' (OnClassCondition)
+2020-02-07T08:39:51.407670+00:00 app[web.1]: 
+2020-02-07T08:39:51.407671+00:00 app[web.1]: EmbeddedMongoAutoConfiguration:
+2020-02-07T08:39:51.407671+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407671+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407671+00:00 app[web.1]: 
+2020-02-07T08:39:51.407672+00:00 app[web.1]: EmbeddedWebServerFactoryCustomizerAutoConfiguration.JettyWebServerFactoryCustomizerConfiguration:
+2020-02-07T08:39:51.407673+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407673+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.eclipse.jetty.server.Server', 'org.eclipse.jetty.util.Loader', 'org.eclipse.jetty.webapp.WebAppContext' (OnClassCondition)
+2020-02-07T08:39:51.407674+00:00 app[web.1]: 
+2020-02-07T08:39:51.407674+00:00 app[web.1]: EmbeddedWebServerFactoryCustomizerAutoConfiguration.TomcatWebServerFactoryCustomizerConfiguration:
+2020-02-07T08:39:51.407674+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407674+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol' (OnClassCondition)
+2020-02-07T08:39:51.407674+00:00 app[web.1]: 
+2020-02-07T08:39:51.407675+00:00 app[web.1]: EmbeddedWebServerFactoryCustomizerAutoConfiguration.UndertowWebServerFactoryCustomizerConfiguration:
+2020-02-07T08:39:51.407675+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407678+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'io.undertow.Undertow', 'org.xnio.SslClientAuthMode' (OnClassCondition)
+2020-02-07T08:39:51.407678+00:00 app[web.1]: 
+2020-02-07T08:39:51.407678+00:00 app[web.1]: ErrorMvcAutoConfiguration:
+2020-02-07T08:39:51.407742+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407743+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+2020-02-07T08:39:51.407743+00:00 app[web.1]: 
+2020-02-07T08:39:51.407743+00:00 app[web.1]: FlywayAutoConfiguration:
+2020-02-07T08:39:51.407743+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407743+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+2020-02-07T08:39:51.407744+00:00 app[web.1]: 
+2020-02-07T08:39:51.407744+00:00 app[web.1]: FreeMarkerAutoConfiguration:
+2020-02-07T08:39:51.407744+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407744+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'freemarker.template.Configuration' (OnClassCondition)
+2020-02-07T08:39:51.407744+00:00 app[web.1]: 
+2020-02-07T08:39:51.407745+00:00 app[web.1]: GroovyTemplateAutoConfiguration:
+2020-02-07T08:39:51.407745+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407745+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+2020-02-07T08:39:51.407745+00:00 app[web.1]: 
+2020-02-07T08:39:51.407745+00:00 app[web.1]: GsonAutoConfiguration:
+2020-02-07T08:39:51.407746+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407746+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+2020-02-07T08:39:51.407746+00:00 app[web.1]: 
+2020-02-07T08:39:51.407746+00:00 app[web.1]: H2ConsoleAutoConfiguration:
+2020-02-07T08:39:51.407746+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407747+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.h2.server.web.WebServlet' (OnClassCondition)
+2020-02-07T08:39:51.407747+00:00 app[web.1]: 
+2020-02-07T08:39:51.407747+00:00 app[web.1]: HazelcastAutoConfiguration:
+2020-02-07T08:39:51.407747+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407747+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+2020-02-07T08:39:51.407748+00:00 app[web.1]: 
+2020-02-07T08:39:51.407748+00:00 app[web.1]: HazelcastCacheConfiguration:
+2020-02-07T08:39:51.407748+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407748+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'com.hazelcast.core.HazelcastInstance', 'com.hazelcast.spring.cache.HazelcastCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407748+00:00 app[web.1]: 
+2020-02-07T08:39:51.407749+00:00 app[web.1]: HazelcastJpaDependencyAutoConfiguration:
+2020-02-07T08:39:51.407749+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407749+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+2020-02-07T08:39:51.407749+00:00 app[web.1]: 
+2020-02-07T08:39:51.407749+00:00 app[web.1]: HttpEncodingAutoConfiguration:
+2020-02-07T08:39:51.407750+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407750+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+2020-02-07T08:39:51.407750+00:00 app[web.1]: 
+2020-02-07T08:39:51.407750+00:00 app[web.1]: HttpMessageConvertersAutoConfiguration:
+2020-02-07T08:39:51.407750+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407751+00:00 app[web.1]: - NoneNestedConditions 1 matched 0 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication found ConfigurableReactiveWebEnvironment (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+2020-02-07T08:39:51.407751+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407751+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+2020-02-07T08:39:51.407751+00:00 app[web.1]: 
+2020-02-07T08:39:51.407751+00:00 app[web.1]: HypermediaAutoConfiguration:
+2020-02-07T08:39:51.407752+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407752+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.hateoas.EntityModel' (OnClassCondition)
+2020-02-07T08:39:51.407752+00:00 app[web.1]: 
+2020-02-07T08:39:51.407752+00:00 app[web.1]: InfinispanCacheConfiguration:
+2020-02-07T08:39:51.407752+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407753+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407753+00:00 app[web.1]: 
+2020-02-07T08:39:51.407753+00:00 app[web.1]: InfluxDbAutoConfiguration:
+2020-02-07T08:39:51.407753+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407754+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.influxdb.InfluxDB' (OnClassCondition)
+2020-02-07T08:39:51.407754+00:00 app[web.1]: 
+2020-02-07T08:39:51.407754+00:00 app[web.1]: IntegrationAutoConfiguration:
+2020-02-07T08:39:51.407754+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407754+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.integration.config.EnableIntegration' (OnClassCondition)
+2020-02-07T08:39:51.407754+00:00 app[web.1]: 
+2020-02-07T08:39:51.407755+00:00 app[web.1]: JCacheCacheConfiguration:
+2020-02-07T08:39:51.407755+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407755+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'javax.cache.Caching', 'org.springframework.cache.jcache.JCacheCacheManager' (OnClassCondition)
+2020-02-07T08:39:51.407755+00:00 app[web.1]: 
+2020-02-07T08:39:51.407755+00:00 app[web.1]: JacksonAutoConfiguration.JodaDateTimeJacksonConfiguration:
+2020-02-07T08:39:51.407756+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407756+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.joda.time.DateTime', 'com.fasterxml.jackson.datatype.joda.ser.DateTimeSerializer', 'com.fasterxml.jackson.datatype.joda.cfg.JacksonJodaDateFormat' (OnClassCondition)
+2020-02-07T08:39:51.407756+00:00 app[web.1]: 
+2020-02-07T08:39:51.407756+00:00 app[web.1]: JdbcRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407756+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407757+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration' (OnClassCondition)
+2020-02-07T08:39:51.407757+00:00 app[web.1]: 
+2020-02-07T08:39:51.407757+00:00 app[web.1]: JerseyAutoConfiguration:
+2020-02-07T08:39:51.407757+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407758+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.ServletRegistration' (OnClassCondition)
+2020-02-07T08:39:51.407758+00:00 app[web.1]: 
+2020-02-07T08:39:51.407758+00:00 app[web.1]: JestAutoConfiguration:
+2020-02-07T08:39:51.407758+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407761+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.searchbox.client.JestClient' (OnClassCondition)
+2020-02-07T08:39:51.407762+00:00 app[web.1]: 
+2020-02-07T08:39:51.407762+00:00 app[web.1]: JmsAutoConfiguration:
+2020-02-07T08:39:51.407762+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407762+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.jms.Message' (OnClassCondition)
+2020-02-07T08:39:51.407762+00:00 app[web.1]: 
+2020-02-07T08:39:51.407762+00:00 app[web.1]: JmxAutoConfiguration:
+2020-02-07T08:39:51.407763+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407763+00:00 app[web.1]: - @ConditionalOnProperty (spring.jmx.enabled=true) did not find property 'enabled' (OnPropertyCondition)
+2020-02-07T08:39:51.407763+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407763+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+2020-02-07T08:39:51.407763+00:00 app[web.1]: 
+2020-02-07T08:39:51.407763+00:00 app[web.1]: JndiConnectionFactoryAutoConfiguration:
+2020-02-07T08:39:51.407764+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407764+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.jms.core.JmsTemplate' (OnClassCondition)
+2020-02-07T08:39:51.407764+00:00 app[web.1]: 
+2020-02-07T08:39:51.407764+00:00 app[web.1]: JndiDataSourceAutoConfiguration:
+2020-02-07T08:39:51.407764+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407764+00:00 app[web.1]: - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name' (OnPropertyCondition)
+2020-02-07T08:39:51.407765+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407765+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+2020-02-07T08:39:51.407765+00:00 app[web.1]: 
+2020-02-07T08:39:51.407765+00:00 app[web.1]: JndiJtaConfiguration:
+2020-02-07T08:39:51.407765+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407766+00:00 app[web.1]: - @ConditionalOnJndi JNDI environment is not available (OnJndiCondition)
+2020-02-07T08:39:51.407766+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407766+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.transaction.jta.JtaTransactionManager' (OnClassCondition)
+2020-02-07T08:39:51.407766+00:00 app[web.1]: 
+2020-02-07T08:39:51.407767+00:00 app[web.1]: JooqAutoConfiguration:
+2020-02-07T08:39:51.407767+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407767+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.jooq.DSLContext' (OnClassCondition)
+2020-02-07T08:39:51.407767+00:00 app[web.1]: 
+2020-02-07T08:39:51.407767+00:00 app[web.1]: JpaBaseConfiguration.JpaWebConfiguration:
+2020-02-07T08:39:51.407768+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407768+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+2020-02-07T08:39:51.407768+00:00 app[web.1]: 
+2020-02-07T08:39:51.407768+00:00 app[web.1]: JpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+2020-02-07T08:39:51.407769+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407770+00:00 app[web.1]: - AnyNestedCondition 0 matched 2 did not; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.LazyBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=lazy) did not find property 'bootstrap-mode'; NestedCondition on JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition.DeferredBootstrapMode @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) did not find property 'bootstrap-mode' (JpaRepositoriesAutoConfiguration.BootstrapExecutorCondition)
+2020-02-07T08:39:51.407770+00:00 app[web.1]: 
+2020-02-07T08:39:51.407770+00:00 app[web.1]: JsonbAutoConfiguration:
+2020-02-07T08:39:51.407770+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407770+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+2020-02-07T08:39:51.407771+00:00 app[web.1]: 
+2020-02-07T08:39:51.407771+00:00 app[web.1]: KafkaAutoConfiguration:
+2020-02-07T08:39:51.407771+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407771+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.kafka.core.KafkaTemplate' (OnClassCondition)
+2020-02-07T08:39:51.407771+00:00 app[web.1]: 
+2020-02-07T08:39:51.407772+00:00 app[web.1]: LdapAutoConfiguration:
+2020-02-07T08:39:51.407772+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407772+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.ldap.core.ContextSource' (OnClassCondition)
+2020-02-07T08:39:51.407772+00:00 app[web.1]: 
+2020-02-07T08:39:51.407772+00:00 app[web.1]: LdapRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407773+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407773+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.ldap.repository.LdapRepository' (OnClassCondition)
+2020-02-07T08:39:51.407773+00:00 app[web.1]: 
+2020-02-07T08:39:51.407773+00:00 app[web.1]: LiquibaseAutoConfiguration:
+2020-02-07T08:39:51.407773+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407773+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'liquibase.change.DatabaseChange' (OnClassCondition)
+2020-02-07T08:39:51.407774+00:00 app[web.1]: 
+2020-02-07T08:39:51.407774+00:00 app[web.1]: MailSenderAutoConfiguration:
+2020-02-07T08:39:51.407774+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407774+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.mail.MailSender' (OnClassCondition)
+2020-02-07T08:39:51.407774+00:00 app[web.1]: 
+2020-02-07T08:39:51.407775+00:00 app[web.1]: MailSenderValidatorAutoConfiguration:
+2020-02-07T08:39:51.407775+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407775+00:00 app[web.1]: - @ConditionalOnSingleCandidate did not find required type 'org.springframework.mail.javamail.JavaMailSenderImpl' (OnBeanCondition)
+2020-02-07T08:39:51.407775+00:00 app[web.1]: 
+2020-02-07T08:39:51.407775+00:00 app[web.1]: MessageSourceAutoConfiguration:
+2020-02-07T08:39:51.407776+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407776+00:00 app[web.1]: - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+2020-02-07T08:39:51.407776+00:00 app[web.1]: 
+2020-02-07T08:39:51.407776+00:00 app[web.1]: MongoAutoConfiguration:
+2020-02-07T08:39:51.407776+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407777+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407777+00:00 app[web.1]: 
+2020-02-07T08:39:51.407777+00:00 app[web.1]: MongoDataAutoConfiguration:
+2020-02-07T08:39:51.407777+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407779+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.client.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407779+00:00 app[web.1]: 
+2020-02-07T08:39:51.407779+00:00 app[web.1]: MongoReactiveAutoConfiguration:
+2020-02-07T08:39:51.407780+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407780+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407780+00:00 app[web.1]: 
+2020-02-07T08:39:51.407780+00:00 app[web.1]: MongoReactiveDataAutoConfiguration:
+2020-02-07T08:39:51.407780+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407780+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407781+00:00 app[web.1]: 
+2020-02-07T08:39:51.407781+00:00 app[web.1]: MongoReactiveRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407781+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407781+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.reactivestreams.client.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407781+00:00 app[web.1]: 
+2020-02-07T08:39:51.407781+00:00 app[web.1]: MongoReactiveSessionConfiguration:
+2020-02-07T08:39:51.407782+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407782+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.springframework.data.mongodb.core.ReactiveMongoOperations', 'org.springframework.session.data.mongo.ReactiveMongoSessionRepository' (OnClassCondition)
+2020-02-07T08:39:51.407782+00:00 app[web.1]: 
+2020-02-07T08:39:51.407782+00:00 app[web.1]: MongoRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407783+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407783+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.mongodb.MongoClient' (OnClassCondition)
+2020-02-07T08:39:51.407783+00:00 app[web.1]: 
+2020-02-07T08:39:51.407783+00:00 app[web.1]: MultipartAutoConfiguration:
+2020-02-07T08:39:51.407783+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407784+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.MultipartConfigElement' (OnClassCondition)
+2020-02-07T08:39:51.407784+00:00 app[web.1]: 
+2020-02-07T08:39:51.407784+00:00 app[web.1]: MustacheAutoConfiguration:
+2020-02-07T08:39:51.407784+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407784+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+2020-02-07T08:39:51.407785+00:00 app[web.1]: 
+2020-02-07T08:39:51.407785+00:00 app[web.1]: Neo4jDataAutoConfiguration:
+2020-02-07T08:39:51.407785+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407785+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.neo4j.ogm.session.SessionFactory' (OnClassCondition)
+2020-02-07T08:39:51.407785+00:00 app[web.1]: 
+2020-02-07T08:39:51.407786+00:00 app[web.1]: Neo4jRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407786+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407786+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.neo4j.ogm.session.Neo4jSession' (OnClassCondition)
+2020-02-07T08:39:51.407786+00:00 app[web.1]: 
+2020-02-07T08:39:51.407786+00:00 app[web.1]: OAuth2ClientAutoConfiguration:
+2020-02-07T08:39:51.407786+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407787+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407787+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407787+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity', 'org.springframework.security.oauth2.client.registration.ClientRegistration' (OnClassCondition)
+2020-02-07T08:39:51.407787+00:00 app[web.1]: 
+2020-02-07T08:39:51.407787+00:00 app[web.1]: OAuth2ResourceServerAutoConfiguration:
+2020-02-07T08:39:51.407788+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407788+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407788+00:00 app[web.1]: 
+2020-02-07T08:39:51.407788+00:00 app[web.1]: ProjectInfoAutoConfiguration#buildProperties:
+2020-02-07T08:39:51.407788+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407789+00:00 app[web.1]: - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+2020-02-07T08:39:51.407789+00:00 app[web.1]: 
+2020-02-07T08:39:51.407789+00:00 app[web.1]: ProjectInfoAutoConfiguration#gitProperties:
+2020-02-07T08:39:51.407789+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407789+00:00 app[web.1]: - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+2020-02-07T08:39:51.407790+00:00 app[web.1]: 
+2020-02-07T08:39:51.407790+00:00 app[web.1]: QuartzAutoConfiguration:
+2020-02-07T08:39:51.407790+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407790+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.quartz.Scheduler' (OnClassCondition)
+2020-02-07T08:39:51.407790+00:00 app[web.1]: 
+2020-02-07T08:39:51.407790+00:00 app[web.1]: RSocketMessagingAutoConfiguration:
+2020-02-07T08:39:51.407791+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407791+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+2020-02-07T08:39:51.407791+00:00 app[web.1]: 
+2020-02-07T08:39:51.407791+00:00 app[web.1]: RSocketRequesterAutoConfiguration:
+2020-02-07T08:39:51.407791+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407791+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+2020-02-07T08:39:51.407792+00:00 app[web.1]: 
+2020-02-07T08:39:51.407792+00:00 app[web.1]: RSocketSecurityAutoConfiguration:
+2020-02-07T08:39:51.407792+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407792+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.security.rsocket.core.SecuritySocketAcceptorInterceptor' (OnClassCondition)
+2020-02-07T08:39:51.407792+00:00 app[web.1]: 
+2020-02-07T08:39:51.407793+00:00 app[web.1]: RSocketServerAutoConfiguration:
+2020-02-07T08:39:51.407793+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407793+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+2020-02-07T08:39:51.407793+00:00 app[web.1]: 
+2020-02-07T08:39:51.407793+00:00 app[web.1]: RSocketStrategiesAutoConfiguration:
+2020-02-07T08:39:51.407794+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407794+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.rsocket.RSocketFactory' (OnClassCondition)
+2020-02-07T08:39:51.407794+00:00 app[web.1]: 
+2020-02-07T08:39:51.407794+00:00 app[web.1]: RabbitAutoConfiguration:
+2020-02-07T08:39:51.407795+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407795+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.rabbitmq.client.Channel' (OnClassCondition)
+2020-02-07T08:39:51.407795+00:00 app[web.1]: 
+2020-02-07T08:39:51.407796+00:00 app[web.1]: ReactiveElasticsearchRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407796+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407799+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.client.reactive.ReactiveElasticsearchClient' (OnClassCondition)
+2020-02-07T08:39:51.407799+00:00 app[web.1]: 
+2020-02-07T08:39:51.407799+00:00 app[web.1]: ReactiveOAuth2ClientConfigurations.ReactiveOAuth2ClientConfiguration.SecurityWebFilterChainConfiguration#springSecurityFilterChain:
+2020-02-07T08:39:51.407800+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407800+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.security.web.server.SecurityWebFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.server.SecurityWebFilterChain' securitygWebFilterChain (OnBeanCondition)
+2020-02-07T08:39:51.407800+00:00 app[web.1]: 
+2020-02-07T08:39:51.407801+00:00 app[web.1]: ReactiveOAuth2ResourceServerAutoConfiguration.JwtConfiguration:
+2020-02-07T08:39:51.407801+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407802+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.security.oauth2.server.resource.BearerTokenAuthenticationToken' (OnClassCondition)
+2020-02-07T08:39:51.407802+00:00 app[web.1]: 
+2020-02-07T08:39:51.407802+00:00 app[web.1]: ReactiveOAuth2ResourceServerAutoConfiguration.OpaqueTokenConfiguration:
+2020-02-07T08:39:51.407802+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407804+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.springframework.security.oauth2.server.resource.BearerTokenAuthenticationToken', 'org.springframework.security.oauth2.server.resource.introspection.ReactiveOpaqueTokenIntrospector' (OnClassCondition)
+2020-02-07T08:39:51.407804+00:00 app[web.1]: 
+2020-02-07T08:39:51.407804+00:00 app[web.1]: ReactiveRestClientAutoConfiguration:
+2020-02-07T08:39:51.407805+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407805+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.elasticsearch.client.reactive.ReactiveRestClients' (OnClassCondition)
+2020-02-07T08:39:51.407805+00:00 app[web.1]: 
+2020-02-07T08:39:51.407806+00:00 app[web.1]: ReactiveWebServerFactoryAutoConfiguration#forwardedHeaderTransformer:
+2020-02-07T08:39:51.407806+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407806+00:00 app[web.1]: - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+2020-02-07T08:39:51.407806+00:00 app[web.1]: 
+2020-02-07T08:39:51.407807+00:00 app[web.1]: ReactiveWebServerFactoryAutoConfiguration#tomcatReactiveWebServerFactoryCustomizer:
+2020-02-07T08:39:51.407807+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407807+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.catalina.startup.Tomcat' (OnClassCondition)
+2020-02-07T08:39:51.407807+00:00 app[web.1]: 
+2020-02-07T08:39:51.407808+00:00 app[web.1]: ReactiveWebServerFactoryConfiguration.EmbeddedJetty:
+2020-02-07T08:39:51.407808+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407808+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.eclipse.jetty.server.Server' (OnClassCondition)
+2020-02-07T08:39:51.407808+00:00 app[web.1]: 
+2020-02-07T08:39:51.407809+00:00 app[web.1]: ReactiveWebServerFactoryConfiguration.EmbeddedTomcat:
+2020-02-07T08:39:51.407809+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407809+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.catalina.startup.Tomcat' (OnClassCondition)
+2020-02-07T08:39:51.407809+00:00 app[web.1]: 
+2020-02-07T08:39:51.407810+00:00 app[web.1]: ReactiveWebServerFactoryConfiguration.EmbeddedUndertow:
+2020-02-07T08:39:51.407810+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407811+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'io.undertow.Undertow' (OnClassCondition)
+2020-02-07T08:39:51.407811+00:00 app[web.1]: 
+2020-02-07T08:39:51.407811+00:00 app[web.1]: RedisAutoConfiguration:
+2020-02-07T08:39:51.407811+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407812+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.redis.core.RedisOperations' (OnClassCondition)
+2020-02-07T08:39:51.407812+00:00 app[web.1]: 
+2020-02-07T08:39:51.407812+00:00 app[web.1]: RedisCacheConfiguration:
+2020-02-07T08:39:51.407813+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407813+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+2020-02-07T08:39:51.407813+00:00 app[web.1]: 
+2020-02-07T08:39:51.407813+00:00 app[web.1]: RedisReactiveAutoConfiguration:
+2020-02-07T08:39:51.407814+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407814+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.ReactiveRedisConnectionFactory' (OnClassCondition)
+2020-02-07T08:39:51.407814+00:00 app[web.1]: 
+2020-02-07T08:39:51.407815+00:00 app[web.1]: RedisReactiveSessionConfiguration:
+2020-02-07T08:39:51.407815+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407816+00:00 app[web.1]: - @ConditionalOnClass did not find required classes 'org.springframework.data.redis.connection.ReactiveRedisConnectionFactory', 'org.springframework.session.data.redis.ReactiveRedisSessionRepository' (OnClassCondition)
+2020-02-07T08:39:51.407816+00:00 app[web.1]: 
+2020-02-07T08:39:51.407816+00:00 app[web.1]: RedisRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407816+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407817+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.redis.repository.configuration.EnableRedisRepositories' (OnClassCondition)
+2020-02-07T08:39:51.407817+00:00 app[web.1]: 
+2020-02-07T08:39:51.407817+00:00 app[web.1]: RepositoryRestMvcAutoConfiguration:
+2020-02-07T08:39:51.407818+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407818+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration' (OnClassCondition)
+2020-02-07T08:39:51.407818+00:00 app[web.1]: 
+2020-02-07T08:39:51.407818+00:00 app[web.1]: RestClientAutoConfiguration:
+2020-02-07T08:39:51.407819+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407819+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.elasticsearch.client.RestClient' (OnClassCondition)
+2020-02-07T08:39:51.407819+00:00 app[web.1]: 
+2020-02-07T08:39:51.407819+00:00 app[web.1]: RestTemplateAutoConfiguration:
+2020-02-07T08:39:51.407820+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407824+00:00 app[web.1]: - NoneNestedConditions 1 matched 0 did not; NestedCondition on RestTemplateAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication found ConfigurableReactiveWebEnvironment (RestTemplateAutoConfiguration.NotReactiveWebApplicationCondition)
+2020-02-07T08:39:51.407824+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407825+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.web.client.RestTemplate' (OnClassCondition)
+2020-02-07T08:39:51.407825+00:00 app[web.1]: 
+2020-02-07T08:39:51.407825+00:00 app[web.1]: Saml2RelyingPartyAutoConfiguration:
+2020-02-07T08:39:51.407825+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407826+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (OnClassCondition)
+2020-02-07T08:39:51.407826+00:00 app[web.1]: 
+2020-02-07T08:39:51.407826+00:00 app[web.1]: SecurityDataConfiguration:
+2020-02-07T08:39:51.407827+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407827+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.security.data.repository.query.SecurityEvaluationContextExtension' (OnClassCondition)
+2020-02-07T08:39:51.407827+00:00 app[web.1]: 
+2020-02-07T08:39:51.407828+00:00 app[web.1]: SecurityFilterAutoConfiguration:
+2020-02-07T08:39:51.407828+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407828+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407829+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407838+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer', 'org.springframework.security.config.http.SessionCreationPolicy' (OnClassCondition)
+2020-02-07T08:39:51.407839+00:00 app[web.1]: 
+2020-02-07T08:39:51.407839+00:00 app[web.1]: SendGridAutoConfiguration:
+2020-02-07T08:39:51.407839+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407840+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'com.sendgrid.SendGrid' (OnClassCondition)
+2020-02-07T08:39:51.407840+00:00 app[web.1]: 
+2020-02-07T08:39:51.407840+00:00 app[web.1]: ServletWebServerFactoryAutoConfiguration:
+2020-02-07T08:39:51.407841+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407841+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.ServletRequest' (OnClassCondition)
+2020-02-07T08:39:51.407841+00:00 app[web.1]: 
+2020-02-07T08:39:51.407842+00:00 app[web.1]: SessionAutoConfiguration.ServletSessionConfiguration:
+2020-02-07T08:39:51.407843+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407843+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407843+00:00 app[web.1]: 
+2020-02-07T08:39:51.407843+00:00 app[web.1]: SolrAutoConfiguration:
+2020-02-07T08:39:51.407844+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407844+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.impl.CloudSolrClient' (OnClassCondition)
+2020-02-07T08:39:51.407844+00:00 app[web.1]: 
+2020-02-07T08:39:51.407845+00:00 app[web.1]: SolrRepositoriesAutoConfiguration:
+2020-02-07T08:39:51.407845+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407845+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.apache.solr.client.solrj.SolrClient' (OnClassCondition)
+2020-02-07T08:39:51.407846+00:00 app[web.1]: 
+2020-02-07T08:39:51.407846+00:00 app[web.1]: SpringApplicationAdminJmxAutoConfiguration:
+2020-02-07T08:39:51.407847+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407847+00:00 app[web.1]: - @ConditionalOnProperty (spring.application.admin.enabled=true) did not find property 'enabled' (OnPropertyCondition)
+2020-02-07T08:39:51.407847+00:00 app[web.1]: 
+2020-02-07T08:39:51.407847+00:00 app[web.1]: SpringBootWebSecurityConfiguration:
+2020-02-07T08:39:51.407848+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407848+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407848+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407849+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter' (OnClassCondition)
+2020-02-07T08:39:51.407849+00:00 app[web.1]: 
+2020-02-07T08:39:51.407871+00:00 app[web.1]: SpringDataWebAutoConfiguration:
+2020-02-07T08:39:51.407872+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407873+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+2020-02-07T08:39:51.407873+00:00 app[web.1]: 
+2020-02-07T08:39:51.407873+00:00 app[web.1]: TaskSchedulingAutoConfiguration#taskScheduler:
+2020-02-07T08:39:51.407874+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407874+00:00 app[web.1]: - @ConditionalOnBean (names: org.springframework.context.annotation.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.context.annotation.internalScheduledAnnotationProcessor (OnBeanCondition)
+2020-02-07T08:39:51.407874+00:00 app[web.1]: 
+2020-02-07T08:39:51.407875+00:00 app[web.1]: ThymeleafAutoConfiguration:
+2020-02-07T08:39:51.407875+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407875+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.thymeleaf.spring5.SpringTemplateEngine' (OnClassCondition)
+2020-02-07T08:39:51.407876+00:00 app[web.1]: 
+2020-02-07T08:39:51.407876+00:00 app[web.1]: TransactionAutoConfiguration#transactionalOperator:
+2020-02-07T08:39:51.407876+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407877+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2020-02-07T08:39:51.407877+00:00 app[web.1]: 
+2020-02-07T08:39:51.407877+00:00 app[web.1]: TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+2020-02-07T08:39:51.407878+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407878+00:00 app[web.1]: - @ConditionalOnProperty (spring.aop.proxy-target-class=false) did not find property 'proxy-target-class' (OnPropertyCondition)
+2020-02-07T08:39:51.407878+00:00 app[web.1]: 
+2020-02-07T08:39:51.407878+00:00 app[web.1]: UserDetailsServiceAutoConfiguration:
+2020-02-07T08:39:51.407879+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407879+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) did not find any beans of type org.springframework.security.config.annotation.ObjectPostProcessor (OnBeanCondition)
+2020-02-07T08:39:51.407884+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407885+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+2020-02-07T08:39:51.407885+00:00 app[web.1]: 
+2020-02-07T08:39:51.407885+00:00 app[web.1]: WebFluxAutoConfiguration#hiddenHttpMethodFilter:
+2020-02-07T08:39:51.407886+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407886+00:00 app[web.1]: - @ConditionalOnProperty (spring.webflux.hiddenmethod.filter.enabled) did not find property 'enabled' (OnPropertyCondition)
+2020-02-07T08:39:51.407886+00:00 app[web.1]: 
+2020-02-07T08:39:51.407887+00:00 app[web.1]: WebFluxAutoConfiguration.ResourceChainCustomizerConfiguration:
+2020-02-07T08:39:51.407887+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407887+00:00 app[web.1]: - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+2020-02-07T08:39:51.407888+00:00 app[web.1]: 
+2020-02-07T08:39:51.407888+00:00 app[web.1]: WebMvcAutoConfiguration:
+2020-02-07T08:39:51.407888+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407889+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+2020-02-07T08:39:51.407889+00:00 app[web.1]: 
+2020-02-07T08:39:51.407889+00:00 app[web.1]: WebSecurityEnablerConfiguration:
+2020-02-07T08:39:51.407890+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407890+00:00 app[web.1]: - not a servlet web application (OnWebApplicationCondition)
+2020-02-07T08:39:51.407890+00:00 app[web.1]: 
+2020-02-07T08:39:51.407891+00:00 app[web.1]: WebServiceTemplateAutoConfiguration:
+2020-02-07T08:39:51.407891+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407892+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.oxm.Marshaller' (OnClassCondition)
+2020-02-07T08:39:51.407892+00:00 app[web.1]: 
+2020-02-07T08:39:51.407892+00:00 app[web.1]: WebServicesAutoConfiguration:
+2020-02-07T08:39:51.407893+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407893+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+2020-02-07T08:39:51.407893+00:00 app[web.1]: 
+2020-02-07T08:39:51.407894+00:00 app[web.1]: WebSocketMessagingAutoConfiguration:
+2020-02-07T08:39:51.407894+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407895+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer' (OnClassCondition)
+2020-02-07T08:39:51.407895+00:00 app[web.1]: 
+2020-02-07T08:39:51.407895+00:00 app[web.1]: WebSocketReactiveAutoConfiguration:
+2020-02-07T08:39:51.407895+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407896+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+2020-02-07T08:39:51.407896+00:00 app[web.1]: 
+2020-02-07T08:39:51.407896+00:00 app[web.1]: WebSocketServletAutoConfiguration:
+2020-02-07T08:39:51.407896+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407897+00:00 app[web.1]: - @ConditionalOnClass did not find required class 'javax.servlet.Servlet' (OnClassCondition)
+2020-02-07T08:39:51.407897+00:00 app[web.1]: 
+2020-02-07T08:39:51.407897+00:00 app[web.1]: XADataSourceAutoConfiguration:
+2020-02-07T08:39:51.407898+00:00 app[web.1]: Did not match:
+2020-02-07T08:39:51.407898+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.boot.jdbc.XADataSourceWrapper; SearchStrategy: all) did not find any beans of type org.springframework.boot.jdbc.XADataSourceWrapper (OnBeanCondition)
+2020-02-07T08:39:51.407898+00:00 app[web.1]: Matched:
+2020-02-07T08:39:51.407899+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'javax.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+2020-02-07T08:39:51.407899+00:00 app[web.1]: 
+2020-02-07T08:39:51.407900+00:00 app[web.1]: 
+2020-02-07T08:39:51.407900+00:00 app[web.1]: Exclusions:
+2020-02-07T08:39:51.407900+00:00 app[web.1]: -----------
+2020-02-07T08:39:51.407900+00:00 app[web.1]: 
+2020-02-07T08:39:51.407901+00:00 app[web.1]: None
+2020-02-07T08:39:51.407901+00:00 app[web.1]: 
+2020-02-07T08:39:51.407901+00:00 app[web.1]: 
+2020-02-07T08:39:51.407902+00:00 app[web.1]: Unconditional classes:
+2020-02-07T08:39:51.407902+00:00 app[web.1]: ----------------------
+2020-02-07T08:39:51.407902+00:00 app[web.1]: 
+2020-02-07T08:39:51.407902+00:00 app[web.1]: org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+2020-02-07T08:39:51.407903+00:00 app[web.1]: 
+2020-02-07T08:39:51.407903+00:00 app[web.1]: org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+2020-02-07T08:39:51.407903+00:00 app[web.1]: 
+2020-02-07T08:39:51.407904+00:00 app[web.1]: org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+2020-02-07T08:39:51.407904+00:00 app[web.1]: 
+2020-02-07T08:39:51.407904+00:00 app[web.1]: 
+2020-02-07T08:39:51.407904+00:00 app[web.1]: 
+2020-02-07T08:39:51.649604+00:00 app[web.1]: 2020-02-07 08:39:51.649  INFO 4 --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 52266
+2020-02-07T08:39:51.653750+00:00 app[web.1]: 2020-02-07 08:39:51.653  INFO 4 --- [           main] d.t.wowraid.api.WowraidApiApplication    : Started WowraidApiApplication in 9.646 seconds (JVM running for 10.509)
+2020-02-07T08:39:52.106778+00:00 heroku[web.1]: State changed from starting to up
+2020-02-07T08:39:59.393711+00:00 app[web.1]: 2020-02-07 08:39:59.393 DEBUG 4 --- [or-http-epoll-4] o.s.w.s.adapter.HttpWebHandlerAdapter    : [98f18903] HTTP GET "/kpi/epgp"
+2020-02-07T08:39:59.471548+00:00 app[web.1]: 2020-02-07 08:39:59.471 DEBUG 4 --- [or-http-epoll-4] .s.u.m.MediaTypeServerWebExchangeMatcher : httpRequestMediaTypes=[text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8]
+2020-02-07T08:39:59.471625+00:00 app[web.1]: 2020-02-07 08:39:59.471 DEBUG 4 --- [or-http-epoll-4] .s.u.m.MediaTypeServerWebExchangeMatcher : Processing text/html
+2020-02-07T08:39:59.471718+00:00 app[web.1]: 2020-02-07 08:39:59.471 DEBUG 4 --- [or-http-epoll-4] .s.u.m.MediaTypeServerWebExchangeMatcher : text/html .isCompatibleWith text/html = true
+2020-02-07T08:39:59.472554+00:00 app[web.1]: 2020-02-07 08:39:59.472 DEBUG 4 --- [or-http-epoll-4] o.s.w.s.adapter.HttpWebHandlerAdapter    : [98f18903] Completed 302 FOUND
+2020-02-07T08:39:59.533526+00:00 app[web.1]: 2020-02-07 08:39:59.533 DEBUG 4 --- [or-http-epoll-5] o.s.w.s.adapter.HttpWebHandlerAdapter    : [87398637] HTTP GET "/oauth2/authorization/battlenet"
+2020-02-07T08:39:59.542870+00:00 app[web.1]: 2020-02-07 08:39:59.542 DEBUG 4 --- [or-http-epoll-5] o.s.w.s.adapter.HttpWebHandlerAdapter    : [87398637] Completed 302 FOUND
+2020-02-07T08:39:59.488140+00:00 heroku[router]: at=info method=GET path="/kpi/epgp" host=wowraid-api.herokuapp.com request_id=62148638-7d61-4033-80e7-6cfa4f016a87 fwd="193.27.51.82" dyno=web.1 connect=0ms service=135ms status=302 bytes=569 protocol=https
+2020-02-07T08:39:59.545934+00:00 heroku[router]: at=info method=GET path="/oauth2/authorization/battlenet" host=wowraid-api.herokuapp.com request_id=bebf1371-787f-42d2-9407-559e56821ff6 fwd="193.27.51.82" dyno=web.1 connect=0ms service=15ms status=302 bytes=747 protocol=https
+2020-02-07T08:40:01.430226+00:00 app[web.1]: 2020-02-07 08:40:01.430 DEBUG 4 --- [or-http-epoll-6] o.s.w.s.adapter.HttpWebHandlerAdapter    : [39c467db] HTTP GET "/login/oauth2/code/battlenet?code=EURIL3SX7CWPS4VGQ45O4BIB8IYWQTG3FN&state=0G9r7E06TjKtLoQibBVjbmwAWk4F26qKXl__xkm6p-A%3D"
+2020-02-07T08:40:01.496215+00:00 app[web.1]: 2020-02-07 08:40:01.496 DEBUG 4 --- [or-http-epoll-6] o.s.w.r.f.client.ExchangeFunctions       : [6befefe0] HTTP POST https://eu.battle.net/oauth/token
+2020-02-07T08:40:01.717254+00:00 app[web.1]: 2020-02-07 08:40:01.717 DEBUG 4 --- [or-http-epoll-7] o.s.http.codec.FormHttpMessageWriter     : [6befefe0] Writing form fields [grant_type, code, redirect_uri] (content masked)
+2020-02-07T08:40:02.070568+00:00 app[web.1]: 2020-02-07 08:40:02.070 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [6befefe0] Response 200 OK
+2020-02-07T08:40:02.119957+00:00 app[web.1]: 2020-02-07 08:40:02.119 DEBUG 4 --- [or-http-epoll-7] o.s.http.codec.json.Jackson2JsonDecoder  : [6befefe0] Decoded [{access_token=EUL7oIXde1r3lgVVYEg4uVOhxFvfiQCdaV, token_type=bearer, expires_in=86399, scope=openid, (truncated)...]
+2020-02-07T08:40:02.223063+00:00 app[web.1]: 2020-02-07 08:40:02.222 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [78f7426d] HTTP GET https://eu.battle.net/oauth/jwks/certs
+2020-02-07T08:40:02.328236+00:00 app[web.1]: 2020-02-07 08:40:02.328 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [78f7426d] Response 200 OK
+2020-02-07T08:40:02.332292+00:00 app[web.1]: 2020-02-07 08:40:02.332 DEBUG 4 --- [or-http-epoll-7] o.s.core.codec.StringDecoder             : [78f7426d] Decoded "{"keys":[{"kty":"RSA","alg":"RS256","use":"sig","kid":"4ccec5815bc0779dc36e7a895fb42b3e4205a894ad85 (truncated)...
+2020-02-07T08:40:02.368344+00:00 app[web.1]: 2020-02-07 08:40:02.368 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [6db771d] HTTP GET https://eu.battle.net/oauth/userinfo
+2020-02-07T08:40:02.402164+00:00 app[web.1]: 2020-02-07 08:40:02.402 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [6db771d] Response 200 OK
+2020-02-07T08:40:02.404117+00:00 app[web.1]: 2020-02-07 08:40:02.404 DEBUG 4 --- [or-http-epoll-7] o.s.http.codec.json.Jackson2JsonDecoder  : [6db771d] Decoded [{sub=947664, id=947664, battletag=Thoki#21479}]
+2020-02-07T08:40:02.408187+00:00 app[web.1]: 2020-02-07 08:40:02.408 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [6befefe0] Cancel signal (to close connection)
+2020-02-07T08:40:02.408339+00:00 app[web.1]: 2020-02-07 08:40:02.408 DEBUG 4 --- [or-http-epoll-7] o.s.w.r.f.client.ExchangeFunctions       : [6db771d] Cancel signal (to close connection)
+2020-02-07T08:40:02.412289+00:00 app[web.1]: 2020-02-07 08:40:02.412 DEBUG 4 --- [or-http-epoll-7] o.s.w.s.adapter.HttpWebHandlerAdapter    : [39c467db] Completed 302 FOUND
+2020-02-07T08:40:02.467448+00:00 app[web.1]: 2020-02-07 08:40:02.467 DEBUG 4 --- [or-http-epoll-8] o.s.w.s.adapter.HttpWebHandlerAdapter    : [88eedbfb] HTTP GET "/kpi/epgp"
+2020-02-07T08:40:02.474844+00:00 app[web.1]: 2020-02-07 08:40:02.474 DEBUG 4 --- [or-http-epoll-8] s.w.r.r.m.a.RequestMappingHandlerMapping : [88eedbfb] Mapped to de.thomasworm.wowraid.api.AccountController#getEffortAndGearKeyPerformanceIndicators()
+2020-02-07T08:40:02.496272+00:00 app[web.1]: 2020-02-07 08:40:02.496 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:02.541530+00:00 app[web.1]: 2020-02-07 08:40:02.541 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:02.420664+00:00 heroku[router]: at=info method=GET path="/login/oauth2/code/battlenet?code=EURIL3SX7CWPS4VGQ45O4BIB8IYWQTG3FN&state=0G9r7E06TjKtLoQibBVjbmwAWk4F26qKXl__xkm6p-A%3D" host=wowraid-api.herokuapp.com request_id=9056888e-b223-4da9-901d-9b3068e6a9b5 fwd="193.27.51.82" dyno=web.1 connect=1ms service=993ms status=302 bytes=547 protocol=https
+2020-02-07T08:40:07.337079+00:00 app[web.1]: 2020-02-07 08:40:07.336 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.374901+00:00 app[web.1]: 2020-02-07 08:40:07.374 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.423374+00:00 app[web.1]: 2020-02-07 08:40:07.423 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.423999+00:00 app[web.1]: 2020-02-07 08:40:07.423 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.462037+00:00 app[web.1]: 2020-02-07 08:40:07.461 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.462575+00:00 app[web.1]: 2020-02-07 08:40:07.462 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.498328+00:00 app[web.1]: 2020-02-07 08:40:07.498 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.499472+00:00 app[web.1]: 2020-02-07 08:40:07.499 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.533274+00:00 app[web.1]: 2020-02-07 08:40:07.532 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.533724+00:00 app[web.1]: 2020-02-07 08:40:07.533 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.598507+00:00 app[web.1]: 2020-02-07 08:40:07.598 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.598993+00:00 app[web.1]: 2020-02-07 08:40:07.598 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.644010+00:00 app[web.1]: 2020-02-07 08:40:07.643 DEBUG 4 --- [or-http-epoll-8] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2020-02-07T08:40:07.645083+00:00 app[web.1]: 2020-02-07 08:40:07.644 DEBUG 4 --- [or-http-epoll-8] o.s.j.d.DriverManagerDataSource          : Creating new JDBC DriverManager Connection to [jdbc:postgresql://ec2-54-228-243-238.eu-west-1.compute.amazonaws.com:5432/d33egaf134f312]
+2020-02-07T08:40:07.750805+00:00 app[web.1]: 2020-02-07 08:40:07.750 DEBUG 4 --- [or-http-epoll-8] a.w.r.e.AbstractErrorWebExceptionHandler : [88eedbfb] Resolved [AopInvocationException: Null return value from advice does not match primitive return type for: public abstract double de.thomasworm.wowraid.api.model.persistence.AccountRepository.findSumOfValueByAccount(de.thomasworm.wowraid.api.model.persistence.Account)] for HTTP GET /kpi/epgp
+2020-02-07T08:40:07.762652+00:00 app[web.1]: 2020-02-07 08:40:07.761 ERROR 4 --- [or-http-epoll-8] a.w.r.e.AbstractErrorWebExceptionHandler : [88eedbfb]  500 Server Error for HTTP GET "/kpi/epgp"
+2020-02-07T08:40:07.762654+00:00 app[web.1]: 
+2020-02-07T08:40:07.762655+00:00 app[web.1]: org.springframework.aop.AopInvocationException: Null return value from advice does not match primitive return type for: public abstract double de.thomasworm.wowraid.api.model.persistence.AccountRepository.findSumOfValueByAccount(de.thomasworm.wowraid.api.model.persistence.Account)
+2020-02-07T08:40:07.762656+00:00 app[web.1]: at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:226) ~[spring-aop-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+2020-02-07T08:40:07.762657+00:00 app[web.1]: Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException:
+2020-02-07T08:40:07.762657+00:00 app[web.1]: Error has been observed at the following site(s):
+2020-02-07T08:40:07.762671+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.authorization.AuthorizationWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762671+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.authorization.ExceptionTranslationWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762672+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.authentication.logout.LogoutWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762672+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.savedrequest.ServerRequestCacheWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762672+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.context.SecurityContextServerWebExchangeWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762673+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.ui.LogoutPageGeneratingWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762673+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.ui.LoginPageGeneratingWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762673+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.oauth2.client.web.server.authentication.OAuth2LoginAuthenticationWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762674+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.oauth2.client.web.server.OAuth2AuthorizationRequestRedirectWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762674+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.context.ReactorContextWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762675+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.web.cors.reactive.CorsWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762675+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.header.HttpHeaderWriterWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762676+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.config.web.server.ServerHttpSecurity$ServerWebExchangeReactorContextWebFilter [DefaultWebFilterChain]
+2020-02-07T08:40:07.762676+00:00 app[web.1]: |_ checkpoint ⇢ org.springframework.security.web.server.WebFilterChainProxy [DefaultWebFilterChain]
+2020-02-07T08:40:07.762677+00:00 app[web.1]: |_ checkpoint ⇢ HTTP GET "/kpi/epgp" [ExceptionHandlingWebHandler]
+2020-02-07T08:40:07.762677+00:00 app[web.1]: Stack trace:
+2020-02-07T08:40:07.762678+00:00 app[web.1]: at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:226) ~[spring-aop-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+2020-02-07T08:40:07.762678+00:00 app[web.1]: at com.sun.proxy.$Proxy116.findSumOfValueByAccount(Unknown Source) ~[na:na]
+2020-02-07T08:40:07.762678+00:00 app[web.1]: at de.thomasworm.wowraid.api.AccountService.lambda$getEffortAndGearKeyPerformanceIndicators$0(AccountService.java:54) ~[classes!/:0.0.1-SNAPSHOT]
+2020-02-07T08:40:07.762679+00:00 app[web.1]: at java.util.ArrayList.forEach(ArrayList.java:1257) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762679+00:00 app[web.1]: at de.thomasworm.wowraid.api.AccountService.getEffortAndGearKeyPerformanceIndicators(AccountService.java:48) ~[classes!/:0.0.1-SNAPSHOT]
+2020-02-07T08:40:07.762679+00:00 app[web.1]: at de.thomasworm.wowraid.api.AccountController.getEffortAndGearKeyPerformanceIndicators(AccountController.java:48) ~[classes!/:0.0.1-SNAPSHOT]
+2020-02-07T08:40:07.762680+00:00 app[web.1]: at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762681+00:00 app[web.1]: at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762681+00:00 app[web.1]: at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762681+00:00 app[web.1]: at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762684+00:00 app[web.1]: at org.springframework.web.reactive.result.method.InvocableHandlerMethod.lambda$invoke$0(InvocableHandlerMethod.java:146) ~[spring-webflux-5.2.1.RELEASE.jar!/:5.2.1.RELEASE]
+2020-02-07T08:40:07.762685+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap.trySubscribeScalarMap(FluxFlatMap.java:151) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762685+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap.subscribeOrReturn(MonoFlatMap.java:53) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762691+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:48) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762692+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762692+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:153) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762692+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762693+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762693+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762693+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762694+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762694+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:274) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762695+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:851) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762695+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762695+00:00 app[web.1]: at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onNext(MonoPeekTerminal.java:173) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762698+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2148) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762698+00:00 app[web.1]: at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.request(MonoPeekTerminal.java:132) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762699+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762699+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1956) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762699+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1830) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762699+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762700+00:00 app[web.1]: at reactor.core.publisher.MonoPeekTerminal$MonoTerminalPeekSubscriber.onSubscribe(MonoPeekTerminal.java:145) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762700+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762700+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762701+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:441) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762701+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:211) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762701+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762702+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762702+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762702+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762703+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762703+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762707+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762708+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:141) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762708+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762708+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onNext(FluxFilter.java:107) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762709+00:00 app[web.1]: at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:92) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762709+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762709+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:274) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762709+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:851) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762710+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762710+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:241) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762711+00:00 app[web.1]: at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:92) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762711+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762711+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:112) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762712+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:287) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762712+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:330) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762712+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762712+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:241) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762713+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762713+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:144) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762713+00:00 app[web.1]: at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762714+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762714+00:00 app[web.1]: at reactor.core.publisher.MonoProcessor.subscribe(MonoProcessor.java:383) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762715+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762715+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762715+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:112) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762716+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2148) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762716+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:184) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762716+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:103) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762719+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:81) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762719+00:00 app[web.1]: at reactor.core.publisher.MonoCurrentContext.subscribe(MonoCurrentContext.java:35) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762720+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762720+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762720+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762721+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onNext(FluxFilterFuseable.java:112) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762721+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2148) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762721+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:184) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762722+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762722+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:103) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762722+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762723+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:81) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762723+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762723+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762724+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:441) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762724+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:211) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762724+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762725+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762725+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762725+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762726+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762726+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762726+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762727+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762727+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762727+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762728+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762728+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762728+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762731+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762732+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1956) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762732+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1830) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762732+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762733+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762733+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762733+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:96) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762734+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762734+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:823) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762734+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:589) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762735+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:569) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762735+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:455) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762735+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:265) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762736+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:201) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762736+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:363) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762736+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762737+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762737+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762737+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762737+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762738+00:00 app[web.1]: at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:92) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762738+00:00 app[web.1]: at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762738+00:00 app[web.1]: at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:114) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762739+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onNext(FluxFilter.java:107) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762739+00:00 app[web.1]: at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onNext(FluxMap.java:213) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762739+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762740+00:00 app[web.1]: at reactor.core.publisher.MonoProcessor.onNext(MonoProcessor.java:317) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762740+00:00 app[web.1]: at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:192) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762740+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762741+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762744+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:421) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762744+00:00 app[web.1]: at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:211) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762745+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762745+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762745+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762745+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762746+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762746+00:00 app[web.1]: at reactor.core.publisher.MonoProcessor.add(MonoProcessor.java:457) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762746+00:00 app[web.1]: at reactor.core.publisher.MonoProcessor.subscribe(MonoProcessor.java:370) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762747+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762747+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762747+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762748+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762748+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762748+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762749+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762749+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762750+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762750+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762750+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762751+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762751+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1956) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762751+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1830) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762752+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762752+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762752+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762753+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:96) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762753+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762753+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:823) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762753+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:589) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762757+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:569) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762761+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:455) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762761+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:265) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762762+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:201) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762762+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:363) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762763+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762763+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762763+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762764+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762764+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762765+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762765+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762765+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762766+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762766+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762766+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762767+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762767+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1956) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762768+00:00 app[web.1]: at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1830) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762768+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762768+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762769+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762769+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:96) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762769+00:00 app[web.1]: at reactor.core.publisher.FluxFilter$FilterSubscriber.onComplete(FluxFilter.java:160) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762770+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:823) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762770+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:589) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762771+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:569) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762771+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:455) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762772+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:265) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762772+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:201) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762773+00:00 app[web.1]: at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:363) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762776+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762776+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762777+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762777+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762777+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762778+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762778+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762778+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762779+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762779+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:174) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762780+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onComplete(FluxFilterFuseable.java:165) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762780+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762780+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:184) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762781+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:103) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762781+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:81) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762781+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762782+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762782+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762783+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762783+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762783+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762784+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762784+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762784+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:174) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762785+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:144) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762785+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:144) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762786+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onComplete(FluxMapFuseable.java:144) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762786+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onComplete(FluxFilterFuseable.java:165) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762786+00:00 app[web.1]: at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:2150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762792+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.request(FluxFilterFuseable.java:184) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762792+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762793+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762793+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.request(FluxMapFuseable.java:162) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762794+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onSubscribe(MonoFlatMap.java:103) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762794+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762794+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762795+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onSubscribe(FluxMapFuseable.java:90) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762795+00:00 app[web.1]: at reactor.core.publisher.FluxFilterFuseable$FilterFuseableSubscriber.onSubscribe(FluxFilterFuseable.java:81) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762796+00:00 app[web.1]: at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762796+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762796+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762797+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762797+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762797+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762798+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762798+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762799+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762799+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762799+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762799+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762800+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762800+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762801+00:00 app[web.1]: at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762801+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762802+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:241) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762802+00:00 app[web.1]: at reactor.core.publisher.Operators$MonoSubscriber.complete(Operators.java:1592) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762803+00:00 app[web.1]: at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:121) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762803+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.fastPath(FluxIterable.java:333) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762806+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:198) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762807+00:00 app[web.1]: at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onSubscribe(MonoCollectList.java:72) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762807+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762809+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762810+00:00 app[web.1]: at reactor.core.publisher.MonoFromFluxOperator.subscribe(MonoFromFluxOperator.java:72) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762810+00:00 app[web.1]: at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:150) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762811+00:00 app[web.1]: at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762811+00:00 app[web.1]: at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762812+00:00 app[web.1]: at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.drain(FluxFilterWhen.java:295) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762812+00:00 app[web.1]: at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onNext(FluxFilterWhen.java:134) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762812+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.slowPath(FluxIterable.java:243) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762813+00:00 app[web.1]: at reactor.core.publisher.FluxIterable$IterableSubscription.request(FluxIterable.java:201) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762813+00:00 app[web.1]: at reactor.core.publisher.FluxFilterWhen$FluxFilterWhenSubscriber.onSubscribe(FluxFilterWhen.java:194) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762814+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:139) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762814+00:00 app[web.1]: at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:63) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762815+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762815+00:00 app[web.1]: at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:52) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762815+00:00 app[web.1]: at reactor.core.publisher.Mono.subscribe(Mono.java:4087) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762816+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.drain(MonoIgnoreThen.java:172) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762816+00:00 app[web.1]: at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:56) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762817+00:00 app[web.1]: at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:55) ~[reactor-core-3.3.0.RELEASE.jar!/:3.3.0.RELEASE]
+2020-02-07T08:40:07.762817+00:00 app[web.1]: at reactor.netty.http.server.HttpServerHandle.onStateChange(HttpServerHandle.java:64) ~[reactor-netty-0.9.1.RELEASE.jar!/:0.9.1.RELEASE]
+2020-02-07T08:40:07.762818+00:00 app[web.1]: at reactor.netty.tcp.TcpServerBind$ChildObserver.onStateChange(TcpServerBind.java:226) ~[reactor-netty-0.9.1.RELEASE.jar!/:0.9.1.RELEASE]
+2020-02-07T08:40:07.762818+00:00 app[web.1]: at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:441) ~[reactor-netty-0.9.1.RELEASE.jar!/:0.9.1.RELEASE]
+2020-02-07T08:40:07.762819+00:00 app[web.1]: at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:93) ~[reactor-netty-0.9.1.RELEASE.jar!/:0.9.1.RELEASE]
+2020-02-07T08:40:07.762819+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762819+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762820+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762820+00:00 app[web.1]: at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:166) ~[reactor-netty-0.9.1.RELEASE.jar!/:0.9.1.RELEASE]
+2020-02-07T08:40:07.762824+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762824+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762825+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762826+00:00 app[web.1]: at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762826+00:00 app[web.1]: at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:326) ~[netty-codec-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762827+00:00 app[web.1]: at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:300) ~[netty-codec-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762827+00:00 app[web.1]: at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762827+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762828+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762828+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762829+00:00 app[web.1]: at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762829+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762829+00:00 app[web.1]: at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762830+00:00 app[web.1]: at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931) ~[netty-transport-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762830+00:00 app[web.1]: at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:792) ~[netty-transport-native-epoll-4.1.43.Final-linux-x86_64.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762831+00:00 app[web.1]: at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:502) ~[netty-transport-native-epoll-4.1.43.Final-linux-x86_64.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762831+00:00 app[web.1]: at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:407) ~[netty-transport-native-epoll-4.1.43.Final-linux-x86_64.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762832+00:00 app[web.1]: at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050) ~[netty-common-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762832+00:00 app[web.1]: at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762832+00:00 app[web.1]: at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.43.Final.jar!/:4.1.43.Final]
+2020-02-07T08:40:07.762833+00:00 app[web.1]: at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_242-heroku]
+2020-02-07T08:40:07.762833+00:00 app[web.1]: 
+2020-02-07T08:40:07.768386+00:00 app[web.1]: 2020-02-07 08:40:07.768 DEBUG 4 --- [or-http-epoll-8] o.s.core.codec.CharSequenceEncoder       : [88eedbfb] Writing "<html><body><h1>Whitelabel Error Page</h1><p>This application has no configured error view, so you  (truncated)...
+2020-02-07T08:40:07.773817+00:00 app[web.1]: 2020-02-07 08:40:07.773 DEBUG 4 --- [or-http-epoll-8] o.s.w.s.adapter.HttpWebHandlerAdapter    : [88eedbfb] Completed 500 INTERNAL_SERVER_ERROR
+2020-02-07T08:40:07.773358+00:00 heroku[router]: at=info method=GET path="/kpi/epgp" host=wowraid-api.herokuapp.com request_id=f1460029-2666-4ef1-8a1d-bd9b307c0557 fwd="193.27.51.82" dyno=web.1 connect=0ms service=5308ms status=500 bytes=1020 protocol=https
+2020-02-07T08:39:54+00:00 app[heroku-redis]: source=REDIS addon=redis-rigid-16406 sample#active-connections=1 sample#load-avg-1m=0.14 sample#load-avg-5m=0.115 sample#load-avg-15m=0.095 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664264kB sample#memory-free=12988704kB sample#memory-cached=520520kB sample#memory-redis=313912bytes sample#hit-rate=1 sample#evicted-keys=0
