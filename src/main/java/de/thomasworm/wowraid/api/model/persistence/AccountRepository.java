@@ -18,6 +18,6 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
         "WHERE account = :account " +
         "GROUP BY account"
     )
-    public double findSumOfValueByAccount(@Param("account") Account account);
+    public Double findSumOfValueByAccount(@Param("account") Account account);
 
 }
