@@ -12,7 +12,7 @@ public interface AccountRepository extends PagingAndSortingRepository<Account, L
 
     @Query(
         "SELECT " +
-            "SUM(transaction.value) " +
+            "COALESCE(SUM(transaction.value), 0) " +
         "FROM Account account " +
         "JOIN account.transactions transaction " +
         "WHERE account = :account " +
