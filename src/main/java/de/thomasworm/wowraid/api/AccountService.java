@@ -51,13 +51,15 @@ public class AccountService {
                 Account effortAccount = mapping.getEffortAccount();
                 Account gearAccount = mapping.getGearAccount();
                 if (effortAccount != null && gearAccount != null) {
-                    Double effortPoints = this.accountRepository.findSumOfValueByAccount(effortAccount);
-                    Double gearPoints = this.accountRepository.findSumOfValueByAccount(gearAccount);
+                    Double effortPointsResult = this.accountRepository.findSumOfValueByAccount(effortAccount);
+                    double effortPoints = (effortPointsResult == null) ? 0 : effortPoints;
+                    Double gearPointsResult = this.accountRepository.findSumOfValueByAccount(gearAccount);
+                    double gearPoints = (gearPointsResult == null) ? 0 : gearPoints;
                     EffortAndGearKeyPerformanceIndicator epgp = new EffortAndGearKeyPerformanceIndicator(
                         user,
-                        (effortPoints == null) ? 0 : effortPoints,
+                        effortPoints,
                         effortAccount,
-                        (gearPoints == null) ? 0 : gearPoints,
+                        gearPoints,
                         gearAccount,
                         effortPoints/(gearPoints == 0 ? (effortPoints == 0 ? 1.0 : effortPoints) : gearPoints)
                     );
