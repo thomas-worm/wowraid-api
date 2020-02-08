@@ -8,6 +8,8 @@ RUN sudo apt-get update \
  && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable" \
  && sudo apt-get update \
  && sudo apt-get install -y docker-ce postgresql postgresql-contrib libpq-dev \
+ && sudo systemctl enable docker \
+ && sudo systemctl start docker \
  && sudo service postgresql start \
  && sudo sudo -u postgres createuser --superuser gitpod \
  && sudo sudo -u postgres createuser --superuser zcatzlevtcsphw \
