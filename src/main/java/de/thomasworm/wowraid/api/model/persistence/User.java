@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,17 +27,20 @@ public class User {
     private String battleTag;
 
     @ManyToMany(
-        mappedBy = "members"
+        mappedBy = "members",
+        fetch = FetchType.EAGER
     )
     private Set<Usergroup> groups = new HashSet<>();
 
     @OneToMany(
-        mappedBy = "user"
+        mappedBy = "user",
+        fetch = FetchType.LAZY
     )
     private Set<Character> characters = new HashSet<>();
 
     @OneToOne(
-        mappedBy = "user"
+        mappedBy = "user",
+        fetch = FetchType.LAZY
     )
     private EffortAndGearAccountMapping effortAndGearAccounts;
 

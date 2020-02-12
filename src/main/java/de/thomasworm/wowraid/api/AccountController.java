@@ -1,6 +1,9 @@
 package de.thomasworm.wowraid.api;
 
+import de.thomasworm.wowraid.api.model.dto.Account;
 import de.thomasworm.wowraid.api.model.dto.EffortAndGearKeyPerformanceIndicator;
+import de.thomasworm.wowraid.api.model.dto.LinkedCharacter;
+import de.thomasworm.wowraid.api.model.dto.LinkedEvent;
 import de.thomasworm.wowraid.api.model.dto.Transaction;
 import reactor.core.publisher.Mono;
 
@@ -22,6 +25,23 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+    @GetMapping("/account/{key}")
+    public Mono<Account> getAccount(@PathVariable("key") String accountKey) {
+        return this.accountService
+            .getAccountByKey(accountKey)
+            .map(accountRecord -> {
+                Account account = new Account();
+                account.setName(accountRecord.getName());
+                List<Transaction> transactionList = new ArrayList<>();
+                accountRecord.getTransactions().forEach(transaction -> {
+                    transactionList.add(this.convertTransactionToTransactionDto(transaction));
+                });
+                transactionList.sort((a, b) -> b.getDateTime().compareTo(a.getDateTime()));
+                account.getTransactions().addAll(transactionList);
+                return account;
+            });
+    }
+
     @GetMapping("/account/{key}/transaction")
     public Mono<List<Transaction>> getTransactionsOfAccount(@PathVariable("key") String accountKey) {
         return this.accountService
@@ -30,16 +50,26 @@ public class AccountController {
             .map(transactions -> {
                 List<Transaction> transactionList = new ArrayList<>();
                 transactions.forEach(transaction -> {
-                    Transaction transactionDto = new Transaction();
-                    transactionDto.setDateTime(transaction.getDateTime());
-                    transactionDto.setTitle(transaction.getTitle());
-                    transactionDto.setValue(transaction.getValue());
-                    transactionDto.setCurrency(transaction.getCurrency().getName());
-                    transactionList.add(transactionDto);
+                    transactionList.add(this.convertTransactionToTransactionDto(transaction));
                 });
                 transactionList.sort((a, b) -> b.getDateTime().compareTo(a.getDateTime()));
                 return transactionList;
             });
+    }
+
+    private Transaction convertTransactionToTransactionDto(de.thomasworm.wowraid.api.model.persistence.Transaction transactionRecord) {
+        Transaction transactionDto = new Transaction();
+        transactionDto.setDateTime(transactionRecord.getDateTime());
+        transactionDto.setTitle(transactionRecord.getTitle());
+        transactionDto.setValue(transactionRecord.getValue());
+        transactionDto.setCurrency(transactionRecord.getCurrency().getName());
+        transactionRecord.getLinkedEvents().forEach(eventRecord -> {
+            LinkedEvent event = new LinkedEvent();
+            event.setKey(eventRecord.getKey());
+            event.setName(eventRecord.getName());
+            transactionDto.getEvents().add(event);
+        });
+        return transactionDto;
     }
 
     @GetMapping("/kpi/epgp")
@@ -56,6 +86,14 @@ public class AccountController {
                     epgp.setGearPoints(kpi.getGearPoints());
                     epgp.setGearPointsAccount(kpi.getGearPointsAccount().getKey());
                     epgp.setPriority(kpi.getPriority());
+                    if (kpi.getUser().getCharacters() != null) {
+                        kpi.getUser().getCharacters().forEach(character -> {
+                            LinkedCharacter characterLink = new LinkedCharacter();
+                            characterLink.setRealm(character.getRealm().getName());
+                            characterLink.setName(character.getName());
+                            epgp.getCharacters().add(characterLink);
+                        });
+                    }
                     epgps.add(epgp);
                 });
                 epgps.sort((a, b) -> Double.compare(b.getPriority(), a.getPriority()));

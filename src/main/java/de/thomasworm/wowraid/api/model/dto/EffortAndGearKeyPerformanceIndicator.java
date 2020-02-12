@@ -1,5 +1,8 @@
 package de.thomasworm.wowraid.api.model.dto;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -23,6 +26,12 @@ public class EffortAndGearKeyPerformanceIndicator {
 
     @JsonProperty("priority")
     private double priority;
+
+    @JsonProperty(
+        value = "characters",
+        required = false
+    )
+    private List<LinkedCharacter> characters = new ArrayList<>();
 
     public void setBattleTag(String value) {
         this.battleTag = value;
@@ -70,6 +79,10 @@ public class EffortAndGearKeyPerformanceIndicator {
 
     public double getPriority() {
         return this.priority;
+    }
+
+    public List<LinkedCharacter> getCharacters() {
+        return this.characters;
     }
 
 }

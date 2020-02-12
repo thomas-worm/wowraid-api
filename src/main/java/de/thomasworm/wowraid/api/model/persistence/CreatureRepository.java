@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository()
 public interface CreatureRepository extends PagingAndSortingRepository<Creature, Long> {
+
+    public Creature findByBlizzardIdentifier(int blizzardIdentifier);
+    
 }

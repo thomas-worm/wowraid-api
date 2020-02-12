@@ -85,4 +85,8 @@ public class Account {
         return this.owner;
     }
 
+    public Set<Transaction> getTransactions() {
+        return this.transactions;
+    }
+
 }

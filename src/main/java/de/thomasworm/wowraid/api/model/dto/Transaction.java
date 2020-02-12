@@ -1,6 +1,8 @@
 package de.thomasworm.wowraid.api.model.dto;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,6 +21,9 @@ public class Transaction {
 
     @JsonProperty("currency")
     private String currency;
+
+    @JsonProperty("events")
+    private List<LinkedEvent> events = new ArrayList<>();
 
     public void setDateTime(LocalDateTime value) {
         this.dateTime = value;
@@ -50,6 +55,10 @@ public class Transaction {
 
     public String getCurrency() {
         return this.currency;
+    }
+    
+    public List<LinkedEvent> getEvents() {
+        return this.events;
     }
 
 }

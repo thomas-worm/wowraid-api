@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +22,9 @@ public class Usergroup {
     @Column()
     private String name;
 
-    @ManyToMany()
+    @ManyToMany(
+        fetch = FetchType.EAGER
+    )
     @JoinTable(
         name = "usergroup_members",
         joinColumns = @JoinColumn(name = "usergroup_id"),

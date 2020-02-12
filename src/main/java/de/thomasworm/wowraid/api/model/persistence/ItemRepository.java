@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository()
 public interface ItemRepository extends PagingAndSortingRepository<Item, Long> {
 
+    public Item findByBlizzardIdentifier(int blizzardIdentifier);
+
 }
